@@ -1,0 +1,19 @@
+<svg width="1199" height="778" viewBox="0 0 1199 778" xmlns="http://www.w3.org/2000/svg">
+  <!-- White rectangles -->
+  <rect x="13" y="35" width="333" height="236" rx="40" ry="40" fill="#FFFFFF"/>
+  <rect x="731" y="40" width="334" height="528" rx="40" ry="40" fill="#FFFFFF"/>
+  <rect x="13" y="291" width="141" height="292" rx="40" ry="40" fill="#FFFFFF"/>
+  <rect x="359" y="465" width="167" height="145" rx="30" ry="30" fill="#FFFFFF"/>
+  <rect x="9" y="630" width="853" height="148" rx="40" ry="40" fill="#FFFFFF"/>
+  <rect x="359" y="465" width="167" height="145" rx="30" ry="30" fill="#FFFFFF"/> <!-- duplicate to ensure stacking order -->
+  <rect x="1106" y="604" width="66" height="174" rx="30" ry="30" fill="#FFFFFF"/>
+
+  <!-- Yellow rectangles -->
+  <rect x="372" y="35" width="333" height="236" rx="40" ry="40" fill="#FFD915"/>
+  <rect x="180" y="291" width="511" height="136" rx="40" ry="40" fill="#FFD915"/>
+  <rect x="179" y="465" width="167" height="145" rx="30" ry="30" fill="#FFD915"/>
+  <rect x="539" y="465" width="166" height="145" rx="30" ry="30" fill="#FFD915"/>
+  <rect x="874" y="596" width="216" height="115" rx="30" ry="30" fill="#FFD915"/>
+  <rect x="876" y="723" width="216" height="55" rx="20" ry="20" fill="#FFD915"/>
+  <rect x="1091" y="40" width="96" height="528" rx="40" ry="40" fill="#FFD915"/>
+</svg>

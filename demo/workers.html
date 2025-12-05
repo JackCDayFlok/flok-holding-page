@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ——————————————— CORE ——————————————— -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description"
+    content="Find flexible hospitality work across the UK with Flok Jobs. Choose when and where you work with fair pay, verified venues and app-based shift booking.">
+
+  <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
+  <link rel="canonical" href="https://www.flokjobs.com/workers">
+
+  <!-- ——————————— SOCIAL CARDS ——————————— -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flokjobs.com/workers">
+  <meta property="og:title" content="Find Hospitality Work & Flexible Shifts | Flok Jobs">
+  <meta property="og:site_name" content="Flok Jobs">
+  <meta property="og:description"
+    content="Work on your terms with Flok Jobs - pick up hospitality shifts, get paid fairly and work directly with trusted UK venues.">
+  <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
+  <meta property="og:image:alt" content="Flok Jobs - hospitality workers finding shifts via mobile app">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Hospitality Work & Flexible Shifts | Flok Jobs">
+  <meta name="twitter:description"
+    content="Join Flok Jobs to find flexible hospitality shifts with better pay, verified venues and full control over your diary.">
+  <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+
+  <!-- ———————————  STRUCTURED DATA  ——————————— -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Flok Jobs",
+    "url":"https://www.flokjobs.com",
+    "logo":"https://www.flokjobs.com/images/flokjobs-logo.png",
+    "description":"UK's leading hospitality recruitment platform connecting venues with verified chefs, bar staff, waiters and hospitality professionals.",
+    "sameAs":[
+      "https://www.facebook.com/people/Flok-Jobs/61576512420509",
+      "https://www.linkedin.com/company/flokjobs",
+      "https://www.instagram.com/flokjobs"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"GB"
+    }
+  }
+  </script>
+
+  <!-- ———————————  PWA / THEME  ——————————— -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Flok Jobs">
+  <meta name="theme-color" content="#121212">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+  <!-- ———————————  PRELOADING ——————————— -->
+  <link rel="preload" as="image" href="/images/silverbackground1.svg" type="image/svg+xml" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/silverbackground2.svg" type="image/svg+xml" media="(min-width: 768px)">
+  <link rel="preload" as="font" href="/fonts/Poppins-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
+
+  <!-- —————————————————  ASSETS  ————————————————— -->
+  <title>Find Hospitality Work & Flexible Shifts | Flok Jobs</title>
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon192.png">
+  <link rel="stylesheet" href="css/workers.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Fixed Header Navigation -->
+  <header class="sticky-header">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html"><img src="images/floklogo.png" class="header-logo" alt="Flok Logo" width="960"
+          height="450"></a>
+
+      <!-- Mobile Action Buttons -->
+      <div class="header-buttons">
+        <button class="header-btn app-btn" onclick="window.open('app.html')">Get the App</button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary">
+        <div class="menu-group">
+          <a href="index.html" class="nav-btn {{HOME_ACTIVE}}" {{HOME_ARIA}}>Home</a>
+          <a href="employers.html" class="nav-btn">Employers</a>
+          <a href="workers.html" class="nav-btn">Workers</a>
+
+          <!-- Resources toggle -->
+          <button id="resourcesToggle" class="nav-btn resources-btn" type="button" aria-expanded="false"
+            aria-controls="resourcesDropdown">
+            Resources
+          </button>
+
+          <!-- Get the App -->
+          <a href="app.html" class="nav-btn cta-app">Get the App</a>
+        </div>
+
+        <!-- Auth links -->
+        <div class="auth-links">
+          <a href="login.html">Login</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href="signup.html">Signup</a>
+        </div>
+      </nav>
+
+
+      <!-- Mobile Hamburger Menu -->
+      <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Open menu" aria-controls="mobileOverlay"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Mobile Overlay Menu -->
+      <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true">
+        <div class="overlay-content">
+          <div class="overlay-header">
+            <div class="logo-wrapper">
+              <a href="index.html"><img src="images/floklogo.png" class="overlay-logo" alt="Flok Logo" width="960"
+                  height="450"></a>
+            </div>
+          </div>
+          <nav class="overlay-nav" aria-label="Mobile navigation">
+            <a class="overlay-link" href="index.html" {{HOME_ARIA}}>Home</a>
+            <a class="overlay-link" href="employers.html">Employers</a>
+            <a class="overlay-link" href="workers.html">Workers</a>
+            <a class="overlay-link" href="about.html">About</a>
+          </nav>
+          <div class="overlay-login-wrapper">
+            <a href="login.html">Login</a>
+            <span class="sep" aria-hidden="true">|</span>
+            <a href="signup.html">Signup</a>
+          </div>
+
+          <button id="closeOverlay" class="close-btn" aria-label="Close menu">
+            <div class="circle-arrow">
+              <img src="images/arrow.png" class="arrow" alt="Back arrow" width="50" height="50">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="resourcesDropdown" class="resources-dropdown" role="region" aria-labelledby="resourcesToggle">
+    <div class="resources-inner">
+      <!-- decorative dots -->
+      <img class="dropdown-decor-left" src="images/dots1.png" alt="" aria-hidden="true">
+      <img class="dropdown-decor-bottom" src="images/dots1.png" alt="" aria-hidden="true">
+
+      <div class="resources-grid">
+        <!-- columns -->
+        <div class="links-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="about.html">About Flok</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="links-col">
+          <h3>Get Help</h3>
+          <ul>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="help-centre.html">Help Centre</a></li>
+          </ul>
+        </div>
+
+        <!-- right-side image with left fade -->
+        <div class="image-col">
+          <div class="fade-wrap">
+            <img src="images/footerimage.png" alt="Hospitality staff at work">
+            <span class="fade-left" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main-content" tabindex="-1">
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Work with Flok</h1>
+        <p class="hero-description">
+          Flok connects you directly with top hospitality employers across the UK. No agencies, no hidden fees - just
+          better pay and freedom to work on your terms.
+        </p>
+        <a href="signup.html" class="hero-cta">Create Your Profile</a>
+      </div>
+    </section>
+
+    <section class="why-work-section">
+      <div class="why-work-container">
+        <h2 class="why-work-title">Why Work With Flok?</h2>
+        <p class="why-work-subtitle">The Only Direct UK Hospitality Platform</p>
+        <p class="why-work-tagline">No agencies. No middlemen. Just fair pay and verified venues.</p>
+
+        <div class="benefits-list">
+          <div class="benefit-card yellow-card">
+            <div class="benefit-left">
+              <h3 class="benefit-title">Shifts That<br>Fit You</h3>
+            </div>
+            <div class="benefit-right">
+              <p class="benefit-text">Choose when and where you work with adhoc shifts, extra income, or regular
+                bookings.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card gray-card">
+            <div class="benefit-left">
+              <h3 class="benefit-title">Your Pay,<br>Boosted</h3>
+            </div>
+            <div class="benefit-right">
+              <p class="benefit-text">Fair hourly rates with enhancements for last-minute cover and bank holidays.
+                Holiday pay is rolled into PAYE shifts.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card yellow-card">
+            <div class="benefit-left">
+              <h3 class="benefit-title">Your Diary,<br>Your Hands</h3>
+            </div>
+            <div class="benefit-right">
+              <p class="benefit-text">Manage your availability, bookings, and payments all from the app.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="roles-available-section">
+          <div class="roles-content">
+            <h2 class="roles-title">Roles Available</h2>
+            <p class="roles-subtitle">We provide flexible jobs across UK hospitality, including:</p>
+            <ul class="roles-list">
+              <li>Chefs & Kitchen Staff</li>
+              <li>Waiters & Bar Staff</li>
+              <li>Housekeepers & Cleaning Teams</li>
+              <li>Event & Festival Staff</li>
+            </ul>
+          </div>
+          <div class="roles-image">
+            <img src="images/workers1.webp" alt="Hospitality professionals at work">
+          </div>
+        </div>
+
+        <!-- How It Works -->
+        <section class="how-it-works" aria-labelledby="hiw-title">
+          <h2 id="hiw-title" class="hiw-title">How It Works</h2>
+
+          <div class="hiw-container">
+            <!-- Live region announces step changes to screen readers -->
+            <div class="hiw-stage" role="region" aria-live="polite" aria-atomic="true" data-step="1">
+              <article class="hiw-step is-active" data-step="1">
+                <h3 class="hiw-step-title"><span class="hiw-num">1.</span> Download the App</h3>
+                <p class="hiw-step-desc">Get started on iOS or Google Play.</p>
+              </article>
+
+              <article class="hiw-step" data-step="2">
+                <h3 class="hiw-step-title"><span class="hiw-num">2.</span> Create Your Profile</h3>
+                <p class="hiw-step-desc">Upload your Right to Work, certificates, and skills to get verified.</p>
+              </article>
+
+              <article class="hiw-step" data-step="3">
+                <h3 class="hiw-step-title"><span class="hiw-num">3.</span> Book Shifts &amp; Get Paid</h3>
+                <p class="hiw-step-desc">Choose your jobs, show up, and get paid fast after verified timesheets.</p>
+              </article>
+            </div>
+
+            <!-- Clickable step indicators -->
+            <div class="hiw-dots" role="group" aria-label="Step indicators">
+              <button class="hiw-dot is-active" aria-label="Go to step 1" type="button"></button>
+              <button class="hiw-dot" aria-label="Go to step 2" type="button"></button>
+              <button class="hiw-dot" aria-label="Go to step 3" type="button"></button>
+            </div>
+          </div>
+
+        </section>
+
+        <div class="take-control">
+          <h2>Take Control of Your Hospitality Career</h2>
+          <p>This isn't agency work. This is your work, your way - with the support of the UK's
+            only direct hospitality platform.</p>
+          <a href="signup.html" class="hero-cta">Join for Free</a>
+        </div>
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-col account-col">
+        <h3 class="footer-heading">Account</h3>
+        <ul class="footer-links">
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col resources-col">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="industries.html">Industries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col legal-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="legal.html">TBC</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col support-col">
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="help-centre.html">Help Centre</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col socials-col">
+        <h3 class="footer-heading">Socials</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/company/flokjobs/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/flokjobs/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Flok-Jobs/61576512420509/" target="_blank"
+              rel="noopener noreferrer">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 Flok</p>
+      <a href="index.html"><img src="images/floklogo.png" alt="Flok Logo" class="footer-logo" width="960"
+          height="450"></a>
+    </div>
+  </footer>
+
+</body>
+
+<!-- JavaScript -->
+<script src="js/overlay-menu.js"></script>
+<script src="js/back-to-top.js"></script>
+<script src="js/resources-dropdown.js"></script>
+<!-- Benefit Cards Animation -->
+<script>
+  // Benefit card scroll animation with sequential timing
+  (function () {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    let visibleCards = 0;
+    const totalCards = document.querySelectorAll('.benefit-card').length;
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+          const delay = visibleCards * 300; // ms delay between each card
+
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+
+          visibleCards++;
+        }
+      });
+    }, observerOptions);
+
+    // Observe all benefit cards
+    document.querySelectorAll('.benefit-card').forEach(card => {
+      cardObserver.observe(card);
+    });
+  })();
+</script>
+<!-- How It Works -->
+<script src="js/how-it-works.js"></script>
+
+
+
+</html>

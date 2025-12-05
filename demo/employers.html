@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ——————————————— CORE ——————————————— -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description"
+    content="Hire reliable hospitality staff across the UK. Flok Jobs connects venues with verified chefs, bar staff, waiters and more through a fast, flexible employer dashboard.">
+
+  <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
+  <link rel="canonical" href="https://www.flokjobs.com/employers">
+
+  <!-- ——————————— SOCIAL CARDS ——————————— -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flokjobs.com/employers">
+  <meta property="og:title" content="Hire Hospitality Staff - Flok Jobs for Employers">
+  <meta property="og:site_name" content="Flok Jobs">
+  <meta property="og:description"
+    content="Post shifts, connect with vetted hospitality professionals and manage bookings in one place. Flok Jobs helps UK venues hire staff quickly without agency hassle.">
+  <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
+  <meta property="og:image:alt" content="Flok Jobs - UK hospitality hiring platform for employers">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hire Hospitality Staff Fast - Flok Jobs Employers">
+  <meta name="twitter:description"
+    content="Find trusted UK hospitality staff on demand. Use Flok Jobs to post shifts, match with workers and manage bookings from your employer dashboard.">
+  <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+
+  <!-- ———————————  STRUCTURED DATA  ——————————— -->
+  <!-- Organization (site-wide) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Flok Jobs",
+    "url": "https://www.flokjobs.com",
+    "logo": "https://www.flokjobs.com/images/flokjobs-logo.png",
+    "description": "UK's leading hospitality recruitment platform connecting venues with verified chefs, bar staff, waiters and hospitality professionals.",
+    "sameAs": [
+      "https://www.facebook.com/people/Flok-Jobs/61576512420509",
+      "https://www.linkedin.com/company/flokjobs",
+      "https://www.instagram.com/flokjobs"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    }
+  }
+  </script>
+
+  <!-- Employers landing page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Hire Hospitality Staff - Flok Jobs for Employers",
+    "url": "https://www.flokjobs.com/employers",
+    "description": "Flok Jobs helps UK hospitality venues hire vetted staff quickly. Post shifts, connect with workers and manage bookings in one employer dashboard."
+  }
+  </script>
+
+  <!-- ———————————  PWA / THEME  ——————————— -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Flok Jobs">
+  <meta name="theme-color" content="#121212">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+  <!-- ———————————  PRELOADING ——————————— -->
+  <link rel="preload" as="image" href="/images/silverbackground1.svg" type="image/svg+xml" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/silverbackground2.svg" type="image/svg+xml" media="(min-width: 768px)">
+  <link rel="preload" as="font" href="/fonts/Poppins-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
+
+  <!-- —————————————————  ASSETS  ————————————————— -->
+  <title>Hire Hospitality Staff | Flok Jobs for Employers (UK)</title>
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon192.png">
+  <link rel="stylesheet" href="css/employers.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Fixed Header Navigation -->
+  <header class="sticky-header">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html"><img src="images/floklogo.png" class="header-logo" alt="Flok Logo" width="960"
+          height="450"></a>
+
+      <!-- Mobile Action Buttons -->
+      <div class="header-buttons">
+        <button class="header-btn app-btn" onclick="window.open('app.html')">Get the App</button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary">
+        <div class="menu-group">
+          <a href="index.html" class="nav-btn {{HOME_ACTIVE}}" {{HOME_ARIA}}>Home</a>
+          <a href="employers.html" class="nav-btn">Employers</a>
+          <a href="workers.html" class="nav-btn">Workers</a>
+
+          <!-- Resources toggle -->
+          <button id="resourcesToggle" class="nav-btn resources-btn" type="button" aria-expanded="false"
+            aria-controls="resourcesDropdown">
+            Resources
+          </button>
+
+          <!-- Get the App -->
+          <a href="app.html" class="nav-btn cta-app">Get the App</a>
+        </div>
+
+        <!-- Auth links -->
+        <div class="auth-links">
+          <a href="login.html">Login</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href="signup.html">Signup</a>
+        </div>
+      </nav>
+
+
+      <!-- Mobile Hamburger Menu -->
+      <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Open menu" aria-controls="mobileOverlay"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Mobile Overlay Menu -->
+      <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true">
+        <div class="overlay-content">
+          <div class="overlay-header">
+            <div class="logo-wrapper">
+              <a href="index.html"><img src="images/floklogo.png" class="overlay-logo" alt="Flok Logo" width="960"
+                  height="450"></a>
+            </div>
+          </div>
+          <nav class="overlay-nav" aria-label="Mobile navigation">
+            <a class="overlay-link" href="index.html" {{HOME_ARIA}}>Home</a>
+            <a class="overlay-link" href="employers.html">Employers</a>
+            <a class="overlay-link" href="workers.html">Workers</a>
+            <a class="overlay-link" href="about.html">About</a>
+          </nav>
+          <div class="overlay-login-wrapper">
+            <a href="login.html">Login</a>
+            <span class="sep" aria-hidden="true">|</span>
+            <a href="signup.html">Signup</a>
+          </div>
+
+          <button id="closeOverlay" class="close-btn" aria-label="Close menu">
+            <div class="circle-arrow">
+              <img src="images/arrow.png" class="arrow" alt="Back arrow" width="50" height="50">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="resourcesDropdown" class="resources-dropdown" role="region" aria-labelledby="resourcesToggle">
+    <div class="resources-inner">
+      <!-- decorative dots -->
+      <img class="dropdown-decor-left" src="images/dots1.png" alt="" aria-hidden="true">
+      <img class="dropdown-decor-bottom" src="images/dots1.png" alt="" aria-hidden="true">
+
+      <div class="resources-grid">
+        <!-- columns -->
+        <div class="links-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="about.html">About Flok</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="links-col">
+          <h3>Get Help</h3>
+          <ul>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="help-centre.html">Help Centre</a></li>
+          </ul>
+        </div>
+
+        <!-- right-side image with left fade -->
+        <div class="image-col">
+          <div class="fade-wrap">
+            <img src="images/footerimage.png" alt="Hospitality staff at work">
+            <span class="fade-left" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main-content" tabindex="-1">
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Hire Hospitality Staff</h1>
+        <p class="hero-description">
+          Hire the staff you need, exactly when you need them. Flok connects you directly with trusted hospitality
+          professionals - no agencies, no fuss.
+        </p>
+        <a href="signup.html" class="hero-cta">Sign Up Now</a>
+      </div>
+    </section>
+
+    <section class="top-gradient-section" id="why-flok">
+      <div class="why-flok">
+        <div class="why-flok-copy">
+          <h2 class="why-flok-title">
+            Why Employers<br>
+            Choose Flok
+          </h2>
+
+          <div class="why-flok-point">
+            <h3 class="why-flok-subtitle">Marketplace at Your Fingertips</h3>
+            <p class="why-flok-text">
+              Instant access to a high-quality workforce on demand.
+            </p>
+          </div>
+
+          <div class="why-flok-point">
+            <h3 class="why-flok-subtitle">Your Employer Dashboard</h3>
+            <p class="why-flok-text">
+              Post shifts, communicate in-app, manage bookings, and track worker
+              performance - all in one place.
+            </p>
+          </div>
+
+          <div class="why-flok-point">
+            <h3 class="why-flok-subtitle">Faster, Smarter Hiring</h3>
+            <p class="why-flok-text">
+              Fill last-minute shifts or plan ahead - without the hassle or
+              inflated costs.
+            </p>
+          </div>
+
+          <div class="why-flok-point">
+            <h3 class="why-flok-subtitle">Designed for Hospitality</h3>
+            <p class="why-flok-text">
+              Built by hospitality professionals with 25+ years of experience -
+              Flok understands your needs.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-flok-visual">
+          <img src="images/employers1.webp" alt="Images of fine dining restaurants" class="why-flok-image-placeholder">
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <section class="how-it-works" aria-labelledby="hiw-title">
+        <h2 id="hiw-title" class="hiw-title">How It Works</h2>
+
+        <div class="hiw-container">
+          <!-- Live region announces step changes to screen readers -->
+          <div class="hiw-stage" role="region" aria-live="polite" aria-atomic="true" data-step="1">
+            <article class="hiw-step is-active" data-step="1">
+              <h3 class="hiw-step-title"><span class="hiw-num">1.</span> Post Your Shift</h3>
+              <p class="hiw-step-desc">Set your position details: Role, times, pay, location.</p>
+            </article>
+
+            <article class="hiw-step" data-step="2">
+              <h3 class="hiw-step-title"><span class="hiw-num">2.</span> Match Instantly</h3>
+              <p class="hiw-step-desc">Flok's marketplace connects you with verified workers who match your criteria.
+              </p>
+            </article>
+
+            <article class="hiw-step" data-step="3">
+              <h3 class="hiw-step-title"><span class="hiw-num">3.</span> Confirm &amp; Deploy</h3>
+              <p class="hiw-step-desc">Approve, communicate, and pay - all via your dashboard.</p>
+            </article>
+          </div>
+
+          <!-- Clickable step indicators -->
+          <div class="hiw-dots" role="group" aria-label="Step indicators">
+            <button class="hiw-dot is-active" aria-label="Go to step 1" type="button"></button>
+            <button class="hiw-dot" aria-label="Go to step 2" type="button"></button>
+            <button class="hiw-dot" aria-label="Go to step 3" type="button"></button>
+          </div>
+        </div>
+
+      </section>
+    </section>
+
+    <section class="sectors-we-cover">
+      <h2>Sectors We Cover</h2>
+      <p>We supply hospitality professionals to a wide range of sectors, including:</p>
+
+      <div class="sectors-container">
+        <div class="sectors-content">
+          <ul class="sectors-list">
+            <li>Fine Dining & Luxury Hotels</li>
+            <li>Casual Dining & Pubs</li>
+            <li>Corporate Events & Conferences</li>
+            <li>Healthcare, Education & Institutions</li>
+            <li>Travel & Specialist Environments (e.g. film, remote, offshore)</li>
+          </ul>
+        </div>
+        <div class="sectors-image">
+          <img src="images/employers2.webp" alt="Hospitality professionals at work">
+        </div>
+      </div>
+
+    </section>
+
+    <section class="bottom-gradient-section">
+      <h2>Ready to Hire?</h2>
+      <p>Staff shortages don't wait. Neither should you.</p>
+      <a href="signup.html" class="hero-cta">Create Your Account</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-col account-col">
+        <h3 class="footer-heading">Account</h3>
+        <ul class="footer-links">
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col resources-col">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="industries.html">Industries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col legal-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="legal.html">TBC</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col support-col">
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="help-centre.html">Help Centre</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col socials-col">
+        <h3 class="footer-heading">Socials</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/company/flokjobs/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/flokjobs/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Flok-Jobs/61576512420509/" target="_blank"
+              rel="noopener noreferrer">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 Flok</p>
+      <a href="index.html"><img src="images/floklogo.png" alt="Flok Logo" class="footer-logo" width="960"
+          height="450"></a>
+    </div>
+  </footer>
+
+</body>
+
+<!-- JavaScript -->
+<script src="js/overlay-menu.js"></script>
+<script src="js/back-to-top.js"></script>
+<script src="js/resources-dropdown.js"></script>
+<!-- How It Works -->
+<script src="js/how-it-works.js"></script>
+
+</html>

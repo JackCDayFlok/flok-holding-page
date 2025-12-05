@@ -1,0 +1,445 @@
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
+        url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
+        url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   BASE STYLES (Generic + Mobile)
+   ========================================================================== */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
+}
+
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+main {
+    position: relative;
+}
+
+:root {
+    --container-min: 1200px;
+    --container-max: 1600px;
+    --primary-gradient: linear-gradient(to bottom, #1f1f50, #3a3a6f);
+}
+
+a {
+    color: #ffdb15;
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    transform: translateY(-200%);
+    background: #ffdb15;
+    color: black;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font: 600 0.95rem/1 'Poppins', sans-serif;
+    text-decoration: none;
+    z-index: 3000;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid black;
+}
+
+#main-content {
+    scroll-margin-top: 96px;
+}
+
+.main-section {
+    padding: 9rem 1.5rem 8rem 1.5rem;
+}
+
+/* ==========================================================================
+   MOBILE OVERLAY MENU
+   ========================================================================== */
+
+
+.mobile-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.overlay-content {
+    width: 100%;
+    max-width: min(80%, 400px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vh, 2rem);
+    position: relative;
+    height: fit-content;
+    max-height: 85vh;
+    justify-content: center;
+}
+
+.overlay-content::before {
+    content: '';
+    position: absolute;
+    background: url('../images/birds3.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 11;
+    top: -260px;
+    right: -180px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.05;
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+}
+
+.overlay-logo {
+    height: clamp(30px, 6vh, 50px);
+    width: auto;
+}
+
+.overlay-nav {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 2vh, 1.5rem);
+}
+
+.overlay-link {
+    background: #ffdb15;
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 3.5vh, 1.5rem);
+    padding: clamp(0.8rem, 2.5vh, 1.4rem) clamp(1.2rem, 4vh, 2rem);
+    border: 3px solid white;
+    border-radius: 38px;
+    text-align: center;
+    display: block;
+    transition: transform .2s ease;
+}
+
+.overlay-link:hover {
+    transform: translateY(-2px);
+}
+
+.overlay-link.active {
+    background: #ffdb15;
+    color: #1f1f50;
+}
+
+.overlay-login-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: clamp(0.5rem, 2vh, 1rem);
+}
+
+.overlay-login-wrapper a {
+    color: #ffdb15;
+    text-decoration: underline;
+    font-size: clamp(0.9rem, 2.5vh, 1rem);
+}
+
+.overlay-login-wrapper .sep {
+    color: #ffdb15;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    bottom: clamp(-4rem, -8vh, -5rem);
+    right: 0;
+    width: clamp(45px, 8vh, 56px);
+    height: clamp(45px, 8vh, 56px);
+}
+
+.circle-arrow {
+    background: #ffdb15;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: clamp(45px, 8vh, 56px);
+    height: clamp(45px, 8vh, 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.circle-arrow .arrow {
+    display: block;
+    transform: rotate(90deg);
+    width: clamp(24px, 5vh, 30px);
+    height: clamp(24px, 5vh, 30px);
+}
+
+
+
+
+/* ————— Confirmation Page Styling ————— */
+.message-confirmation {
+    color: #fff;
+    width: 92vw;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.message-confirmation h1 {
+    margin-top: 0;
+    font-size: 4.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.message-confirmation .sent-text {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+.message-confirmation .highlight {
+    color: #ffdd33;
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+
+.message-confirmation .follow-up {
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    margin-top: 0;
+}
+
+.message-confirmation .return-link a {
+    color: #ffdd33;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin-bottom: 0;
+}
+
+.message-confirmation .return-link {
+    font-size: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 5rem;
+}
+
+.message-confirmation .return-link a::before {
+    content: '';
+    position: absolute;
+    background: url('../images/birds4.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 11;
+    top: 300px;
+    right: 170px;
+    width: 360px;
+    height: 360px;
+    opacity: 0.2;
+}
+
+/* ————— Social Media ————— */
+.social-section {
+    margin: auto;
+    width: fit-content;
+}
+
+.social-section p {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    margin-bottom: 65px;
+}
+
+.social-icons img {
+    width: 110px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* ————— App Links ————— */
+.app-link {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.download-link {
+    color: #ffdd33;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 1.8rem;
+}
+
+.app-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6em;
+    margin-bottom: 1rem;
+}
+
+.app-icon {
+    width: 150px;
+    opacity: 0.5;
+}
+
+/* ————— Footer ————— */
+.availability {
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 125px;
+    text-align: center;
+}
+
+.footer-links {
+    font-size: 1.8rem;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    gap: 100px;
+}
+
+.footer-links a {
+    color: lightgray;
+    text-decoration: underline;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    body {
+        margin: 0 ;
+    }
+
+    .message-confirmation {
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    .message-confirmation .sent-text {
+        font-size: 24px;
+    }
+
+    .message-confirmation .highlight {
+        font-size: 26px;
+    }
+
+    .message-confirmation .follow-up {
+        font-size: 24px;
+    }
+
+    .message-confirmation .return-link a {
+        font-size: 24px;
+    }
+
+    .message-confirmation .return-link {
+        font-size: 24px ;
+        margin-bottom: 32px ;
+    }
+
+    .message-confirmation .return-link a::before {
+        right: 0px ;
+    }
+
+    .social-section p {
+        font-size: 24px ;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 60px ;
+        margin-left: 0 ;
+    }
+
+    .social-icons img {
+        width: 80px ;
+    }
+
+    .download-link {
+        text-decoration: underline;
+        font-size: 24px ;
+    }
+
+    .availability {
+        font-size: 24px ;
+        margin-bottom: 50px ;
+        text-align: center;
+    }
+
+    .footer-links {
+        font-size: 20px ;
+        flex-direction: column;
+        gap: 0 ;
+    }
+
+    .footer-links a {
+        float: left ;
+        margin-bottom: 40px ;
+    }
+
+    .app-icons {
+        gap: 25px ;
+        margin-bottom: 1rem ;
+    }
+
+    .app-icon {
+        width: 125px ;
+    }
+}

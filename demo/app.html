@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ——————————————— CORE ——————————————— -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+        content="Download the Flok Jobs app for iOS and Android to find hospitality shifts or hire verified staff in real time across the UK.">
+
+    <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
+    <link rel="canonical" href="https://www.flokjobs.com/app">
+
+    <!-- ——————————— SOCIAL CARDS ——————————— -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.flokjobs.com/app">
+    <meta property="og:title" content="Get the Flok Jobs App - Hire or Find Hospitality Shifts">
+    <meta property="og:site_name" content="Flok Jobs">
+    <meta property="og:description"
+        content="Download the Flok Jobs app for iOS and Android to post hospitality shifts, find work and manage bookings in real time across the UK.">
+    <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Flok Jobs mobile app screen showing UK hospitality shifts and hiring tools">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get the Flok Jobs App - Hire or Find Hospitality Shifts">
+    <meta name="twitter:description"
+        content="Install the Flok Jobs app on iOS or Android to book shifts or hire hospitality staff in just a few taps.">
+    <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+
+    <!-- ———————————  STRUCTURED DATA  ——————————— -->
+    <!-- Organization (shared across site) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Flok Jobs",
+    "url": "https://www.flokjobs.com",
+    "logo": "https://www.flokjobs.com/images/flokjobs-logo.png",
+    "description": "UK's leading hospitality recruitment platform connecting venues with verified chefs, bar staff, waiters and hospitality professionals.",
+    "sameAs": [
+      "https://www.facebook.com/people/Flok-Jobs/61576512420509",
+      "https://www.linkedin.com/company/flokjobs",
+      "https://www.instagram.com/flokjobs"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    }
+  }
+  </script>
+
+    <!-- Mobile app listing -->
+    <!-- TODO: Update app links -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Flok Jobs",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "BusinessApplication",
+    "url": "https://www.flokjobs.com/app",
+    "downloadUrl": [
+      "https://apps.apple.com/gb/app/YOUR-APP-ID",
+      "https://play.google.com/store/apps/details?id=YOUR.PACKAGE.NAME"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Flok Jobs"
+    }
+  }
+  </script>
+
+    <!-- ———————————  PWA / THEME  ——————————— -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Flok Jobs">
+    <meta name="theme-color" content="#121212">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+    <!-- ———————————  PRELOADING ——————————— -->
+    <link rel="preload" as="font" href="/fonts/Poppins-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
+
+    <!-- —————————————————  ASSETS  ————————————————— -->
+    <title>Get the Flok Jobs App - iOS & Android | Flok Jobs</title>
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon192.png">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Fixed Header Navigation -->
+    <header class="sticky-header">
+        <div class="header-content">
+            <!-- Logo -->
+            <a href="index.html"><img src="images/floklogo.png" class="header-logo" alt="Flok Logo" width="960"
+                    height="450"></a>
+
+            <!-- Mobile Action Buttons -->
+            <div class="header-buttons">
+                <button class="header-btn app-btn" onclick="window.open('app.html')">Get the App</button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Primary">
+                <div class="menu-group">
+                    <a href="index.html" class="nav-btn {{HOME_ACTIVE}}" {{HOME_ARIA}}>Home</a>
+                    <a href="employers.html" class="nav-btn">Employers</a>
+                    <a href="workers.html" class="nav-btn">Workers</a>
+
+                    <!-- Resources toggle -->
+                    <button id="resourcesToggle" class="nav-btn resources-btn" type="button" aria-expanded="false"
+                        aria-controls="resourcesDropdown">
+                        Resources
+                    </button>
+
+                    <!-- Get the App -->
+                    <a href="app.html" class="nav-btn cta-app">Get the App</a>
+                </div>
+
+                <!-- Auth links -->
+                <div class="auth-links">
+                    <a href="login.html">Login</a>
+                    <span class="sep" aria-hidden="true">|</span>
+                    <a href="signup.html">Signup</a>
+                </div>
+            </nav>
+
+
+            <!-- Mobile Hamburger Menu -->
+            <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Open menu" aria-controls="mobileOverlay"
+                aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Mobile Overlay Menu -->
+            <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true">
+                <div class="overlay-content">
+                    <div class="overlay-header">
+                        <div class="logo-wrapper">
+                            <a href="index.html"><img src="images/floklogo.png" class="overlay-logo" alt="Flok Logo"
+                                    width="960" height="450"></a>
+                        </div>
+                    </div>
+                    <nav class="overlay-nav" aria-label="Mobile navigation">
+                        <a class="overlay-link" href="index.html" {{HOME_ARIA}}>Home</a>
+                        <a class="overlay-link" href="employers.html">Employers</a>
+                        <a class="overlay-link" href="workers.html">Workers</a>
+                        <a class="overlay-link" href="about.html">About</a>
+                    </nav>
+                    <div class="overlay-login-wrapper">
+                        <a href="login.html">Login</a>
+                        <span class="sep" aria-hidden="true">|</span>
+                        <a href="signup.html">Signup</a>
+                    </div>
+
+                    <button id="closeOverlay" class="close-btn" aria-label="Close menu">
+                        <div class="circle-arrow">
+                            <img src="images/arrow.png" class="arrow" alt="Back arrow" width="50" height="50">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="resourcesDropdown" class="resources-dropdown" role="region" aria-labelledby="resourcesToggle">
+        <div class="resources-inner">
+            <!-- decorative dots -->
+            <img class="dropdown-decor-left" src="images/dots1.png" alt="" aria-hidden="true">
+            <img class="dropdown-decor-bottom" src="images/dots1.png" alt="" aria-hidden="true">
+
+            <div class="resources-grid">
+                <!-- columns -->
+                <div class="links-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="about.html">About Flok</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="links-col">
+                    <h3>Get Help</h3>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a>
+                        </li>
+                        <li><a href="help-centre.html">Help Centre</a></li>
+                    </ul>
+                </div>
+
+                <!-- right-side image with left fade -->
+                <div class="image-col">
+                    <div class="fade-wrap">
+                        <img src="images/footerimage.png" alt="Hospitality staff at work">
+                        <span class="fade-left" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main id="main-content" tabindex="-1">
+
+        <section class="app-section">
+            <h1 class="app-title">Get the Flok App</h1>
+            <p class="app-subtitle">Scan the QR code to get the Flok app:</p>
+
+            <p id="appError" class="app-error" role="alert" aria-live="polite" hidden></p>
+
+            <div class="qr-container">
+                <a id="qrLink" href="#">
+                    <img id="qrImage" src="images/qr-code.png" alt="Flok App QR Code"><br>
+                </a>
+            </div>
+
+            <p class="subtext"><i> Simply point your phone camera at the QR code and click the link.<br>Not working?
+                    Visit
+                    this page (flokjobs.com/app) on your phone.</i></p>
+
+            <div class="text-content">
+                <p>Hospitality moves fast — so should you.</p>
+                <p>With the Flok app, you can find staff or shifts instantly, manage bookings and get paid, all in one
+                    place.</p>
+                <p>Whether you're an employer looking for reliable hospitality professionals, or a worker searching for
+                    flexible
+                    shifts, the Flok app makes it simple.</p>
+                <p>Download now and start hiring or working today.</p>
+            </div>
+
+            <div class="icons">
+                <img src="images/apple-logo.png" alt="Apple Store">
+                <img src="images/android-png.png" alt="Google Play">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-columns">
+            <div class="footer-col account-col">
+                <h3 class="footer-heading">Account</h3>
+                <ul class="footer-links">
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col resources-col">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col legal-col">
+                <h3 class="footer-heading">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="legal.html">TBC</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col support-col">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li><a href="help-centre.html">Help Centre</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col socials-col">
+                <h3 class="footer-heading">Socials</h3>
+                <ul class="footer-links">
+                    <li><a href="https://www.linkedin.com/company/flokjobs/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/flokjobs/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/people/Flok-Jobs/61576512420509/" target="_blank"
+                            rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p class="copyright">© 2025 Flok</p>
+            <a href="index.html"><img src="images/floklogo.png" alt="Flok Logo" class="footer-logo" width="960"
+                    height="450"></a>
+        </div>
+    </footer>
+
+</body>
+
+<!-- JavaScript -->
+<script src="js/overlay-menu.js"></script>
+<script src="js/back-to-top.js"></script>
+<script src="js/resources-dropdown.js"></script>
+
+<script>
+    (function () {
+        function getMobileOS() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Android
+            if (/android/i.test(ua)) {
+                return 'android';
+            }
+
+            // iOS
+            if (/iPhone|iPad|iPod/i.test(ua)) {
+                return 'ios';
+            }
+
+            return null;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var os = getMobileOS();
+            var isSmallScreen = window.innerWidth <= 767;
+
+            var subtitle = document.querySelector('.app-subtitle');
+            var qrImage = document.getElementById('qrImage');
+            var qrLink = document.getElementById('qrLink');
+            var errorEl = document.getElementById('appError');
+
+            if (!subtitle || !qrImage || !qrLink) return;
+
+            // Desktop / larger screens: leave default QR experience as-is
+            if (!isSmallScreen) {
+                return;
+            }
+
+            // Unsupported platform on a small screen (not iOS or Android)
+            if (!os) {
+                if (errorEl) {
+                    errorEl.textContent =
+                        'Your device does not support the Apple App Store or Google Play. ' +
+                        'Please visit this page on an iOS or Android device to download the Flok app.';
+                    errorEl.hidden = false;
+                    qrImage.style.display = 'none';
+                }
+
+                // Deactivate link + visually indicate it’s not clickable
+                qrLink.removeAttribute('href');
+                qrLink.style.pointerEvents = 'none';
+                qrImage.style.opacity = '0.5';
+                subtitle.textContent = 'The Flok app is only available on iOS and Android devices.';
+                return;
+            }
+
+            // iOS / Android behaviour
+            var storeUrl, imgSrc, subtitleText, altText;
+
+            if (os === 'ios') {
+                storeUrl = 'https://apps.apple.com/gb/app/YOUR-APP-ID';
+                imgSrc = 'images/AppStore.png';
+                subtitleText = 'Get the Flok app on the App Store:';
+                altText = 'Download on the App Store';
+            } else {
+                storeUrl = 'https://play.google.com/store/apps/details?id=YOUR.PACKAGE.NAME';
+                imgSrc = 'images/GooglePlay.png';
+                subtitleText = 'Get the Flok app on the Play Store:';
+                altText = 'Get it on Google Play';
+            }
+
+            // Update text + image + link
+            subtitle.textContent = subtitleText;
+            qrImage.src = imgSrc;
+            qrImage.alt = altText;
+            qrLink.href = storeUrl;
+            qrLink.target = '_blank';
+            qrLink.rel = 'noopener noreferrer';
+            qrImage.style.border = 0; // Removes white border if present
+        });
+    })();
+</script>
+
+
+</html>

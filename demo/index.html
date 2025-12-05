@@ -1,0 +1,2415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ——————————————— CORE ——————————————— -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description"
+    content="The UK's only direct way to hire and get hired in hospitality — fast, flexible and real-time. Sign up now for exclusive early access.">
+
+  <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
+  <link rel="canonical" href="https://www.flokjobs.com">
+
+  <!-- ——————————— SOCIAL CARDS ——————————— -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flokjobs.com/">
+  <meta property="og:title" content="Flok Jobs - UK Hospitality Hiring Platform">
+  <meta property="og:site_name" content="Flok Jobs">
+  <meta property="og:description"
+    content="The UK's only direct way to hire and get hired in hospitality — fast, flexible and real-time. Sign up now for exclusive early access.">
+  <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Flok Jobs - UK hospitality hiring platform connecting venues with verified staff">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flok Jobs - UK Hospitality Hiring Platform">
+  <meta name="twitter:description"
+    content="The UK's only direct way to hire and get hired in hospitality — fast, flexible and real-time. Sign up now for exclusive early access.">
+  <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+
+  <!-- ———————————  STRUCTURED DATA  ——————————— -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Flok Jobs",
+    "url":"https://www.flokjobs.com",
+    "logo":"https://www.flokjobs.com/images/flokjobs-logo.png",
+    "description":"UK's leading hospitality recruitment platform connecting venues with verified chefs, bar staff, waiters and hospitality professionals.",
+    "sameAs":["https://www.facebook.com/people/Flok-Jobs/61576512420509", "https://www.linkedin.com/company/flokjobs","https://www.instagram.com/flokjobs"],
+    "address":{"@type":"PostalAddress","addressCountry":"GB"}
+  }</script>
+
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://www.flokjobs.com",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.flokjobs.com/search?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }</script>
+
+  <!-- ———————————  PWA / THEME  ——————————— -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Flok Jobs">
+  <meta name="theme-color" content="#121212">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+  <!-- ———————————  PRELOADING ——————————— -->
+   
+  <link rel="preload" as="font" href="/fonts/Poppins-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
+
+
+  <!-- —————————————————  ASSETS  ————————————————— -->
+  <title>Flok Jobs - UK Hospitality Hiring Platform</title>
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon192.png">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <div class="testing">
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Fixed Header Navigation -->
+    <header class="sticky-header">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="index.html"><img src="images/floklogo.png" class="header-logo" alt="Flok Logo" width="960"
+            height="450"></a>
+
+        <!-- Mobile Action Buttons -->
+        <div class="header-buttons">
+          <button class="header-btn app-btn" onclick="window.open('app.html')">Get the App</button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Primary">
+          <div class="menu-group">
+            <a href="index.html" class="nav-btn {{HOME_ACTIVE}}" {{HOME_ARIA}}>Home</a>
+            <a href="employers.html" class="nav-btn">Employers</a>
+            <a href="workers.html" class="nav-btn">Workers</a>
+
+            <!-- Resources toggle -->
+            <button id="resourcesToggle" class="nav-btn resources-btn" type="button" aria-expanded="false"
+              aria-controls="resourcesDropdown">
+              Resources
+            </button>
+
+            <!-- Get the App -->
+            <a href="app.html" class="nav-btn cta-app">Get the App</a>
+          </div>
+
+          <!-- Auth links -->
+          <div class="auth-links">
+            <a href="login.html">Login</a>
+            <span class="sep" aria-hidden="true">|</span>
+            <a href="signup.html">Signup</a>
+          </div>
+        </nav>
+
+
+        <!-- Mobile Hamburger Menu -->
+        <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Open menu" aria-controls="mobileOverlay"
+          aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Mobile Overlay Menu -->
+        <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-header">
+              <div class="logo-wrapper">
+                <a href="index.html"><img src="images/floklogo.png" class="overlay-logo" alt="Flok Logo" width="960"
+                    height="450"></a>
+              </div>
+            </div>
+            <nav class="overlay-nav" aria-label="Mobile navigation">
+              <a class="overlay-link" href="index.html" {{HOME_ARIA}}>Home</a>
+              <a class="overlay-link" href="employers.html">Employers</a>
+              <a class="overlay-link" href="workers.html">Workers</a>
+              <a class="overlay-link" href="about.html">About</a>
+            </nav>
+            <div class="overlay-login-wrapper">
+              <a href="login.html">Login</a>
+              <span class="sep" aria-hidden="true">|</span>
+              <a href="signup.html">Signup</a>
+            </div>
+
+            <button id="closeOverlay" class="close-btn" aria-label="Close menu">
+              <div class="circle-arrow">
+                <img src="images/arrow.png" class="arrow" alt="Back arrow" width="50" height="50">
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="resourcesDropdown" class="resources-dropdown" role="region" aria-labelledby="resourcesToggle">
+      <div class="resources-inner">
+        <!-- decorative dots -->
+        <img class="dropdown-decor-left" src="images/dots1.png" alt="" aria-hidden="true">
+        <img class="dropdown-decor-bottom" src="images/dots1.png" alt="" aria-hidden="true">
+
+        <div class="resources-grid">
+          <!-- columns -->
+          <div class="links-col">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="about.html">About Flok</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="links-col">
+            <h3>Get Help</h3>
+            <ul>
+              <li><a href="contact-us.html">Contact Us</a></li>
+              <li><a href="help-centre.html">Help Centre</a></li>
+            </ul>
+          </div>
+
+          <!-- right-side image with left fade -->
+          <div class="image-col">
+            <div class="fade-wrap">
+              <img src="images/footerimage.png" alt="Hospitality staff at work">
+              <span class="fade-left" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <main id="main-content" tabindex="-1">
+
+      <!-- Top Section-->
+      <section class="gradient-box-top">
+
+        <section class="hero">
+          <div class="hero-inner">
+            <!-- Left copy -->
+            <div class="hero-left">
+              <p class="hero-eyebrow">Save up to 40% compared to Agencies</p>
+
+              <h1 class="hero-title">
+                <span class="hero-line">Skip The Agency.</span>
+                <span class="hero-accent">Find The Flok.</span>
+              </h1>
+
+              <p class="hero-copy">
+                The UK's first direct hospitality hiring platform.
+                No middlemen. No waiting. Just great people, when you need them.
+              </p>
+
+              <p class="hero-download">Download on iOS / Android</p>
+
+              <a href="app.html" class="hero-cta" aria-label="Get the Flok app">
+                Get the App
+              </a>
+            </div>
+
+            <!-- Right visual (carousel placeholder) -->
+            <div class="hero-right" aria-hidden="true">
+
+              <div class="carousel-shell">
+                <div class="hero-carousel-container">
+                  <div class="carousel hero-carousel" aria-label="Featured professionals">
+
+                    <!-- SET 1  -->
+                    <div class="set">
+                      <!-- Jamie L. -->
+                      <div class="card">
+                        <div class="location-info">
+                          <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                          <span class="distance">2.3 miles away</span>
+                        </div>
+                        <div class="profile-header">
+                          <div class="profile-image">
+                            <img src="images/profile1.jpg" alt="Jamie L. profile photo" class="profile-photo">
+                          </div>
+                          <div class="profile-info">
+                            <h2>Jamie L.</h2>
+                            <div class="profile-role">
+                              <span>Chef</span>
+                              <div class="verified">VERIFIED ✓</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rating-section">
+                          <div class="stars" data-rating="4.5">
+                            <div class="stars-bg">★★★★★</div>
+                            <div class="stars-fill" style="width: 90%;">★★★★★</div>
+                          </div>
+                          <div class="rating-text">4.5/5</div>
+                        </div>
+                        <div class="stats">
+                          <div class="stat">
+                            <div class="stat-number">82</div>
+                            <div class="stat-label">Shifts Completed</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years' Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Punctuality</div>
+                          </div>
+                        </div>
+                        <div class="badges-section">
+                          <div class="badges">
+                            <span class="badge">Great team player</span>
+                            <span class="badge">Hard working</span>
+                          </div>
+                          <div class="certifications">
+                            <p class="card-quote">"Jamie is a very talented chef, who is efficient and always on time."
+                            </p>
+                          </div>
+                        </div>
+                        <div class="experience-section">
+                          <div class="experience-title">Relevant Experience</div>
+                          <div class="experience-text">
+                            15+ years' experience across high-volume kitchens and à la carte service. Skilled in prep,
+                            stock
+                            rotation, and maintaining clean, organised stations under pressure. Delivers consistent
+                            quality while
+                            supporting service
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Maria S. -->
+                      <div class="card">
+                        <div class="location-info">
+                          <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                          <span class="distance">1.5 miles away</span>
+                        </div>
+                        <div class="profile-header">
+                          <div class="profile-image">
+                            <img src="images/profile2.jpg" alt="Maria S. profile photo" class="profile-photo">
+                          </div>
+                          <div class="profile-info">
+                            <h2>Maria S.</h2>
+                            <div class="profile-role">
+                              <span>Bartender</span>
+                              <div class="verified">VERIFIED ✓</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rating-section">
+                          <div class="stars" data-rating="4.8">
+                            <div class="stars-bg">★★★★★</div>
+                            <div class="stars-fill" style="width: 96%;">★★★★★</div>
+                          </div>
+                          <div class="rating-text">4.8/5</div>
+                        </div>
+                        <div class="stats">
+                          <div class="stat">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Shifts Completed</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years' Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Punctuality</div>
+                          </div>
+                        </div>
+                        <div class="badges-section">
+                          <div class="badges">
+                            <span class="badge">Customer favorite</span>
+                            <span class="badge">Experienced</span>
+                          </div>
+                          <div class="certifications">
+                            <div class="certification">
+                              <div class="cert-icon">✓</div>
+                              <span>Background Checked</span>
+                            </div>
+                            <div class="certification">
+                              <div class="cert-icon food">📋</div>
+                              <span>Responsible Service of Alcohol</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="experience-section">
+                          <div class="experience-title">Relevant Experience</div>
+                          <div class="experience-text">
+                            5+ years experience of bartender work in high-volume establishments. Skilled in cocktail
+                            preparation,
+                            wine service, and customer relations. Known for creating memorable experiences and shaping
+                            vibrant,
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- David T. -->
+                      <div class="card">
+                        <div class="location-info">
+                          <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                          <span class="distance">2 miles away</span>
+                        </div>
+                        <div class="profile-header">
+                          <div class="profile-image">
+                            <img src="images/profile3.jpg" alt="David T. profile photo" class="profile-photo">
+                          </div>
+                          <div class="profile-info">
+                            <h2>David T.</h2>
+                            <div class="profile-role">
+                              <span>Chef</span>
+                              <div class="verified">VERIFIED ✓</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rating-section">
+                          <div class="stars" data-rating="4.9">
+                            <div class="stars-bg">★★★★★</div>
+                            <div class="stars-fill" style="width: 98%;">★★★★★</div>
+                          </div>
+                          <div class="rating-text">4.9/5</div>
+                        </div>
+                        <div class="stats">
+                          <div class="stat">
+                            <div class="stat-number">203</div>
+                            <div class="stat-label">Shifts Completed</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">12+</div>
+                            <div class="stat-label">Years' Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Punctuality</div>
+                          </div>
+                        </div>
+                        <div class="badges-section">
+                          <div class="badges">
+                            <span class="badge">Master chef</span>
+                            <span class="badge">Leadership</span>
+                          </div>
+                          <div class="certifications">
+                            <p class="card-quote">"A top-notch chef whose passion and skill have made every shift a
+                              pleasure to
+                              manage."</p>
+                          </div>
+                        </div>
+                        <div class="experience-section">
+                          <div class="experience-title">Relevant Experience</div>
+                          <div class="experience-text">
+                            Senior chef with 12+ years experience in fine dining and casual restaurants. Specializes in
+                            modern
+                            European cuisine with strong leadership skills. Proven track record of menu development,
+                            team building
+                            and
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- SET 2  -->
+                    <div class="set">
+                      <!-- Jamie L. -->
+                      <div class="card">
+                        <div class="location-info">
+                          <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                          <span class="distance">2.3 miles away</span>
+                        </div>
+                        <div class="profile-header">
+                          <div class="profile-image">
+                            <img src="images/profile1.jpg" alt="Jamie L. profile photo" class="profile-photo">
+                          </div>
+                          <div class="profile-info">
+                            <h2>Jamie L.</h2>
+                            <div class="profile-role">
+                              <span>Chef</span>
+                              <div class="verified">VERIFIED ✓</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rating-section">
+                          <div class="stars" data-rating="4.5">
+                            <div class="stars-bg">★★★★★</div>
+                            <div class="stars-fill" style="width: 90%;">★★★★★</div>
+                          </div>
+                          <div class="rating-text">4.5/5</div>
+                        </div>
+                        <div class="stats">
+                          <div class="stat">
+                            <div class="stat-number">82</div>
+                            <div class="stat-label">Shifts Completed</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years' Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Punctuality</div>
+                          </div>
+                        </div>
+                        <div class="badges-section">
+                          <div class="badges">
+                            <span class="badge">Great team player</span>
+                            <span class="badge">Hard working</span>
+                          </div>
+                          <div class="certifications">
+                            <p class="card-quote">"Jamie is a very talented chef, who is efficient and always on time."
+                            </p>
+                          </div>
+                        </div>
+                        <div class="experience-section">
+                          <div class="experience-title">Relevant Experience</div>
+                          <div class="experience-text">
+                            15+ years' experience across high-volume kitchens and à la carte service. Skilled in prep,
+                            stock
+                            rotation, and maintaining clean, organised stations under pressure. Delivers consistent
+                            quality while
+                            supporting service
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Maria S. -->
+                      <div class="card">
+                        <div class="location-info">
+                          <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                          <span class="distance">1.5 miles away</span>
+                        </div>
+                        <div class="profile-header">
+                          <div class="profile-image">
+                            <img src="images/profile2.jpg" alt="Maria S. profile photo" class="profile-photo">
+                          </div>
+                          <div class="profile-info">
+                            <h2>Maria S.</h2>
+                            <div class="profile-role">
+                              <span>Bartender</span>
+                              <div class="verified">VERIFIED ✓</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rating-section">
+                          <div class="stars" data-rating="4.8">
+                            <div class="stars-bg">★★★★★</div>
+                            <div class="stars-fill" style="width: 96%;">★★★★★</div>
+                          </div>
+                          <div class="rating-text">4.8/5</div>
+                        </div>
+                        <div class="stats">
+                          <div class="stat">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Shifts Completed</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years' Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Punctuality</div>
+                          </div>
+                        </div>
+                        <div class="badges-section">
+                          <div class="badges">
+                            <span class="badge">Customer favorite</span>
+                            <span class="badge">Experienced</span>
+                          </div>
+                          <div class="certifications">
+                            <div class="certification">
+                              <div class="cert-icon">✓</div>
+                              <span>Background Checked</span>
+                            </div>
+                            <div class="certification">
+                              <div class="cert-icon food">📋</div>
+                              <span>Responsible Service of Alcohol</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="experience-section">
+                          <div class="experience-title">Relevant Experience</div>
+                          <div class="experience-text">
+                            5+ years experience of bartender work in high-volume establishments. Skilled in cocktail
+                            preparation,
+                            wine service, and customer relations. Known for creating memorable experiences and shaping
+                            vibrant,
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- David T. -->
+                      <div class="card">
+                        <div class="location-info">
+                          <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                          <span class="distance">2 miles away</span>
+                        </div>
+                        <div class="profile-header">
+                          <div class="profile-image">
+                            <img src="images/profile3.jpg" alt="David T. profile photo" class="profile-photo">
+                          </div>
+                          <div class="profile-info">
+                            <h2>David T.</h2>
+                            <div class="profile-role">
+                              <span>Chef</span>
+                              <div class="verified">VERIFIED ✓</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rating-section">
+                          <div class="stars" data-rating="4.9">
+                            <div class="stars-bg">★★★★★</div>
+                            <div class="stars-fill" style="width: 98%;">★★★★★</div>
+                          </div>
+                          <div class="rating-text">4.9/5</div>
+                        </div>
+                        <div class="stats">
+                          <div class="stat">
+                            <div class="stat-number">203</div>
+                            <div class="stat-label">Shifts Completed</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">12+</div>
+                            <div class="stat-label">Years' Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Punctuality</div>
+                          </div>
+                        </div>
+                        <div class="badges-section">
+                          <div class="badges">
+                            <span class="badge">Master chef</span>
+                            <span class="badge">Leadership</span>
+                          </div>
+                          <div class="certifications">
+                            <p class="card-quote">"A top-notch chef whose passion and skill have made every shift a
+                              pleasure to
+                              manage."</p>
+                          </div>
+                        </div>
+                        <div class="experience-section">
+                          <div class="experience-title">Relevant Experience</div>
+                          <div class="experience-text">
+                            Senior chef with 12+ years experience in fine dining and casual restaurants. Specializes in
+                            modern
+                            European cuisine with strong leadership skills. Proven track record of menu development,
+                            team building
+                            and
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Why Flok Exists Section -->
+
+        <h1 class="why-flok-heading">
+          <span class="highlight">Why choose Flok?</span>
+        </h1>
+
+        <!-- Flok vs Agency comparison -->
+        <section class="flok-compare" role="table" aria-label="Flok vs Agency comparison">
+          <!-- Center column overlay -->
+          <div class="flok-compare__overlay" aria-hidden="true"></div>
+
+          <!-- Headers -->
+          <div class="flok-compare__cell flok-compare__head"><span class="flok-compare__head-label">Feature</span></div>
+          <div class="flok-compare__cell flok-compare__head flok-compare__head--flok"><span
+              class="flok-compare__head-label">Flok</span></div>
+          <div class="flok-compare__cell flok-compare__head"><span class="flok-compare__head-label">Agency</span></div>
+
+          <!-- Row: Time to fill shifts -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">Time to fill shifts</div>
+            <div class="flok-compare__sub">How quickly can you get staff when you need them?</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">24 hours average</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Real-time matching</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">7-10 days</div>
+            <div class="flok-compare__sub">Slow process</div>
+          </div>
+
+          <!-- Row: Cost savings -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">Cost savings</div>
+            <div class="flok-compare__sub">Direct hiring eliminates expensive agency markup</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">Up to 40% savings</div>
+            <div class="flok-compare__sub flok-compare__sub-good">No agency fees</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">High fees</div>
+            <div class="flok-compare__sub">High markup fees</div>
+          </div>
+
+          <!-- Row: AI-powered matching -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">AI-powered matching</div>
+            <div class="flok-compare__sub">Smart algorithms match skills, location, and availability</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">✓</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Precision matching</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">✗</div>
+            <div class="flok-compare__sub">Manual selection</div>
+          </div>
+
+          <!-- Row: In-app payments -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">In-app payments</div>
+            <div class="flok-compare__sub">Automated payroll, invoicing, and payments in the app</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">✓</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Seamless in-app</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">✗</div>
+            <div class="flok-compare__sub">Separate systems</div>
+          </div>
+
+          <!-- Row: 24/7 availability -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">24/7 availability</div>
+            <div class="flok-compare__sub">Platform never closes - post and fill shifts anytime</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">✓</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Always open</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">✗</div>
+            <div class="flok-compare__sub">Business hours only</div>
+          </div>
+
+          <!-- Row: AI verification system -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">AI verification system</div>
+            <div class="flok-compare__sub">Automated background checks, skill assessments &amp; document verification
+            </div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">✓</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Comprehensive AI vetting</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">✗</div>
+            <div class="flok-compare__sub">Basic manual checks</div>
+          </div>
+
+          <!-- Row: In-app messaging -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">In-app messaging</div>
+            <div class="flok-compare__sub">Direct communication between employers and workers</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">✓</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Direct contact</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">✗</div>
+            <div class="flok-compare__sub">Through middleman</div>
+          </div>
+
+          <!-- Row: Searchable worker profiles -->
+          <div class="flok-compare__cell flok-compare__feature">
+            <div class="flok-compare__title">Searchable worker profiles</div>
+            <div class="flok-compare__sub">Rich profiles with photos, ratings, work history, and references</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__flok">
+            <div class="flok-compare__strong">✓</div>
+            <div class="flok-compare__sub flok-compare__sub-good">Full transparency</div>
+          </div>
+          <div class="flok-compare__cell flok-compare__agency">
+            <div class="flok-compare__strong  flok-compare__strong-bad">✗</div>
+            <div class="flok-compare__sub">Basic information</div>
+          </div>
+
+          <!-- Add just before </section> -->
+          <div class="flok-compare__cta">
+            <p class="flok-compare__cta-text">
+              Ready to revolutionise your staffing? Join thousands of UK hospitality businesses saving time and money
+              with
+              Flok.
+            </p>
+            <a class="flok-compare__cta-btn" href="#start-free-trial">Start your Free Trial</a>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- Post. Match. Go. Section -->
+      <section class="post-match-go">
+        <div class="post-match-inner">
+          <!-- Title and subtitle -->
+          <h2 class="post-match-title">Post. Match. Go.</h2>
+          <p class="post-match-subtitle">Find staff or shifts in 3 simple steps. No agencies. No hassle. Just work that
+            works.</p>
+
+          <!-- Replace the two sibling blocks with this wrapper INSIDE .post-match-go -->
+          <div class="post-match-row">
+
+            <div class="post-match-left">
+              <div class="post-match-steps">
+                <div class="step-item">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                    <h3 class="step-title">Post in Minutes</h3>
+                    <p class="step-description">Add your job or create your profile.<br>Fast and simple.</p>
+                  </div>
+                </div>
+
+                <div class="step-arrow" aria-hidden="true"></div>
+
+                <div class="step-item">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                    <h3 class="step-title">Find Your Match</h3>
+                    <p class="step-description">Browse, apply, connect. Done.<br><br></p>
+                  </div>
+                </div>
+
+                <div class="step-arrow" aria-hidden="true"></div>
+
+                <div class="step-item">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                    <h3 class="step-title">Work. Get Paid.</h3>
+                    <p class="step-description">Confirm the shift. Get paid fast - often within 24 hours.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="post-match-right">
+              <div class="post-match-image">
+                <img class="pmg-img is-visible" src="images/postmatch1.png" alt="Woman sitting at computer">
+                <img class="pmg-img" src="" alt="" aria-hidden="true">
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- Bottom Section-->
+      <section class="gradient-box-bottom">
+
+        <!-- Meet FlokAI -->
+        <section class="flokai">
+          <div class="flokai-inner">
+
+            <!-- Left content -->
+            <div class="flokai-left" aria-hidden="true">
+              <svg class="flokai-svg" viewBox="0 0 400 400" role="img" aria-label="">
+                <defs>
+                  <!-- Main planet gradient -->
+                  <radialGradient id="planetGrad" cx="40%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#FFDB15" />
+                    <stop offset="60%" stop-color="#1152AE" />
+                    <stop offset="100%" stop-color="#77760B" />
+                  </radialGradient>
+
+                  <!-- Ring gradients -->
+                  <linearGradient id="ringInner" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FFDB15" />
+                    <stop offset="100%" stop-color="#99830D" />
+                  </linearGradient>
+
+                  <linearGradient id="ringOuter" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#99830D" />
+                    <stop offset="100%" stop-color="#FFDB15" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Planet -->
+                <g class="flokai-planet">
+                  <circle cx="200" cy="200" r="85" fill="url(#planetGrad)" />
+                </g>
+
+                <!-- Rings -->
+                <circle cx="200" cy="200" r="125" fill="none" stroke="url(#ringInner)" stroke-width="2" />
+                <circle cx="200" cy="200" r="175" fill="none" stroke="url(#ringOuter)" stroke-width="2" />
+
+                <!-- Orbiting dots -->
+                <!-- Outer fast, clockwise (on the left edge of the outer ring ~ r=175) -->
+                <g class="flokai-orbit" style="--dur:10s;">
+                  <circle cx="25" cy="200" r="3.5" fill="#fff" />
+                </g>
+
+                <!-- Inner medium, counter-clockwise (on the inner ring ~ r=125, above center) -->
+                <g class="flokai-orbit reverse" style="--dur:10s;">
+                  <circle cx="200" cy="75" r="3" fill="#fff" />
+                </g>
+
+                <!-- Small dot near top, slow clockwise (outer ring) -->
+                <g class="flokai-orbit" style="--dur:8s;">
+                  <circle cx="200" cy="25" r="4" fill="#fff" />
+                </g>
+
+                <!-- Small dot on right, medium counter-clockwise (outer ring) -->
+                <g class="flokai-orbit reverse" style="--dur:12s;">
+                  <circle cx="375" cy="200" r="2.8" fill="#fff" />
+                </g>
+
+              </svg>
+            </div>
+
+
+            <!-- Right content -->
+            <div class="flokai-right">
+              <h2 class="flokai-title">
+                <em>Meet FlokAI.</em> Your intelligent hiring assistant.
+              </h2>
+
+              <div class="flok-content">
+                <p class="flokai-eyebrow">Think. Match. Done.</p>
+
+                <p class="flokai-copy">
+                  Smart hiring shouldn't be hard. FlokAI learns what you need, finds who you need, when you need them.
+                </p>
+
+                <h3 class="flokai-subhead">What FlokAI does:</h3>
+                <ul class="flokai-list">
+                  <li>Finds the perfect match for every shift</li>
+                  <li>Checks availability instantly</li>
+                  <li>Manages schedules seamlessly</li>
+                  <li>Gets smarter with every hire</li>
+                </ul>
+
+                <div class="flokai-why">
+                  <span class="flokai-why-title">Why it works:</span>
+                  <div class="flokai-why-chip">
+                    FlokAI makes connecting effortless. No searching. No waiting. Just ask FlokAI and get matched with
+                    the
+                    right people, right now.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Where Quality... -->
+        <h2 class="where-quality-heading">
+          <span class="highlight">Where Quality...</span>
+        </h2>
+
+        <section class="carousel-section">
+          <!-- Carousel  -->
+          <div class="carousel-container">
+            <div class="carousel">
+
+              <!-- FIRST SET -->
+              <div class="set">
+
+                <!-- Jamie L. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">2.3 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile1.jpg" alt="Jamie L. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Jamie L.</h2>
+                      <div class="profile-role">
+                        <span>Chef</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.5">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 90%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.5/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">82</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">15+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">98%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Great team player</span>
+                      <span class="badge">Hard working</span>
+                    </div>
+                    <div class="certifications">
+                      <p class="card-quote">"Jamie is a very talented chef, who is efficient and always on time."</p>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      15+ years' experience across high-volume kitchens and à la carte service. Skilled in prep, stock
+                      rotation, and maintaining clean, organised stations under pressure. Delivers consistent quality
+                      while
+                      supporting service
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Maria S. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">1.5 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile2.jpg" alt="Maria S. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Maria S.</h2>
+                      <div class="profile-role">
+                        <span>Bartender</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.8">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 96%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.8/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">156</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">5+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">95%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Customer favorite</span>
+                      <span class="badge">Experienced</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Background Checked</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Responsible Service of Alcohol</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      5+ years experience of bartender work in high-volume establishments. Skilled in cocktail
+                      preparation,
+                      wine service, and customer relations. Known for creating memorable experiences and shaping
+                      vibrant,
+                    </div>
+                  </div>
+                </div>
+
+                <!-- David T. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">2 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile3.jpg" alt="David T. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>David T.</h2>
+                      <div class="profile-role">
+                        <span>Chef</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.9">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 98%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.9/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">203</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">12+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">100%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Master chef</span>
+                      <span class="badge">Leadership</span>
+                    </div>
+                    <div class="certifications">
+                      <p class="card-quote">"A top-notch chef whose passion and skill have made every shift a pleasure
+                        to
+                        manage."</p>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Senior chef with 12+ years experience in fine dining and casual restaurants. Specializes in modern
+                      European cuisine with strong leadership skills. Proven track record of menu development, team
+                      building
+                      and
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Anna L. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">3.2 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile4.jpg" alt="Anna L. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Anna L.</h2>
+                      <div class="profile-role">
+                        <span>Host</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.6">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 92%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.6/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">67</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">7+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">97%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">People person</span>
+                      <span class="badge">Reliable</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Background Checked</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Customer Service Excellence</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Friendly and professional host with excellent communication skills. Experience in reservation
+                      management, guest relations, and maintaining welcoming atmosphere. Skilled in handling busy
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Priya K. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">0.9 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile5.jpg" alt="Priya K. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Priya K.</h2>
+                      <div class="profile-role">
+                        <span>Barista</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.7">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 94%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.7/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">124</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">3+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">99%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Latte art</span>
+                      <span class="badge">Speedy service</span>
+                    </div>
+                    <div class="certifications">
+                      <!-- <p class="barista-quote-text"><i>You've got a glowing review:</i></p>
+                        <p class="barista-quote"><i>"Fantastic barista!"</i></p>
+                        <p class="barista-quote-text"><i>Check your profile for the update ⭐</i></p> -->
+
+                      <div class="certification">
+                        <span><i>You've got a glowing review:</i></span>
+                      </div>
+                      <div class="certification barista-quote">
+                        <span><i>"Fantastic barista!"</i></span>
+                      </div>
+                      <div class="certification">
+                        <span><i>Check your profile for the update</i> ⭐</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      High-street café and specialty coffee experience with consistent 60+ drinks/hour during rush.
+                      Confident on grinders, dial-in, workflow setup and closing procedures. Passionate about guest
+                      satisfaction
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tom R. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">1 mile away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile6.jpg" alt="Tom R. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Tom R.</h2>
+                      <div class="profile-role">
+                        <span>Sous Chef</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.8">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 96%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.8/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">178</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">18+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">99%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Prep machine</span>
+                      <span class="badge">Calm under pressure</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Allergen Awareness</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Food Safety Level 3</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Sous chef in high-volume gastropubs and hotel banqueting. Strong on grill, sauce and pass
+                      management.
+                      Comfortable leading a small team, maintaining HACCP logs and coordinating service
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chloe M. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">2.3 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile7.jpg" alt="Chloe M. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Chloe M.</h2>
+                      <div class="profile-role">
+                        <span>Mixologist</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.9">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 98%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.9/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">142</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">10+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">98%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Menu creation</span>
+                      <span class="badge">Creative</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Background Checked</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Personal Licence Holder</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Premium cocktail bars and private events; batch prep, garnish systems and service flow
+                      optimisation.
+                      Comfortable engaging guests with signature serves and balancing speed with quality to ensure
+                      memorable
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sam D. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">4.4 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile8.jpg" alt="Sam D. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Sam D.</h2>
+                      <div class="profile-role">
+                        <span>Kitchen Porter</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.7">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 94%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.7/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">210</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">6+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">99%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Fast turnaround</span>
+                      <span class="badge">Clean & tidy</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <p class="card-quote">"Loved your energy last night - fancy another shift next week?"</p>
+                        <img src="images/notificationwhite.png" width="30" height="30">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      High-volume dish area, stock rotation and waste separation. Supports basic veg prep and keeps the
+                      pass
+                      supplied with clean kit to maintain service pace. Trusted closer for end-of-day deep clean and
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- SECOND SET -->
+
+              <div class="set">
+
+                <!-- Jamie L. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">2.3 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile1.jpg" alt="Jamie L. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Jamie L.</h2>
+                      <div class="profile-role">
+                        <span>Chef</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.5">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 90%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.5/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">82</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">15+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">98%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Great team player</span>
+                      <span class="badge">Hard working</span>
+                    </div>
+                    <div class="certifications">
+                      <p class="card-quote">"Jamie is a very talented chef, who is efficient and always on time."</p>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      15+ years' experience across high-volume kitchens and à la carte service. Skilled in prep, stock
+                      rotation, and maintaining clean, organised stations under pressure. Delivers consistent quality
+                      while
+                      supporting service
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Maria S. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">1.5 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile2.jpg" alt="Maria S. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Maria S.</h2>
+                      <div class="profile-role">
+                        <span>Bartender</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.8">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 96%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.8/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">156</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">5+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">95%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Customer favorite</span>
+                      <span class="badge">Experienced</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Background Checked</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Responsible Service of Alcohol</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      5+ years experience of bartender work in high-volume establishments. Skilled in cocktail
+                      preparation,
+                      wine service, and customer relations. Known for creating memorable experiences and shaping
+                      vibrant,
+                    </div>
+                  </div>
+                </div>
+
+                <!-- David T. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">2 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile3.jpg" alt="David T. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>David T.</h2>
+                      <div class="profile-role">
+                        <span>Chef</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.9">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 98%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.9/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">203</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">12+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">100%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Master chef</span>
+                      <span class="badge">Leadership</span>
+                    </div>
+                    <div class="certifications">
+                      <p class="card-quote">"A top-notch chef whose passion and skill have made every shift a pleasure
+                        to
+                        manage."</p>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Senior chef with 12+ years experience in fine dining and casual restaurants. Specializes in modern
+                      European cuisine with strong leadership skills. Proven track record of menu development, team
+                      building
+                      and
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Anna L. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">3.2 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile4.jpg" alt="Anna L. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Anna L.</h2>
+                      <div class="profile-role">
+                        <span>Host</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.6">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 92%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.6/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">67</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">7+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">97%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">People person</span>
+                      <span class="badge">Reliable</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Background Checked</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Customer Service Excellence</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Friendly and professional host with excellent communication skills. Experience in reservation
+                      management, guest relations, and maintaining welcoming atmosphere. Skilled in handling busy
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Priya K. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">0.9 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile5.jpg" alt="Priya K. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Priya K.</h2>
+                      <div class="profile-role">
+                        <span>Barista</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.7">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 94%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.7/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">124</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">3+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">99%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Latte art</span>
+                      <span class="badge">Speedy service</span>
+                    </div>
+                    <div class="certifications">
+                      <!-- <p class="barista-quote-text"><i>You've got a glowing review:</i></p>
+                      <p class="barista-quote"><i>"Fantastic barista!"</i></p>
+                      <p class="barista-quote-text"><i>Check your profile for the update ⭐</i></p> -->
+
+                      <div class="certification">
+                        <span><i>You've got a glowing review:</i></span>
+                      </div>
+                      <div class="certification barista-quote">
+                        <span><i>"Fantastic barista!"</i></span>
+                      </div>
+                      <div class="certification">
+                        <span><i>Check your profile for the update</i> ⭐</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      High-street café and specialty coffee experience with consistent 60+ drinks/hour during rush.
+                      Confident on grinders, dial-in, workflow setup and closing procedures. Passionate about guest
+                      satisfaction
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tom R. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">1 mile away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile6.jpg" alt="Tom R. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Tom R.</h2>
+                      <div class="profile-role">
+                        <span>Sous Chef</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.8">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 96%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.8/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">178</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">18+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">99%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Prep machine</span>
+                      <span class="badge">Calm under pressure</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Allergen Awareness</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Food Safety Level 3</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Sous chef in high-volume gastropubs and hotel banqueting. Strong on grill, sauce and pass
+                      management.
+                      Comfortable leading a small team, maintaining HACCP logs and coordinating service
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chloe M. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">2.3 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile7.jpg" alt="Chloe M. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Chloe M.</h2>
+                      <div class="profile-role">
+                        <span>Mixologist</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.9">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 98%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.9/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">142</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">10+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">98%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Menu creation</span>
+                      <span class="badge">Creative</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <div class="cert-icon">✓</div>
+                        <span>Background Checked</span>
+                      </div>
+                      <div class="certification">
+                        <div class="cert-icon food">📋</div>
+                        <span>Personal Licence Holder</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      Premium cocktail bars and private events; batch prep, garnish systems and service flow
+                      optimisation.
+                      Comfortable engaging guests with signature serves and balancing speed with quality to ensure
+                      memorable
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sam D. -->
+                <div class="card">
+                  <div class="location-info">
+                    <img src="images/map-pin.png" alt="Location" class="map-pin" width="16" height="20">
+                    <span class="distance">4.4 miles away</span>
+                  </div>
+                  <div class="profile-header">
+                    <div class="profile-image">
+                      <img src="images/profile8.jpg" alt="Sam D. profile photo" class="profile-photo">
+                    </div>
+                    <div class="profile-info">
+                      <h2>Sam D.</h2>
+                      <div class="profile-role">
+                        <span>Kitchen Porter</span>
+                        <div class="verified">VERIFIED ✓</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rating-section">
+                    <div class="stars" data-rating="4.7">
+                      <div class="stars-bg">★★★★★</div>
+                      <div class="stars-fill" style="width: 94%;">★★★★★</div>
+                    </div>
+                    <div class="rating-text">4.7/5</div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <div class="stat-number">210</div>
+                      <div class="stat-label">Shifts Completed</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">6+</div>
+                      <div class="stat-label">Years' Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="stat-number">99%</div>
+                      <div class="stat-label">Punctuality</div>
+                    </div>
+                  </div>
+
+                  <div class="badges-section">
+                    <div class="badges">
+                      <span class="badge">Fast turnaround</span>
+                      <span class="badge">Clean & tidy</span>
+                    </div>
+                    <div class="certifications">
+                      <div class="certification">
+                        <p class="card-quote">"Loved your energy last night - fancy another shift next week?"</p>
+                        <img src="images/notificationwhite.png" width="30" height="30">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="experience-section">
+                    <div class="experience-title">Relevant Experience</div>
+                    <div class="experience-text">
+                      High-volume dish area, stock rotation and waste separation. Supports basic veg prep and keeps the
+                      pass
+                      supplied with clean kit to maintain service pace. Trusted closer for end-of-day deep clean and
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Meets Speed -->
+        <h2 class="meets-speed-heading">
+          <span class="highlight">...Meets Speed</span>
+        </h2>
+
+        <section class="meets-speed">
+          <div class="speed-grid">
+            <article class="speed-card">
+              <div class="speed-stat" data-start="0" data-end="500" data-suffix="+" data-duration="1200"></div>
+              <p class="speed-copy">Pre-verified hospitality professionals and counting</p>
+            </article>
+
+            <article class="speed-card">
+              <div class="speed-stat" data-start="120" data-end="24" data-prefix="&lt;" data-suffix=" hrs"
+                data-duration="1400"></div>
+              <p class="speed-copy">Average time to fill urgent shifts</p>
+            </article>
+
+            <article class="speed-card">
+              <div class="speed-stat" data-start="0" data-end="100" data-suffix="%" data-duration="1000"></div>
+              <p class="speed-copy">Every professional ID-checked and referenced</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- The Industry Speaks -->
+        <h2 class="industry-speaks-heading">
+          <span class="highlight">The Industry Speaks</span>
+        </h2>
+
+        <!-- The Industry Speaks Section -->
+        <section class="industry-speaks">
+          <div class="industry-inner">
+            <!-- Quote 1 - Left aligned -->
+            <div class="quote-container quote-left">
+              <div class="quote-bubble">
+                "This is what we've needed for a decade."
+              </div>
+            </div>
+
+            <!-- Quote 2 - Right aligned -->
+            <div class="quote-container quote-right">
+              <div class="quote-bubble">
+                "Game-changing doesn't begin to describe it."
+              </div>
+            </div>
+
+            <!-- Quote 3 - Left aligned -->
+            <div class="quote-container quote-left">
+              <div class="quote-bubble">
+                "Finally, someone gets it."
+              </div>
+            </div>
+
+            <!-- Quote 4 - Right aligned -->
+            <div class="quote-container quote-right">
+              <div class="quote-bubble">
+                "Every venue owner I know has been waiting for this."
+              </div>
+            </div>
+
+            <!-- Quote 5 - Left aligned -->
+            <div class="quote-container quote-left">
+              <div class="quote-bubble">
+                "This changes everything for hospitality hiring."
+              </div>
+            </div>
+
+            <!-- Bottom text and CTA -->
+            <div class="industry-bottom">
+              <p class="industry-summary">
+                The whispers are getting louder. The anticipation is building. The industry is ready.
+              </p>
+              <p class="industry-question">Are you?</p>
+              <a href="app.html" class="industry-cta">Join the Revolution</a>
+            </div>
+          </div>
+
+          <!-- Back to Top Button -->
+          <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+              <img src="images/arrow.png" width="30" height="30" alt="">
+            </button>
+            <p class="back-to-top-label">Back to Top</p>
+          </div>
+
+        </section>
+
+
+
+      </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-columns">
+        <div class="footer-col account-col">
+          <h3 class="footer-heading">Account</h3>
+          <ul class="footer-links">
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col resources-col">
+          <h3 class="footer-heading">Resources</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="industries.html">Industries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col legal-col">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-links">
+            <li><a href="legal.html">TBC</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col support-col">
+          <h3 class="footer-heading">Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="help-centre.html">Help Centre</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col socials-col">
+          <h3 class="footer-heading">Socials</h3>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/company/flokjobs/" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/flokjobs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </li>
+            <li><a href="https://www.facebook.com/people/Flok-Jobs/61576512420509/" target="_blank"
+                rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 Flok</p>
+        <a href="index.html"><img src="images/floklogo.png" alt="Flok Logo" class="footer-logo" width="960"
+            height="450"></a>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/overlay-menu.js"></script>
+    <script src="js/back-to-top.js"></script>
+    <script src="js/resources-dropdown.js"></script>
+    <!-- Comparison table glow effect -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.flok-vs-agency');
+        const table = container?.querySelector('table');
+        if (!table) return;
+
+        function positionFlokOverlay() {
+          // Prefer the header cell of the Flok column; fallback to first row's td
+          const headerCells = table.tHead?.rows?.[0]?.cells || [];
+          const target = headerCells[1] || table.tBodies[0]?.rows?.[0]?.cells?.[1];
+          if (!target) return;
+
+          const tRect = table.getBoundingClientRect();
+          const cRect = target.getBoundingClientRect();
+          table.style.setProperty('--flok-left', (cRect.left - tRect.left) + 'px');
+          table.style.setProperty('--flok-width', cRect.width + 'px');
+        }
+
+        positionFlokOverlay();
+        window.addEventListener('resize', positionFlokOverlay);
+        new ResizeObserver(positionFlokOverlay).observe(table);
+      });
+    </script>
+
+    <!-- Post. Match. Go. step animation -->
+    <script>
+      (() => {
+        const section = document.querySelector('.post-match-go');
+        const steps = Array.from(document.querySelectorAll('.post-match-steps .step-item'));
+        if (!section || steps.length === 0) return;
+
+        const imgs = Array.from(section.querySelectorAll('.post-match-image .pmg-img'));
+        if (imgs.length < 2) return;
+
+        const sources = [
+          'images/postmatch11.jpg',
+          'images/postmatch2.jpg',
+          'images/postmatch3.jpg'
+        ];
+
+        let stepIndex = 0;        // which step is active (0..2)
+        let visibleIndex = 0;     // which <img> element is currently visible (0 or 1)
+        let timer = null;
+        let started = false;
+
+        // ensure initial state
+        imgs[0].src = sources[0];
+        imgs[0].classList.add('is-visible');
+        imgs[1].classList.remove('is-visible');
+
+        function highlightStep(i) {
+          steps.forEach((s, j) => s.classList.toggle('is-active', j === i));
+        }
+
+        function crossfadeTo(index) {
+          const nextSrc = sources[index % sources.length];
+          const from = imgs[visibleIndex];
+          const to = imgs[1 - visibleIndex];
+
+          if (from.src.endsWith(nextSrc)) return; // already showing
+
+          // preload then swap visibility exactly once
+          const loader = new Image();
+          loader.onload = () => {
+            to.src = nextSrc;
+            // one fade-in / fade-out pair — no extra toggles
+            to.classList.add('is-visible');
+            from.classList.remove('is-visible');
+            visibleIndex = 1 - visibleIndex; // update which img is now on top
+          };
+          loader.src = nextSrc;
+        }
+
+        function setActive(i) {
+          stepIndex = i;
+          highlightStep(i);
+          crossfadeTo(i);
+        }
+
+        function advance() {
+          setActive((stepIndex + 1) % steps.length);
+        }
+
+        function startCycle() {
+          if (started) return;
+          started = true;
+          setActive(0); // start at step 1 on first view
+          timer = setInterval(advance, 3500);
+        }
+
+        // Start once when section enters the viewport
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              startCycle();
+              obs.unobserve(section); // prevent re-triggers
+            }
+          });
+        }, { threshold: 0.25 });
+
+        observer.observe(section);
+
+        // Pause/resume when tab visibility changes
+        document.addEventListener('visibilitychange', () => {
+          if (!started) return;
+          if (document.hidden) {
+            if (timer) { clearInterval(timer); timer = null; }
+          } else if (!timer) {
+            timer = setInterval(advance, 3500);
+          }
+        });
+      })();
+    </script>
+
+    <!-- Carousel loop -->
+    <script>
+      // Measure and set --loop-distance for every carousel on the page
+      function measureAllCarousels() {
+        document.querySelectorAll('.carousel').forEach(track => {
+          const firstSet = track.querySelector('.set');
+          if (!firstSet) return;
+
+          const setWidth = firstSet.getBoundingClientRect().width;
+          const cs = getComputedStyle(track);
+          const gap = parseFloat(cs.columnGap || cs.gap || 0);
+
+          track.style.setProperty('--loop-distance', (setWidth + gap) + 'px');
+        });
+      }
+
+      window.addEventListener('load', measureAllCarousels);
+      window.addEventListener('resize', measureAllCarousels);
+    </script>
+
+    <!-- Statistic counter animation -->
+    <script>
+      (() => {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Ease-out cubic for a quick start, smooth finish
+        const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+        function animateNumber(el) {
+          const start = Number(el.dataset.start ?? 0);
+          const end = Number(el.dataset.end ?? 0);
+          const duration = Number(el.dataset.duration ?? 2500); // ms
+          const prefix = el.dataset.prefix ?? '';
+          const suffix = el.dataset.suffix ?? '';
+
+          if (prefersReduced || duration <= 0) {
+            el.textContent = `${prefix}${Math.round(end)}${suffix}`;
+            return;
+          }
+
+          const startTime = performance.now();
+          function frame(now) {
+            const t = Math.min(1, (now - startTime) / duration);
+            const eased = easeOutCubic(t);
+            const current = start + (end - start) * eased;
+            el.textContent = `${prefix}${Math.round(current)}${suffix}`;
+            if (t < 1) requestAnimationFrame(frame);
+            else el.textContent = `${prefix}${Math.round(end)}${suffix}`; // final snap
+          }
+          requestAnimationFrame(frame);
+        }
+
+        const stats = Array.from(document.querySelectorAll('.meets-speed .speed-stat'));
+        if (!stats.length) return;
+
+        // If the section is already visible on load, animate once. Otherwise, wait.
+        const section = document.querySelector('.meets-speed');
+        const run = () => { stats.forEach(animateNumber); };
+
+        const once = new IntersectionObserver((entries, obs) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              run();
+              obs.disconnect(); // fire only once
+            }
+          });
+        }, { threshold: 0.3 });
+
+        if (section) once.observe(section);
+      })();
+    </script>
+
+    <!-- Quote fade-in animation -->
+    <script>
+      // Quote scroll animation with sequential timing
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      let visibleQuotes = 0;
+      const totalQuotes = document.querySelectorAll('.quote-bubble').length;
+
+      const quoteObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+            const delay = visibleQuotes * 500; // ms delay between each quote
+
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, delay);
+
+            visibleQuotes++;
+          }
+        });
+      }, observerOptions);
+
+      // Observe all quote bubbles
+      document.querySelectorAll('.quote-bubble').forEach(quote => {
+        quoteObserver.observe(quote);
+      });
+    </script>
+
+
+
+
+  </div>
+</body>
+
+</html>
