@@ -97,10 +97,9 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     padding: 1.3rem 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     min-height: 60px;
     box-sizing: border-box;
 }
@@ -538,7 +537,11 @@ h1::after {
 .form-label {
     font-weight: 700;
     color: #ffdd2d;
-    font-size: 32px;
+    font-size: 2rem;
+}
+
+#contact-method-wrapper {
+    margin-top: 40px;
 }
 
 textarea {
@@ -557,30 +560,23 @@ textarea {
     box-sizing: border-box;
 }
 
-.contact-heading {
-    color: #ffdd2d;
-    font-size: 48px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
 .contact-heading::before {
     content: '';
     position: absolute;
     background: url('../images/birds2.webp') no-repeat;
     background-size: cover;
     pointer-events: none;
-    z-index: 11;
-    top: 1750px;
-    right: 200px;
+    z-index: 1;
+    right: 50px;
     width: 400px;
     height: 400px;
     opacity: 0.15;
+    transform: translateY(-50px);
 }
 
 .required-note {
     color: #ffdd2d;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-top: 20px;
 }
 
@@ -630,7 +626,7 @@ textarea {
     border: 2px solid white;
     border-radius: 999px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
 }
 
@@ -659,7 +655,8 @@ textarea {
     margin: 50px 0;
 }
 
-.social-icons, .app-icons {
+.social-icons,
+.app-icons {
     display: flex;
     justify-content: space-evenly;
 }
@@ -736,9 +733,9 @@ textarea {
         background: url('../images/birds2.webp') no-repeat;
         background-size: cover;
         pointer-events: none;
-        z-index: 11;
-        top: 1800px;
+        z-index: 1;
         right: 0px;
+        transform: translateY(100px);
         width: 175px;
         height: 205px;
         opacity: 0.4;
@@ -752,7 +749,7 @@ textarea {
     .social-section p {
         font-size: 1.8rem;
     }
-    
+
     .social-icons a img {
         height: 80px;
     }
@@ -981,7 +978,7 @@ textarea {
     }
 
     .resources-inner {
-        background: #1D1D40;
+        background: rgba(0, 0, 0, 0.9);
         padding: 3rem 0;
         position: relative;
         overflow: hidden;
@@ -999,7 +996,7 @@ textarea {
 
     .resources-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1.2fr;
+        grid-template-columns: 1fr 1fr 2fr;
         gap: 3.5rem;
         align-items: start;
     }
@@ -1027,6 +1024,11 @@ textarea {
         font-size: 1.35rem;
     }
 
+    .image-col {
+        display: flex;
+        justify-content: center;
+    }
+
     .image-col .fade-wrap {
         position: relative;
         overflow: hidden;
@@ -1044,13 +1046,13 @@ textarea {
         position: absolute;
         inset: 0;
         pointer-events: none;
-        background: linear-gradient(to right, #1D1D40 0%, rgba(29, 29, 64, 0) 60%);
+        background: linear-gradient(to right, #000 0%, rgba(29, 29, 64, 0) 60%);
     }
 
     .dropdown-decor-left,
     .dropdown-decor-bottom {
         position: absolute;
-        opacity: .25;
+        opacity: .1;
         user-select: none;
         pointer-events: none;
     }

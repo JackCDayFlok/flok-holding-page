@@ -121,7 +121,8 @@
             <label for="email">Email*</label>
             <input type="email" name="email" placeholder="Email" required>
             <label for="phone">Phone Number</label>
-            <input type="text" name="phone" placeholder="Phone Number">
+            <input id="phone" type="tel" name="phone" placeholder="e.g. 07123 456789 or +44 7123 456789"
+              autocomplete="tel" inputmode="tel" />
             <label for="cmpnyvenue">Company / Venue Name</label>
             <input type="text" name="cmpnyvenue" placeholder="Company / Venue Name">
             <label>How can we help?</label><br><br>
@@ -144,13 +145,15 @@
               <span>Feedback</span>
             </label>
           </div>
+
           <div class="form-group">
             <label class="form-label" for="message">Your Message*</label>
             <textarea id="message" name="message" maxlength="400"
               placeholder="Your Message (max. 400 characters)"></textarea>
           </div>
+
           <div id="contact-method-wrapper" style="display: none;">
-            <h3 class="contact-heading">Preferred Contact Method</h3>
+            <label class="form-label contact-heading">Preferred Contact Method</label><br><br>
             <div class="help-boxes">
               <label class="help-option">
                 <input type="radio" name="contact_method" value="email">
@@ -175,28 +178,94 @@
     </section>
   </main>
 
-
-
 </body>
 
 <!-- JavaScript -->
 <script src="js/overlay-menu.js"></script>
 <script src="js/back-to-top.js"></script>
 <script src="js/resources-dropdown.js"></script>
+<!-- Phone number format validation -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const phoneInput = document.querySelector('input[name="phone"]');
+    const phoneInput = document.getElementById("phone");
     const contactBlock = document.getElementById("contact-method-wrapper");
+    if (!phoneInput || !contactBlock) return;
 
-    phoneInput.addEventListener("input", () => {
-      if (phoneInput.value.trim() !== "") {
-        contactBlock.style.display = "block";
+    function normalizeUkPhone(raw) {
+      let s = (raw || "").trim();
+      s = s.replace(/[\s()\-\u00A0]/g, ""); // spaces, brackets, dashes, NBSP
+      if (s.startsWith("0044")) s = "+44" + s.slice(4);
+      return s;
+    }
+
+    // UK only, accepts:
+    // - 0 + 10 digits (11 total): 07123456789, 02079460000
+    // - +44 + 10 digits (no leading 0 after +44): +447123456789, +442079460000
+    // - 10 digits with no prefix (missing trunk 0): 7123456789, 2079460000
+    function isValidUkPhone(raw) {
+      const s = normalizeUkPhone(raw);
+
+      if (s === "") return true; // phone optional; make false if required
+
+      if (/^0[1-9]\d{9}$/.test(s)) return true;
+      if (/^\+44[1-9]\d{9}$/.test(s)) return true;
+      if (/^[1-9]\d{9}$/.test(s)) return true; // no 0, no +44
+
+      return false;
+    }
+
+    // Optional: choose ONE normal form to store/display
+    // - "national": force 0XXXXXXXXXX
+    // - "e164": force +44XXXXXXXXXX
+    function toUkFormat(raw, mode = "national") {
+      const s = normalizeUkPhone(raw);
+      if (s === "") return "";
+
+      if (/^0[1-9]\d{9}$/.test(s)) {
+        return mode === "e164" ? "+44" + s.slice(1) : s;
+      }
+      if (/^\+44[1-9]\d{9}$/.test(s)) {
+        return mode === "national" ? "0" + s.slice(3) : s;
+      }
+      if (/^[1-9]\d{9}$/.test(s)) {
+        return mode === "e164" ? "+44" + s : "0" + s;
+      }
+      return raw; // leave as-is if weird
+    }
+
+    function updateUIAndValidity() {
+      const hasValue = phoneInput.value.trim() !== "";
+      contactBlock.style.display = hasValue ? "block" : "none";
+
+      if (!isValidUkPhone(phoneInput.value)) {
+        phoneInput.setCustomValidity(
+          "Enter a valid UK number."
+        );
       } else {
-        contactBlock.style.display = "none";
+        phoneInput.setCustomValidity("");
+      }
+    }
+
+    phoneInput.addEventListener("input", updateUIAndValidity);
+
+    phoneInput.addEventListener("blur", () => {
+      // OPTIONAL: uncomment to normalise on blur
+      // phoneInput.value = toUkFormat(phoneInput.value, "national"); // or "e164"
+      updateUIAndValidity();
+    });
+
+    phoneInput.form?.addEventListener("submit", (e) => {
+      updateUIAndValidity();
+      if (!phoneInput.checkValidity()) {
+        e.preventDefault();
+        phoneInput.reportValidity();
       }
     });
-  });
 
+    updateUIAndValidity();
+  });
 </script>
+
+
 
 </html>

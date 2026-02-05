@@ -23,7 +23,8 @@
   <meta property="og:locale" content="en_GB">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Flok Jobs - UK hospitality hiring platform connecting venues with verified staff">
+  <meta property="og:image:alt"
+    content="Flok Jobs - UK hospitality hiring platform connecting venues with verified staff">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Flok Jobs - UK Hospitality Hiring Platform">
@@ -63,7 +64,7 @@
   <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
   <!-- ———————————  PRELOADING ——————————— -->
-   
+
   <link rel="preload" as="font" href="/fonts/Poppins-Regular.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="/fonts/Poppins-Bold.woff2" type="font/woff2" crossorigin>
 
@@ -2150,7 +2151,9 @@
         <div class="footer-col legal-col">
           <h3 class="footer-heading">Legal</h3>
           <ul class="footer-links">
-            <li><a href="legal.html">TBC</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="fairprocessingnotice.html">Fair Processing Policy</a></li>
+            <li><a href="cookiepolicy.html">Cookies Policy</a></li>
           </ul>
         </div>
 
@@ -2377,34 +2380,38 @@
 
     <!-- Quote fade-in animation -->
     <script>
-      // Quote scroll animation with sequential timing
-      const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-      };
+      (() => {
+        const bubbles = Array.from(document.querySelectorAll('.quote-bubble'));
+        if (!bubbles.length) return;
 
-      let visibleQuotes = 0;
-      const totalQuotes = document.querySelectorAll('.quote-bubble').length;
+        const gap = 900; // ms between bubbles
 
-      const quoteObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-            const delay = visibleQuotes * 500; // ms delay between each quote
+        // stable DOM order
+        const index = new Map(bubbles.map((el, i) => [el, i]));
 
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, delay);
+        const io = new IntersectionObserver((entries) => {
+          const toReveal = entries
+            .filter(e => e.isIntersecting && !e.target.classList.contains('visible'))
+            .map(e => e.target)
+            .sort((a, b) => index.get(a) - index.get(b));
 
-            visibleQuotes++;
-          }
+          if (!toReveal.length) return;
+
+          // Stagger only within this batch (prevents delay growing randomly)
+          toReveal.forEach((el, i) => {
+            el.style.setProperty('--reveal-delay', `${i * gap}ms`);
+            requestAnimationFrame(() => el.classList.add('visible'));
+            io.unobserve(el);
+          });
+        }, {
+          threshold: 0.2,
+          rootMargin: '0px 0px -50px 0px'
         });
-      }, observerOptions);
 
-      // Observe all quote bubbles
-      document.querySelectorAll('.quote-bubble').forEach(quote => {
-        quoteObserver.observe(quote);
-      });
+        bubbles.forEach(el => io.observe(el));
+      })();
     </script>
+
 
 
 
