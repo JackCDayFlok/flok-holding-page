@@ -365,7 +365,7 @@ a {
 
 @media (max-width: 767px) {
     body {
-        margin: 0 ;
+        margin: 0;
     }
 
     .message-confirmation {
@@ -390,56 +390,56 @@ a {
     }
 
     .message-confirmation .return-link {
-        font-size: 24px ;
-        margin-bottom: 32px ;
+        font-size: 24px;
+        margin-bottom: 32px;
     }
 
     .message-confirmation .return-link a::before {
-        right: 0px ;
+        right: 0px;
     }
 
     .social-section p {
-        font-size: 24px ;
+        font-size: 24px;
     }
 
     .social-icons {
         display: flex;
-        gap: 60px ;
-        margin-left: 0 ;
+        gap: 60px;
+        margin-left: 0;
     }
 
     .social-icons img {
-        width: 80px ;
+        width: 80px;
     }
 
     .download-link {
         text-decoration: underline;
-        font-size: 24px ;
+        font-size: 24px;
     }
 
     .availability {
-        font-size: 24px ;
-        margin-bottom: 50px ;
+        font-size: 24px;
+        margin-bottom: 50px;
         text-align: center;
     }
 
     .footer-links {
-        font-size: 20px ;
+        font-size: 20px;
         flex-direction: column;
-        gap: 0 ;
+        gap: 0;
     }
 
     .footer-links a {
-        float: left ;
-        margin-bottom: 40px ;
+        float: left;
+        margin-bottom: 40px;
     }
 
     .app-icons {
-        gap: 25px ;
-        margin-bottom: 1rem ;
+        gap: 25px;
+        margin-bottom: 1rem;
     }
 
     .app-icon {
-        width: 125px ;
+        width: 125px;
     }
 }

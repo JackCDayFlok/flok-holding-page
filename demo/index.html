@@ -97,7 +97,7 @@
         <!-- Desktop Navigation -->
         <nav class="desktop-nav" aria-label="Primary">
           <div class="menu-group">
-            <a href="index.html" class="nav-btn {{HOME_ACTIVE}}" {{HOME_ARIA}}>Home</a>
+            <a href="index.html" class="nav-btn nav-btn-highlight {{HOME_ACTIVE}}" {{HOME_ARIA}}>Home</a>
             <a href="employers.html" class="nav-btn">Employers</a>
             <a href="workers.html" class="nav-btn">Workers</a>
 
@@ -177,7 +177,7 @@
           <div class="links-col">
             <h3>Get Help</h3>
             <ul>
-              <li><a href="contact-us.html">Contact Us</a></li>
+              <li><a href="contact-us.html" target="_blank">Contact Us</a></li>
               <li><a href="help-centre.html">Help Centre</a></li>
             </ul>
           </div>
@@ -206,7 +206,8 @@
               <p class="hero-eyebrow">Save up to 40% compared to Agencies</p>
 
               <h1 class="hero-title">
-                <span class="hero-line">Skip The Agency.</span><br>
+                <span class="hero-line">Skip The Agency.</span>
+                <br class="hero-title-break">
                 <span class="hero-accent">Find The Flok.</span>
               </h1>
 
@@ -771,8 +772,7 @@
           <h2 class="post-match-title">Post. Match. Go.</h2>
           <p class="post-match-subtitle">Find staff or shifts in 3 simple steps. No agencies. No hassle. Just work that
             works.</p>
-
-          <!-- Replace the two sibling blocks with this wrapper INSIDE .post-match-go -->
+          
           <div class="post-match-row">
 
             <div class="post-match-left">
@@ -809,7 +809,7 @@
 
             <div class="post-match-right">
               <div class="post-match-image">
-                <img class="pmg-img is-visible" src="images/postmatch1.png" alt="Woman sitting at computer">
+                <img class="pmg-img is-visible" src="images/postmatch1.jpg" alt="Man sitting at computer">
                 <img class="pmg-img" src="" alt="" aria-hidden="true">
               </div>
             </div>
@@ -2160,7 +2160,7 @@
         <div class="footer-col support-col">
           <h3 class="footer-heading">Support</h3>
           <ul class="footer-links">
-            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="contact-us.html" target="_blank">Contact Us</a></li>
             <li><a href="help-centre.html">Help Centre</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
@@ -2227,7 +2227,7 @@
         if (imgs.length < 2) return;
 
         const sources = [
-          'images/postmatch11.jpg',
+          'images/postmatch1.jpg',
           'images/postmatch2.jpg',
           'images/postmatch3.jpg'
         ];
@@ -2279,7 +2279,7 @@
           if (started) return;
           started = true;
           setActive(0); // start at step 1 on first view
-          timer = setInterval(advance, 3500);
+          timer = setInterval(advance, 2000);
         }
 
         // Start once when section enters the viewport
@@ -2300,7 +2300,7 @@
           if (document.hidden) {
             if (timer) { clearInterval(timer); timer = null; }
           } else if (!timer) {
-            timer = setInterval(advance, 3500);
+            timer = setInterval(advance, 2000);
           }
         });
       })();

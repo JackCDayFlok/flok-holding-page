@@ -50,8 +50,8 @@ main {
 }
 
 :root {
-  --container-min: 1200px;
-  --container-max: 1600px;
+    --container-min: 1200px;
+    --container-max: 1600px;
 }
 
 
@@ -189,22 +189,53 @@ a {
 .nav-btn {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
-    background: white;
+    font-size: 1rem;
+    padding: 0.7rem 1.3rem;
+    background: #fff;
     border-radius: 999px;
-    color: black;
+    color: #000;
     text-decoration: none;
     display: inline-block;
-    transition: background 0.3s ease, transform 0.2s ease;
     border: none;
-    text-align: center;
-    cursor: pointer;
+    transition: transform 0.2s ease, background 0.25s ease;
+    box-shadow: none;
+    position: relative;
+}
+
+.nav-btn-highlight {
+    font-weight: 700;
+}
+
+.nav-btn-highlight::after {
+    content: '.';
+    position: absolute;
+    pointer-events: none;
+    color: white;
+    font-size: 1.5rem;
+
+    left: 50%;
+    bottom: -25px;
+    /* keep your current vertical position */
+    transform: translateX(-50%);
+    /* true center */
+
+    transition: none;
+    /* no independent movement */
+}
+
+/* Keep hover/focus identical (optional, but clean) */
+.nav-btn-highlight:hover::after,
+.nav-btn-highlight:focus-visible::after {
+    transform: translateX(-50%);
+}
+
+.nav-btn-highlight:hover,
+.nav-btn-highlight:focus-visible {
+    transform: none;
 }
 
 .nav-btn:hover {
-    background: #fff;
-    transform: translateY(-1px);
+    transform: translateY(-5px);
 }
 
 .nav-btn.active {

@@ -1,11 +1,8 @@
-/* ==========================================================================
-   FONTS
-   ========================================================================== */
+/* ========================================================================== FONTS ========================================================================== */
 
 @font-face {
     font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
-        url("../fonts/Poppins-Regular.ttf") format("truetype");
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -13,16 +10,14 @@
 
 @font-face {
     font-family: "Poppins";
-    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
-        url("../fonts/Poppins-Bold.ttf") format("truetype");
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
-/* ==========================================================================
-   BASE STYLES (Generic + Mobile)
-   ========================================================================== */
+
+/* ========================================================================== BASE STYLES (Generic + Mobile) ========================================================================== */
 
 html {
     -webkit-text-size-adjust: 100%;
@@ -53,6 +48,69 @@ main {
     position: relative;
 }
 
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    color: #ffdb15;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    opacity: 0.8;
+    text-decoration: underline;
+    font-style: italic;
+    margin-bottom: 8vh;
+}
+
+.PolicyBTNS {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+.PolicyBTNS::before {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 11;
+    top: 100px;
+    left: 0px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.2;
+}
+
+.PolicyBTNS::after {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 11;
+    top: 335px;
+    right: 0px;
+    width: 400px;
+    height: 400px;
+    transform: scaleX(-1);
+    opacity: 0.2;
+}
+
+.PolicyBTNS a {
+    width: 35vw;
+    margin: auto;
+    color: #000 !important;
+    text-decoration: none;
+    font-size: 2.2rem;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 48px;
+    padding: 2rem;
+}
+
 :root {
     --container-min: 1200px;
     --container-max: 1600px;
@@ -63,7 +121,9 @@ a {
     color: #ffdb15;
 }
 
+
 /* Accessibility */
+
 .skip-link {
     position: absolute;
     left: 0.75rem;
@@ -86,15 +146,16 @@ a {
 
 #main-content {
     scroll-margin-top: 96px;
+    text-align: center;
 }
 
-.main-section {
-    padding: 9rem 1.5rem 8rem 1.5rem;
+.LegalCont {
+    margin-top: 7rem;
+    margin-bottom: 4rem;
 }
 
-/* ==========================================================================
-   HEADER (Mobile-first)
-   ========================================================================== */
+
+/* ========================================================================== HEADER (Mobile-first) ========================================================================== */
 
 .sticky-header {
     position: fixed;
@@ -123,7 +184,9 @@ a {
     margin: 0;
 }
 
+
 /* Mobile Navigation */
+
 .header-buttons {
     display: flex;
     gap: clamp(0.2rem, 1vw, 0.5rem);
@@ -182,7 +245,9 @@ a {
     transform: translateY(0);
 }
 
+
 /* Hamburger (mobile) */
+
 .hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -206,7 +271,9 @@ a {
     transition: all 0.3s ease;
 }
 
+
 /* Desktop nav hidden by default (mobile-first) */
+
 .desktop-nav {
     display: none;
 }
@@ -219,9 +286,8 @@ a {
     display: none;
 }
 
-/* ==========================================================================
-   MOBILE OVERLAY MENU
-   ========================================================================== */
+
+/* ========================================================================== MOBILE OVERLAY MENU ========================================================================== */
 
 .mobile-overlay {
     position: fixed;
@@ -395,9 +461,7 @@ a {
 }
 
 
-/* ==========================================================================
-    FOOTER (Generic + Mobile)
-    ========================================================================== */
+/* ========================================================================== FOOTER (Generic + Mobile) ========================================================================== */
 
 .footer {
     background-color: #1D1D40;
@@ -514,9 +578,91 @@ a {
     font-weight: 400;
 }
 
-/* ==========================================================================
-   DESKTOP STYLES (768px and up)
-   ========================================================================== */
+.legal-col {
+    position: relative;
+}
+
+
+/* Trigger button */
+
+.legal-trigger {
+    all: unset;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffdb15;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.legal-trigger .caret {
+    transition: transform 0.25s ease;
+}
+
+
+/* Panel itself */
+
+.legal-panel {
+    position: absolute;
+    top: 100%;
+    /* ● drops down below the Legal heading */
+    left: 0;
+    width: 100%;
+    min-width: 0;
+    background: #1D1D40;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-5px);
+    transition: opacity .2s ease, transform .2s ease;
+    z-index: 1000;
+}
+
+
+/* LINK STYLES */
+
+.legal-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.legal-links li+li {
+    margin-top: 0.75rem;
+}
+
+.legal-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.legal-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* OPEN STATES (HOVER & FOCUS) */
+
+.legal-col:hover .legal-panel,
+.legal-col:focus-within .legal-panel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+
+/* rotate caret */
+
+.legal-col:hover .legal-trigger .caret,
+.legal-col:focus-within .legal-trigger .caret {
+    transform: rotate(180deg);
+}
+
+
+/* ========================================================================== DESKTOP STYLES (768px and up) ========================================================================== */
 
 @media (min-width: 768px) {
 
@@ -624,7 +770,6 @@ a {
         border-radius: 20px;
         box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15) inset;
         font-size: 1.2rem;
-        text-align: center;
     }
 
     .nav-btn.cta-app:hover {
@@ -788,7 +933,6 @@ a {
         transform: rotate(-90deg);
     }
 
-
     /* Footer Desktop */
     .footer {
         background-color: #1D1D40;
@@ -838,127 +982,6 @@ a {
 }
 
 @media (max-width: 1030px) {
-    #resourcesToggle {
-        display: none;
-    }
-}
-
-h1 {
-    margin-top: 13rem;
-    margin-bottom: 0;
-    font-size: 64px;
-    font-weight: 600;
-    text-align: center;
-}
-
-h1::before {
-    content: '';
-    position: absolute;
-    background: url('../images/dots1.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: -1;
-    top: 125px;
-    Left: 0px;
-    width: 425px;
-    height: 425px;
-    opacity: 0.5;
-}
-
-h1::after {
-    content: '';
-    position: absolute;
-    background: url('../images/dots1.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: -1;
-    top: 450px;
-    right: 0px;
-    width: 425px;
-    transform: scalex(-1);
-    height: 425px;
-    opacity: 0.5;
-}
-
-.BTN_CONT {
-    display: flex;
-    justify-content: center;
-    gap: 125px;
-    padding-top: 125px;
-    padding-bottom: 300px;
-}
-
-.BTN_CONT a {
-    padding: 40px;
-    background: #ffdb15;
-    border: 2px solid white;
-    border-radius: 80px;
-    text-align: center;
-    color: black;
-    font-size: 32px;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.BLD {
-    font-weight: 800
-}
-
-.BTN_CONT a::Before {
-    content: '';
-    position: absolute;
-    background: url('../images/birds4.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 0;
-    top: 525px;
-    Left: 500px;
-    width: 650px;
-    height: 650px;
-    opacity: 0.5;
-}
-
-@media (max-width:767px) {
-    h1 {
-        margin-top: 250px;
-        margin-bottom: 0;
-        font-size: 32px;
-    }
-
-    .body {
-        width: fit-content;
-        overflow-x: hidden;
-    }
-
-    .BTN_CONT {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .BTN_CONT a {
-        margin: auto;
-        width: fit-content;
-        font-size: 24px;
-        padding: 24px;
-    }
-
-    h1::before {
-        opacity: 0.1;
-    }
-
-    h1::after {
-        opacity: 0.1;
-    }
-
-    .BTN_CONT a::Before {
-        position: absolute;
-        background-size: contain;
-        left: 75px;
-        top: 890px;
-        width: 300px;
-        opacity: 0.1;
-    }
-
     #resourcesToggle {
         display: none;
     }

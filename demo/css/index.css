@@ -658,7 +658,11 @@ h1 {
         display: block;
     }
 
-    /* force line break */
+    /* Hide line break on mobile */
+    .hero-title-break {
+        display: block;
+    }
+
     .hero-accent {
         color: #ffdb15;
     }
@@ -1160,7 +1164,7 @@ h1 {
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    transition: opacity .35s ease;
+    transition: opacity .25s ease;
     display: block;
 }
 
@@ -1239,7 +1243,7 @@ h1 {
 
 /* —— FlokAI (generic baseline; grid moves to desktop) —— */
 .flokai {
-    padding: 4rem 1.5rem 6rem;
+    padding: 4rem 1.5rem 0;
     color: #fff;
     position: relative;
 }
@@ -2152,7 +2156,7 @@ h1 {
         gap: 2.5rem 3rem;
         position: relative;
         text-align: center;
-        margin-bottom:50px;
+        margin-bottom: 50px;
     }
 
     .footer-columns::before {
@@ -2314,10 +2318,43 @@ h1 {
         border: none;
         transition: transform 0.2s ease, background 0.25s ease;
         box-shadow: none;
+        position: relative;
+    }
+
+    .nav-btn-highlight {
+        font-weight: 700;
+    }
+
+    .nav-btn-highlight::after {
+        content: '.';
+        position: absolute;
+        pointer-events: none;
+        color: white;
+        font-size: 1.5rem;
+
+        left: 50%;
+        bottom: -25px;
+        /* keep your current vertical position */
+        transform: translateX(-50%);
+        /* true center */
+
+        transition: none;
+        /* no independent movement */
+    }
+
+    /* Keep hover/focus identical (optional, but clean) */
+    .nav-btn-highlight:hover::after,
+    .nav-btn-highlight:focus-visible::after {
+        transform: translateX(-50%);
+    }
+
+    .nav-btn-highlight:hover,
+    .nav-btn-highlight:focus-visible {
+        transform: none;
     }
 
     .nav-btn:hover {
-        transform: translateY(-1px);
+        transform: translateY(-5px);
     }
 
     .nav-btn.cta-app {
@@ -2438,8 +2475,12 @@ h1 {
 
     .links-col a {
         color: #fff;
-        font-weight: 700;
+        font-weight: 400;
         font-size: 1.35rem;
+    }
+
+    .links-col-highlight {
+        font-weight: 700 !important;
     }
 
     .image-col {
