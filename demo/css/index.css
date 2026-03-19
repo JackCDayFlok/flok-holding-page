@@ -530,6 +530,21 @@ h1 {
     color: #ffdb15;
 }
 
+.hero-accent {
+  display: inline-block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text-fade-in{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text-fade-out{
+    opacity: 0;
+    transform: translateY(10px);
+}
+
 /* Keep hero right/visual generic so it’s fine on mobile too */
 .hero-right {
     display: flex;
