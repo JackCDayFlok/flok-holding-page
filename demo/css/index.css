@@ -535,6 +535,17 @@ h1 {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.hero-accent::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
 .text-fade-in{
     opacity: 1;
     transform: translateY(0);
@@ -2596,7 +2607,11 @@ h1 {
     }
 
     .hero-left {
-        max-width: 44rem;
+        max-width: 65rem;
+    }
+
+    .hero-copy{
+        max-width: 42rem !important;
     }
 
     /* Flok Compare desktop columns */
