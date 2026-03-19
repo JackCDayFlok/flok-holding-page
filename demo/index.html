@@ -86,8 +86,8 @@
     <header class="sticky-header">
       <div class="header-content">
         <!-- Logo -->
-        <a href="index.html"><img src="images/floklogo.png" class="header-logo" alt="Flok Logo" width="960"
-            height="450"></a>
+        <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.png" class="header-logo" alt="Flok Logo"
+            width="960" height="450"></a>
 
         <!-- Mobile Action Buttons -->
         <div class="header-buttons">
@@ -113,9 +113,7 @@
 
           <!-- Auth links -->
           <div class="auth-links">
-            <a href="login.html">Login</a>
-            <span class="sep" aria-hidden="true">|</span>
-            <a href="signup.html">Signup</a>
+            <a href="https://app.flokjobs.com/">Dashboard</a>
           </div>
         </nav>
 
@@ -131,8 +129,8 @@
           <div class="overlay-content">
             <div class="overlay-header">
               <div class="logo-wrapper">
-                <a href="index.html"><img src="images/floklogo.png" class="overlay-logo" alt="Flok Logo" width="960"
-                    height="450"></a>
+                <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.png" class="overlay-logo" alt="Flok Logo"
+                    width="960" height="450"></a>
               </div>
             </div>
             <nav class="overlay-nav" aria-label="Mobile navigation">
@@ -142,9 +140,7 @@
               <a class="overlay-link" href="about.html">About</a>
             </nav>
             <div class="overlay-login-wrapper">
-              <a href="login.html">Login</a>
-              <span class="sep" aria-hidden="true">|</span>
-              <a href="signup.html">Signup</a>
+              <a href="https://app.flokjobs.com/">Dashboard</a>
             </div>
 
             <button id="closeOverlay" class="close-btn" aria-label="Close menu">
@@ -208,7 +204,7 @@
               <h1 class="hero-title">
                 <span class="hero-line">Skip The Agency.</span>
                 <br class="hero-title-break">
-                <span class="hero-accent">Find The Flok.</span>
+                <span id="hero-accent" class="hero-accent">Find The Flok.</span>
               </h1>
 
               <p class="hero-copy">
@@ -772,7 +768,7 @@
           <h2 class="post-match-title">Post. Match. Go.</h2>
           <p class="post-match-subtitle">Find staff or shifts in 3 simple steps. No agencies. No hassle. Just work that
             works.</p>
-          
+
           <div class="post-match-row">
 
             <div class="post-match-left">
@@ -2182,8 +2178,8 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <p class="copyright">© 2025 Flok</p>
-        <a href="index.html"><img src="images/floklogo.png" alt="Flok Logo" class="footer-logo" width="960"
-            height="450"></a>
+        <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.png" alt="Flok Logo" class="footer-logo"
+            width="960" height="450"></a>
       </div>
     </footer>
 
@@ -2191,6 +2187,34 @@
     <script src="js/overlay-menu.js"></script>
     <script src="js/back-to-top.js"></script>
     <script src="js/resources-dropdown.js"></script>
+    <script>
+      const texts = [
+        "Find The Flok.",
+        "Hire Direct. Work Direct",
+        "Less Cost. More Pay. Full Control."
+      ];
+
+      let index = 0;
+      const hero = document.getElementById("hero-accent");
+
+      setInterval(() => {
+        hero.classList.add("text-fade-out");
+
+        setTimeout(() => {
+          index = (index + 1) % texts.length;
+          hero.textContent = texts[index];
+
+          hero.classList.remove("text-fade-out");
+          hero.classList.add("text-fade-in");
+
+          setTimeout(() => {
+            hero.classList.remove("text-fade-in");
+          }, 500);
+
+        }, 500);
+
+      }, 5000);
+    </script>
     <!-- Comparison table glow effect -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
