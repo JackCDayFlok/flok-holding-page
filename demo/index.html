@@ -2190,30 +2190,47 @@
     <script>
       const texts = [
         "Find The Flok.",
-        "Hire Direct. Work Direct",
+        "Hire Direct. Work Direct.",
         "Less Cost. More Pay. Full Control."
       ];
 
-      let index = 0;
-      const hero = document.getElementById("hero-accent");
+      const el = document.getElementById("hero-accent");
 
-      setInterval(() => {
-        hero.classList.add("text-fade-out");
+      let textIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
 
-        setTimeout(() => {
-          index = (index + 1) % texts.length;
-          hero.textContent = texts[index];
+      const typingSpeed = 80;
+      const deletingSpeed = 50;
+      const pauseTime = 1500;
 
-          hero.classList.remove("text-fade-out");
-          hero.classList.add("text-fade-in");
+      function typeEffect() {
+        const currentText = texts[textIndex];
 
-          setTimeout(() => {
-            hero.classList.remove("text-fade-in");
-          }, 500);
+        if (isDeleting) {
+          charIndex--;
+        } else {
+          charIndex++;
+        }
 
-        }, 500);
+        el.textContent = currentText.substring(0, charIndex);
 
-      }, 5000);
+        let speed = isDeleting ? deletingSpeed : typingSpeed;
+
+        if (!isDeleting && charIndex === currentText.length) {
+          speed = pauseTime;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          speed = 500;
+        }
+
+        setTimeout(typeEffect, speed);
+      }
+
+      // start animation
+      typeEffect();
     </script>
     <!-- Comparison table glow effect -->
     <script>
