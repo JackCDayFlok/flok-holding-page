@@ -2607,7 +2607,7 @@ h1 {
     }
 
     .hero-left {
-        max-width: 65rem;
+        max-width: 65rem !important;
     }
 
     .hero-copy{
