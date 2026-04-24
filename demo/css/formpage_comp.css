@@ -3,18 +3,16 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
-        url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
-        url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -35,7 +33,7 @@ body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: white;
     background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
@@ -71,7 +69,7 @@ a {
     color: black;
     padding: 0.6rem 1rem;
     border-radius: 999px;
-    font: 600 0.95rem/1 'Poppins', sans-serif;
+    font: 600 0.95rem/1 'Inter', sans-serif;
     text-decoration: none;
     z-index: 3000;
 }
@@ -149,7 +147,7 @@ a {
     background: #ffdb15;
     color: black;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: clamp(1.1rem, 3.5vh, 1.5rem);
     padding: clamp(0.8rem, 2.5vh, 1.4rem) clamp(1.2rem, 4vh, 2rem);
@@ -173,7 +171,7 @@ a {
     display: flex;
     justify-content: center;
     gap: 5px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin-top: clamp(0.5rem, 2vh, 1rem);
 }
@@ -228,7 +226,7 @@ a {
     color: #fff;
     width: 92vw;
     margin: auto;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 

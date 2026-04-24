@@ -3,18 +3,16 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
-        url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
-        url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -35,7 +33,7 @@ body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     margin: 0;
     color: white;
@@ -73,7 +71,7 @@ a {
     color: black;
     padding: 0.6rem 1rem;
     border-radius: 999px;
-    font: 600 0.95rem/1 'Poppins', sans-serif;
+    font: 600 0.95rem/1 'Inter', sans-serif;
     text-decoration: none;
     z-index: 3000;
 }
@@ -133,7 +131,7 @@ a {
 }
 
 .header-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
     color: #ffdb15;
@@ -158,7 +156,7 @@ a {
 }
 
 .header-btn.app-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: #00C2CB;
     color: #00151f;
@@ -323,7 +321,7 @@ a {
     background: #ffdb15;
     color: black;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: clamp(1.1rem, 3.5vh, 1.5rem);
     padding: clamp(0.8rem, 2.5vh, 1.4rem) clamp(1.2rem, 4vh, 2rem);
@@ -347,7 +345,7 @@ a {
     display: flex;
     justify-content: center;
     gap: 5px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin-top: clamp(0.5rem, 2vh, 1rem);
 }
@@ -414,7 +412,7 @@ a {
 }
 
 .hero-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 5rem;
     color: #ffdb15;
@@ -423,7 +421,7 @@ a {
 }
 
 .hero-description {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.6rem;
     color: white;
@@ -436,7 +434,7 @@ a {
 
 .hero-cta {
     display: inline-block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.7rem;
     background: #ffdb15;
@@ -494,7 +492,7 @@ a {
 }
 
 .why-work-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 4rem;
     color: #ffdb15;
@@ -503,7 +501,7 @@ a {
 }
 
 .why-work-subtitle {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1.8rem;
     color: white;
@@ -511,7 +509,7 @@ a {
 }
 
 .why-work-tagline {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     color: white;
@@ -569,7 +567,7 @@ a {
 }
 
 .benefit-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 3rem;
     color: #ffdb15;
@@ -583,7 +581,7 @@ a {
 }
 
 .benefit-text {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     color: white;
@@ -653,7 +651,7 @@ a {
 }
 
 .roles-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 3.5rem;
     color: #ffdb15;
@@ -663,7 +661,7 @@ a {
 }
 
 .roles-subtitle {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-align: center;
     font-size: 1.6rem;
     color: white;
@@ -679,7 +677,7 @@ a {
 }
 
 .roles-list li {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.6rem;
     color: white;
@@ -758,7 +756,7 @@ a {
 }
 
 .hiw-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #ffdb15;
     font-size: 4rem;
@@ -821,7 +819,7 @@ a {
 
 .hiw-step-title {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #ffdb15;
     font-size: 2.5rem;
@@ -833,7 +831,7 @@ a {
 
 .hiw-step-desc {
     margin: .2rem 0 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #fff;
     font-size: 1.5rem;
@@ -946,7 +944,7 @@ a {
     background-color: #1D1D40;
     color: white;
     padding: 2rem 1.5rem 4rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     position: relative;
     min-height: 200px;
@@ -1053,7 +1051,7 @@ a {
     font-size: 0.9rem;
     margin: 0;
     align-self: flex-end;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
 
@@ -1107,7 +1105,7 @@ a {
     }
 
     .nav-btn {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 400;
         font-size: 1rem;
         padding: 0.7rem 1.3rem;
@@ -1200,7 +1198,7 @@ a {
 
     .login-link {
         font-size: 1rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 400;
         color: #ffdb15;
         text-decoration: underline;

@@ -3,9 +3,8 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
-        url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
     /* fallback */
     font-weight: 400;
     font-style: normal;
@@ -13,9 +12,8 @@
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
-        url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
     /* fallback */
     font-weight: 700;
     font-style: normal;
@@ -37,7 +35,7 @@ body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     margin: 0;
     background: #fff;
@@ -70,7 +68,7 @@ a {
     color: #000;
     padding: 0.6rem 1rem;
     border-radius: 999px;
-    font: 600 0.95rem/1 'Poppins', sans-serif;
+    font: 600 0.95rem/1 'Inter', sans-serif;
     text-decoration: none;
     z-index: 3000;
     /* higher than .sticky-header (1000) and overlay (2000) */
@@ -130,7 +128,7 @@ a {
 }
 
 .header-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
     color: #ffdb15;
@@ -189,7 +187,7 @@ a {
 }
 
 .nav-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.95rem;
     padding: 0.75rem 1.5rem;
@@ -215,7 +213,7 @@ a {
 }
 
 .nav-btn.cta {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: #ffdb15;
     font-weight: 700;
@@ -367,7 +365,7 @@ a {
     background: white;
     color: black;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     padding: 1.4rem 2rem;
@@ -399,7 +397,7 @@ a {
     padding: 0;
     color: #ffdb15;
     text-decoration: underline;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     cursor: pointer;
@@ -454,7 +452,7 @@ h1 {
 }
 
 .desc {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 0.94rem;
     line-height: 1.6;
@@ -468,7 +466,7 @@ h1 {
 }
 
 .signup-button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: #ffdb15;
     color: #000;
@@ -555,7 +553,7 @@ h1 {
 }
 
 .section-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.9rem;
     font-weight: 700;
@@ -583,7 +581,7 @@ h1 {
 }
 
 .step-number {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.8rem;
     font-weight: 700;
@@ -592,7 +590,7 @@ h1 {
 }
 
 .step-description {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     color: #000;
@@ -683,7 +681,7 @@ h1 {
 }
 
 .why-flok-text {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     line-height: 1.6;
@@ -691,7 +689,7 @@ h1 {
 }
 
 .contact-us-button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: #ffdb15;
     color: #000;
@@ -734,7 +732,7 @@ h1 {
 /* Quote Section */
 .quote {
     position: relative;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     margin: 9rem 0 0 -1.5rem;
@@ -757,7 +755,7 @@ h1 {
 }
 
 .quote-author {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
     margin: 0 0 3rem -2rem;
@@ -788,7 +786,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
 }
 
@@ -806,7 +804,7 @@ h1 {
     background-color: #1f1f50;
     color: white;
     padding: 2rem 1.5rem 4rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     position: relative;
     min-height: 200px;
@@ -851,7 +849,7 @@ h1 {
 }
 
 .social-heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -901,7 +899,7 @@ h1 {
     font-size: 0.9rem;
     margin: 0;
     align-self: flex-end;
-    font-family: 'Poppins';
+    font-family: 'Inter';
     font-weight: 400;
 }
 
@@ -969,7 +967,7 @@ h1 {
 
     .login-link {
         font-size: 1rem;
-        font-family: 'Poppins';
+        font-family: 'Inter';
         font-weight: 400;
         color: #ffdb15;
         text-decoration: underline;
@@ -1185,7 +1183,7 @@ h1 {
     /* Quote Desktop */
     .quote {
         margin: 2rem auto 1rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 700;
         font-size: 1.1rem;
         max-width: 700px;
@@ -1241,7 +1239,7 @@ h1 {
     }
 
     .footer-heading {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 700;
         font-size: 1.6rem;
         color: #ffdb15;
