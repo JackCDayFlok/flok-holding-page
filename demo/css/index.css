@@ -3,20 +3,24 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "Inter";
-    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
+        url("../fonts/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
+        url("../fonts/Poppins-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
+
+
 
 /* ==========================================================================
    BASE STYLES (Generic + Mobile)
@@ -33,7 +37,7 @@ body {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     margin: 0;
     color: white;
@@ -70,7 +74,7 @@ a {
     color: black;
     padding: 0.6rem 1rem;
     border-radius: 999px;
-    font: 600 0.95rem/1 'Inter', sans-serif;
+    font: 600 0.95rem/1 'Poppins', sans-serif;
     text-decoration: none;
     z-index: 3000;
 }
@@ -134,7 +138,7 @@ a {
 }
 
 .header-btn {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
     color: #ffdb15;
@@ -159,7 +163,7 @@ a {
 }
 
 .header-btn.app-btn {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     background: #00C2CB;
     color: #00151f;
@@ -324,7 +328,7 @@ a {
     background: #ffdb15;
     color: black;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: clamp(1.1rem, 3.5vh, 1.5rem);
     padding: clamp(0.8rem, 2.5vh, 1.4rem) clamp(1.2rem, 4vh, 2rem);
@@ -348,7 +352,7 @@ a {
     display: flex;
     justify-content: center;
     gap: 5px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     margin-top: clamp(0.5rem, 2vh, 1rem);
 }
@@ -439,7 +443,7 @@ a {
 }
 
 .content-text {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.6;
@@ -462,7 +466,7 @@ h1 {
 
 /* Buttons */
 .primary-button {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     background: #ffdb15;
     color: black;
@@ -490,7 +494,7 @@ h1 {
 }
 
 .secondary-button {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background: transparent;
     color: #ffdb15;
@@ -529,29 +533,42 @@ h1 {
 }
 
 .hero-accent {
-  display: inline-block;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .hero-accent::after {
-  content: "|";
-  margin-left: 5px;
-  animation: blink 1s infinite;
+    content: "|";
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+#hero-change-text{
+    transition: transform 0.5s ease;
 }
 
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
-.text-fade-in{
+.text-fade-in {
     opacity: 1;
-    transform: translateY(0);
+    transition: 1s ease;
 }
 
-.text-fade-out{
+.text-fade-out {
     opacity: 0;
-    transform: translateY(10px);
+    transition: 1s ease;
 }
 
 /* Keep hero right/visual generic so it’s fine on mobile too */
@@ -625,7 +642,7 @@ h1 {
     display: inline-block;
     background: #ffdb15;
     color: black;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.8rem;
     padding: 1rem 2rem;
@@ -673,12 +690,12 @@ h1 {
     .hero-title {
         margin: .25rem 0 .75rem;
         line-height: 1.5;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         letter-spacing: -0.2px;
     }
 
     .hero-title .hero-line,
-    .hero-title .hero-accent {
+    .hero-title {
         display: block;
     }
 
@@ -689,6 +706,7 @@ h1 {
 
     .hero-accent {
         color: #ffdb15;
+        font-size: 1.4rem;
     }
 
     .hero-copy {
@@ -1078,7 +1096,7 @@ h1 {
 }
 
 .post-match-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 3.5rem;
     color: #000;
@@ -1087,7 +1105,7 @@ h1 {
 }
 
 .post-match-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
     color: #333;
@@ -1114,7 +1132,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.4rem;
     flex-shrink: 0;
@@ -1134,7 +1152,7 @@ h1 {
 }
 
 .step-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.8rem;
     color: #000;
@@ -1143,7 +1161,7 @@ h1 {
 }
 
 .step-description {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
     color: #333;
@@ -1281,51 +1299,17 @@ h1 {
 }
 
 .flokai-left {
+    position: relative;
     width: 100%;
     max-width: 420px;
     aspect-ratio: 1 / 1;
     /* margin-top set on desktop */
 }
 
-.flokai-svg {
+#blob {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-}
-
-.flokai-planet {
-    animation: flokaiHue 14s ease-in-out infinite;
-}
-
-
-.flokai-orbit {
-    transform-origin: 200px 200px;
-    transform-box: view-box;
-    animation: flokaiSpin var(--dur, 36s) linear infinite;
-}
-
-.flokai-orbit.reverse {
-    animation-direction: reverse;
-}
-
-@keyframes flokaiSpin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes flokaiHue {
-    0% {
-        filter: hue-rotate(0deg)
-    }
-
-    50% {
-        filter: hue-rotate(30deg)
-    }
-
-    100% {
-        filter: hue-rotate(0deg)
-    }
 }
 
 .flokai-title {
@@ -1982,7 +1966,7 @@ h1 {
     color: black;
     padding: 1.5rem 2rem;
     border-radius: 25px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-style: italic;
     font-size: 1.3rem;
@@ -2047,7 +2031,7 @@ h1 {
 }
 
 .industry-summary {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.4rem;
     color: white;
@@ -2057,7 +2041,7 @@ h1 {
 }
 
 .industry-question {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: #ffdb15;
@@ -2068,7 +2052,7 @@ h1 {
     display: inline-block;
     background: #ffdb15;
     color: black;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     padding: 1.2rem 3rem;
@@ -2137,7 +2121,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
@@ -2155,7 +2139,7 @@ h1 {
     background-color: #1D1D40;
     color: white;
     padding: 2rem 1.5rem 4rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     position: relative;
     min-height: 200px;
@@ -2262,7 +2246,7 @@ h1 {
     font-size: 0.9rem;
     margin: 0;
     align-self: flex-end;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
@@ -2330,7 +2314,7 @@ h1 {
     }
 
     .nav-btn {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 1rem;
         padding: 0.7rem 1.3rem;
@@ -2423,7 +2407,7 @@ h1 {
 
     .login-link {
         font-size: 1rem;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: 400;
         color: #ffdb15;
         text-decoration: underline;
@@ -2608,7 +2592,7 @@ h1 {
         max-width: 65rem !important;
     }
 
-    .hero-copy{
+    .hero-copy {
         max-width: 42rem !important;
     }
 
