@@ -3,18 +3,18 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
-        url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+    /* fallback */
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins-Bold.woff2") format("woff2"),
-        url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-family: "Inter";
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+    /* fallback */
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -37,7 +37,7 @@ body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     margin: 0;
     color: white;
@@ -138,7 +138,7 @@ a {
 }
 
 .header-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
     color: #ffdb15;
@@ -163,7 +163,7 @@ a {
 }
 
 .header-btn.app-btn {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     background: #00C2CB;
     color: #00151f;
@@ -328,7 +328,7 @@ a {
     background: #ffdb15;
     color: black;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: clamp(1.1rem, 3.5vh, 1.5rem);
     padding: clamp(0.8rem, 2.5vh, 1.4rem) clamp(1.2rem, 4vh, 2rem);
@@ -352,7 +352,7 @@ a {
     display: flex;
     justify-content: center;
     gap: 5px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin-top: clamp(0.5rem, 2vh, 1rem);
 }
@@ -443,7 +443,7 @@ a {
 }
 
 .content-text {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.6;
@@ -466,7 +466,7 @@ h1 {
 
 /* Buttons */
 .primary-button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     background: #ffdb15;
     color: black;
@@ -494,7 +494,7 @@ h1 {
 }
 
 .secondary-button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 400;
     background: transparent;
     color: #ffdb15;
@@ -642,7 +642,7 @@ h1 {
     display: inline-block;
     background: #ffdb15;
     color: black;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 1.8rem;
     padding: 1rem 2rem;
@@ -1096,7 +1096,7 @@ h1 {
 }
 
 .post-match-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 3.5rem;
     color: #000;
@@ -1105,7 +1105,7 @@ h1 {
 }
 
 .post-match-subtitle {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 400;
     font-size: 1.1rem;
     color: #333;
@@ -1132,7 +1132,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 1.4rem;
     flex-shrink: 0;
@@ -1152,7 +1152,7 @@ h1 {
 }
 
 .step-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 1.8rem;
     color: #000;
@@ -1161,7 +1161,7 @@ h1 {
 }
 
 .step-description {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 400;
     font-size: 1.2rem;
     color: #333;
@@ -1966,7 +1966,7 @@ h1 {
     color: black;
     padding: 1.5rem 2rem;
     border-radius: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-style: italic;
     font-size: 1.3rem;
@@ -2031,7 +2031,7 @@ h1 {
 }
 
 .industry-summary {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 1.4rem;
     color: white;
@@ -2041,7 +2041,7 @@ h1 {
 }
 
 .industry-question {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 2.5rem;
     color: #ffdb15;
@@ -2052,7 +2052,7 @@ h1 {
     display: inline-block;
     background: #ffdb15;
     color: black;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
     font-size: 1.5rem;
     padding: 1.2rem 3rem;
@@ -2121,7 +2121,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 700;
 }
 
@@ -2139,7 +2139,7 @@ h1 {
     background-color: #1D1D40;
     color: white;
     padding: 2rem 1.5rem 4rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 400;
     position: relative;
     min-height: 200px;
@@ -2246,7 +2246,7 @@ h1 {
     font-size: 0.9rem;
     margin: 0;
     align-self: flex-end;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;;
     font-weight: 400;
 }
 
@@ -2314,7 +2314,7 @@ h1 {
     }
 
     .nav-btn {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;;
         font-weight: 400;
         font-size: 1rem;
         padding: 0.7rem 1.3rem;
@@ -2407,7 +2407,7 @@ h1 {
 
     .login-link {
         font-size: 1rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;;
         font-weight: 400;
         color: #ffdb15;
         text-decoration: underline;
@@ -2560,7 +2560,8 @@ h1 {
     .hero-title {
         margin: 0;
         line-height: 1.5;
-        font-size: 3.7rem;
+        font-size: 3.5rem;
+        max-width:fit-content;
         letter-spacing: -0.5px;
     }
 
@@ -2589,7 +2590,7 @@ h1 {
     }
 
     .hero-left {
-        max-width: 65rem !important;
+        max-width: 80rem !important;
     }
 
     .hero-copy {
