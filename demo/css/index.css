@@ -466,7 +466,8 @@ h1 {
 
 /* Buttons */
 .primary-button {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     background: #ffdb15;
     color: black;
@@ -494,7 +495,8 @@ h1 {
 }
 
 .secondary-button {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 400;
     background: transparent;
     color: #ffdb15;
@@ -528,6 +530,7 @@ h1 {
 
 .hero-eyebrow,
 .hero-accent,
+.hero-accent-mobile,
 .hero-download {
     color: #ffdb15;
 }
@@ -543,7 +546,16 @@ h1 {
     animation: blink 1s infinite;
 }
 
-#hero-change-text{
+.hero-accent-mobile {
+    display: none;
+}
+
+.hero-title-break {
+    display: none;
+}
+
+
+#hero-change-text {
     transition: transform 0.5s ease;
 }
 
@@ -642,7 +654,8 @@ h1 {
     display: inline-block;
     background: #ffdb15;
     color: black;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 1.8rem;
     padding: 1rem 2rem;
@@ -706,7 +719,7 @@ h1 {
 
     .hero-accent {
         color: #ffdb15;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     .hero-copy {
@@ -1096,7 +1109,8 @@ h1 {
 }
 
 .post-match-title {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 3.5rem;
     color: #000;
@@ -1105,7 +1119,8 @@ h1 {
 }
 
 .post-match-subtitle {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 400;
     font-size: 1.1rem;
     color: #333;
@@ -1132,7 +1147,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 1.4rem;
     flex-shrink: 0;
@@ -1152,7 +1168,8 @@ h1 {
 }
 
 .step-title {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 1.8rem;
     color: #000;
@@ -1161,7 +1178,8 @@ h1 {
 }
 
 .step-description {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 400;
     font-size: 1.2rem;
     color: #333;
@@ -1966,7 +1984,8 @@ h1 {
     color: black;
     padding: 1.5rem 2rem;
     border-radius: 25px;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-style: italic;
     font-size: 1.3rem;
@@ -2031,7 +2050,8 @@ h1 {
 }
 
 .industry-summary {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 1.4rem;
     color: white;
@@ -2041,7 +2061,8 @@ h1 {
 }
 
 .industry-question {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 2.5rem;
     color: #ffdb15;
@@ -2052,7 +2073,8 @@ h1 {
     display: inline-block;
     background: #ffdb15;
     color: black;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
     font-size: 1.5rem;
     padding: 1.2rem 3rem;
@@ -2121,7 +2143,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 700;
 }
 
@@ -2139,7 +2162,8 @@ h1 {
     background-color: #1D1D40;
     color: white;
     padding: 2rem 1.5rem 4rem;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 400;
     position: relative;
     min-height: 200px;
@@ -2246,7 +2270,8 @@ h1 {
     font-size: 0.9rem;
     margin: 0;
     align-self: flex-end;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    ;
     font-weight: 400;
 }
 
@@ -2314,7 +2339,8 @@ h1 {
     }
 
     .nav-btn {
-        font-family: 'Inter', sans-serif;;
+        font-family: 'Inter', sans-serif;
+        ;
         font-weight: 400;
         font-size: 1rem;
         padding: 0.7rem 1.3rem;
@@ -2407,7 +2433,8 @@ h1 {
 
     .login-link {
         font-size: 1rem;
-        font-family: 'Inter', sans-serif;;
+        font-family: 'Inter', sans-serif;
+        ;
         font-weight: 400;
         color: #ffdb15;
         text-decoration: underline;
@@ -2561,7 +2588,7 @@ h1 {
         margin: 0;
         line-height: 1.5;
         font-size: 3.5rem;
-        max-width:fit-content;
+        max-width: fit-content;
         letter-spacing: -0.5px;
     }
 
