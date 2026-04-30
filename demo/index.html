@@ -201,15 +201,14 @@
             <div class="hero-left">
 
               <h1 class="hero-title">
-                <span class="hero-line">Hospitality Hiring <span id='hero-change-text'
-                    class="text-fade-in">Fixed.</span></span>
+                <span class="hero-line">Skip The Agency</span>
                 <br class="hero-title-break">
-                <span id="hero-accent" class="hero-accent">Find The Flok.</span>
+                <span class="hero-accent">Hire Hospitality <span id="hero-accent">Fixed.</span></span>
               </h1>
 
               <p class="hero-copy">
-                The UK's first direct hospitality hiring platform.
-                No middlemen. No waiting. Just great people, when you need them.
+                Direct hiring for hospitality. Faster, simpler, and without agencies.
+                The right people, when you need them.
               </p>
 
               <p class="hero-download">Download on iOS / Android</p>
@@ -2138,9 +2137,9 @@
     <script src="js/resources-dropdown.js"></script>
     <script>
       const texts = [
-        "Find The Flok.",
-        "Hire Direct. Work Direct.",
-        "Less Cost. More Pay."
+        "Fixed.",
+        "Sorted.",
+        "Simplified."
       ];
 
       const el = document.getElementById("hero-accent");
@@ -2180,30 +2179,6 @@
       }
 
       typeEffect();
-    </script>
-    <script>
-      const heroTexts = ["Fixed.", "Sorted.", "Simplified."];
-      const textChange = document.getElementById('hero-change-text');
-
-      let index = 0;
-
-      textChange.style.transition = "opacity 1s ease";
-      textChange.style.opacity = 1;
-
-      function changeHeroText() {
-        textChange.style.opacity = 0;
-
-        setTimeout(() => {
-          index = (index + 1) % heroTexts.length;
-          textChange.textContent = heroTexts[index];
-
-          void textChange.offsetWidth;
-          textChange.style.opacity = 1;
-        }, 1000);
-      }
-
-      setInterval(changeHeroText, 5000);
-
     </script>
     <!-- Comparison table glow effect -->
     <script>
