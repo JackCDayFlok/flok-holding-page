@@ -2695,7 +2695,7 @@ h1 {
     /* FlokAI desktop grid + visual offset */
     .flokai-inner {
         display: grid;
-        gap: 2.5rem;
+        gap: 10rem;
         align-items: center;
         grid-template-columns: 2fr 3fr;
     }
