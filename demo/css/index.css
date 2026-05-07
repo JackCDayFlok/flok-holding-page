@@ -655,7 +655,6 @@ h1 {
     background: #ffdb15;
     color: black;
     font-family: 'Inter', sans-serif;
-    ;
     font-weight: 700;
     font-size: 1.8rem;
     padding: 1rem 2rem;
@@ -664,6 +663,22 @@ h1 {
     border: 3px solid white;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
+}
+
+.hero-cta::before{
+    content: '';
+    position: absolute;
+    background: url('../images/birds2.webp') no-repeat;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 11;
+    top: -75px;
+    left: 630px;
+    width: 650px;
+    height: 690px;
+    opacity: 0.1;
+    transform: scaleX(1);
+    transform:rotate(2deg);
 }
 
 /* =========================
@@ -830,7 +845,7 @@ h1 {
     width: 350px;
     height: 350px;
     opacity: 0.4;
-    transform: scaleX(-1)
+    transform: scaleX(-1);
 }
 
 .flok-compare__overlay {
