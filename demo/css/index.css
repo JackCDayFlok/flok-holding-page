@@ -665,20 +665,20 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.hero-cta::before{
+.hero-cta::before {
     content: '';
     position: absolute;
     background: url('../images/birds2.webp') no-repeat;
     background-size: cover;
     pointer-events: none;
     z-index: 11;
-    top: -75px;
-    left: 630px;
-    width: 650px;
-    height: 690px;
+    top: -65px;
+    left: 620px;
+    width: 600px;
+    height: 640px;
     opacity: 0.1;
     transform: scaleX(1);
-    transform:rotate(2deg);
+    transform: rotate(2deg);
 }
 
 /* =========================
@@ -1332,12 +1332,48 @@ h1 {
 }
 
 .flokai-left {
-    position: relative;
     width: 100%;
     max-width: 420px;
     aspect-ratio: 1 / 1;
     /* margin-top set on desktop */
 }
+
+.flokai-planet {
+    animation: flokaiHue 14s ease-in-out infinite;
+}
+
+.flokai-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.flokai-orbit {
+    transform-origin: 200px 200px;
+    transform-box: view-box;
+    animation: flokaiSpin var(--dur, 36s) linear infinite;
+}
+
+@keyframes flokaiSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flokaiHue {
+    0% {
+        filter: hue-rotate(0deg)
+    }
+
+    50% {
+        filter: hue-rotate(30deg)
+    }
+
+    100% {
+        filter: hue-rotate(0deg)
+    }
+}
+
 
 #blob {
     width: 100%;
@@ -2615,7 +2651,7 @@ h1 {
     .hero-copy {
         font-size: 1.6rem;
         margin: 0;
-        margin-top:1vh;
+        margin-top: 1vh;
     }
 
     .hero-download {
