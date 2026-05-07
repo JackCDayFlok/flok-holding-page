@@ -205,6 +205,7 @@
                 
               </h1>
 
+
               <p class="hero-copy">
                 Direct hiring for hospitality. Faster, simpler, and without agencies.
                 The right people, when you need them.
@@ -822,8 +823,59 @@
           <div class="flokai-inner">
 
             <!-- Left content -->
-            <div class="flokai-left" aria-hidden="true">
-              <canvas id="blob"></canvas>
+<div class="flokai-left" aria-hidden="true">
+              <svg class="flokai-svg" viewBox="0 0 400 400" role="img" aria-label="">
+                <defs>
+                  <!-- Main planet gradient -->
+                  <radialGradient id="planetGrad" cx="40%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#FFDB15" />
+                    <stop offset="60%" stop-color="#1152AE" />
+                    <stop offset="100%" stop-color="#77760B" />
+                  </radialGradient>
+
+                  <!-- Ring gradients -->
+                  <linearGradient id="ringInner" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FFDB15" />
+                    <stop offset="100%" stop-color="#99830D" />
+                  </linearGradient>
+
+                  <linearGradient id="ringOuter" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#99830D" />
+                    <stop offset="100%" stop-color="#FFDB15" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Planet -->
+                <g class="flokai-planet">
+                  <circle cx="200" cy="200" r="85" fill="url(#planetGrad)" />
+                </g>
+
+                <!-- Rings -->
+                <circle cx="200" cy="200" r="125" fill="none" stroke="url(#ringInner)" stroke-width="2" />
+                <circle cx="200" cy="200" r="175" fill="none" stroke="url(#ringOuter)" stroke-width="2" />
+
+                <!-- Orbiting dots -->
+                <!-- Outer fast, clockwise (on the left edge of the outer ring ~ r=175) -->
+                <g class="flokai-orbit" style="--dur:10s;">
+                  <circle cx="25" cy="200" r="3.5" fill="#fff" />
+                </g>
+
+                <!-- Inner medium, counter-clockwise (on the inner ring ~ r=125, above center) -->
+                <g class="flokai-orbit reverse" style="--dur:10s;">
+                  <circle cx="200" cy="75" r="3" fill="#fff" />
+                </g>
+
+                <!-- Small dot near top, slow clockwise (outer ring) -->
+                <g class="flokai-orbit" style="--dur:8s;">
+                  <circle cx="200" cy="25" r="4" fill="#fff" />
+                </g>
+
+                <!-- Small dot on right, medium counter-clockwise (outer ring) -->
+                <g class="flokai-orbit reverse" style="--dur:12s;">
+                  <circle cx="375" cy="200" r="2.8" fill="#fff" />
+                </g>
+
+              </svg>
             </div>
 
 
@@ -2399,6 +2451,7 @@
         bubbles.forEach(el => io.observe(el));
       })();
     </script>
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
