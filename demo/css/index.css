@@ -672,13 +672,13 @@ h1 {
     background-size: cover;
     pointer-events: none;
     z-index: 11;
-    top: -65px;
-    left: 620px;
-    width: 600px;
-    height: 640px;
+    top: 75px;
+    left: 600px;
+    width: 500px;
+    height: 460px;
     opacity: 0.1;
     transform: scaleX(1);
-    transform: rotate(2deg);
+    transform: rotate(5deg);
 }
 
 /* =========================
