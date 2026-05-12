@@ -870,6 +870,7 @@ h1 {
     padding: 18px 20px;
     border-bottom: 1px solid var(--line);
     line-height: 1.25;
+    text-align:center;
 }
 
 .flok-compare__agency {
