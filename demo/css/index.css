@@ -1346,6 +1346,7 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
+    margin-top:9vh;
 }
 
 .flokai-orbit {
@@ -1972,9 +1973,21 @@ h1 {
 }
 
 /* —— The Industry Speaks (generic) —— */
-.industry-speaks-heading {
+.hospitality-HIRING-heading {
     font-size: 3.5rem;
     text-align: center;
+    margin-bottom:0;
+}
+
+.hospitality-hiring-list{
+    font-size:2.2em;
+    margin-bottom:4vh;
+}
+
+
+.hospitality-hiring-list li{
+    width:fit-content;
+    margin:auto;
 }
 
 .industry-speaks-heading::before {
@@ -2004,7 +2017,7 @@ h1 {
     opacity: 0.5;
 }
 
-.industry-speaks {
+.hospitality-HIRING {
     position: relative;
     overflow: hidden;
 }
