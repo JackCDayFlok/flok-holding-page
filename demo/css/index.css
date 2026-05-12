@@ -1014,7 +1014,6 @@ h1 {
         width: 33.333%;
         top: 0px;
         /* start below header row */
-        bottom: 320px;
         /* leave space above CTA */
         border-radius: 28px;
     }
@@ -1484,6 +1483,7 @@ h1 {
 
 /* FlokAI — fix orbit drift (use CSS only, disable SMIL) */
 .flokai-svg {
+    margin-top:1vh;
     overflow: visible;
 }
 
