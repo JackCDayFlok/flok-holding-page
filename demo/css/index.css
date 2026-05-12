@@ -1297,6 +1297,7 @@ h1 {
     .post-match-row {
         display: flex;
         flex-direction: column;
+        gap:unset;
     }
 
     /* move the image block before the steps */
@@ -1311,6 +1312,9 @@ h1 {
 
     .step-description {
         max-width: 370px;
+    }
+    .step-arrow{
+        margin:-5.5rem 0.7rem 0rem;
     }
 }
 
