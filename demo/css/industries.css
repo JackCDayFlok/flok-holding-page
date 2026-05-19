@@ -1027,7 +1027,7 @@ hr {
     right: -13px;
     width: 400px;
     height: 400px;
-    transform: scaleX(1)translateY(60px);
+    transform: scaleX(1)translateY(-50px);
     opacity: 0.6;
 }
 
@@ -1050,8 +1050,8 @@ hr {
 }
 
 .ECH-Content img {
-    width: 50%;
-    margin-top:1vh;
+    width: 40%;
+    margin-top:3vh;
 }
 
 .ICC {
@@ -1101,6 +1101,7 @@ hr {
 
 .ICC-Content img {
     height: 100%;
+    margin-top:3vh;
 }
 
 .TSH {
@@ -1184,6 +1185,7 @@ hr {
     width: 100%;
     max-width: 450px;
     align-self: center;
+    margin-top:3vh;
 }
 
 .readyfor {
