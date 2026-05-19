@@ -988,7 +988,8 @@ hr {
 }
 
 .PRCD-Content img {
-    width: 100%;
+    width: 50%;
+    margin-top: 2vh
 }
 
 .Pubs-Restaurants-CasualDining h1::before {
@@ -1049,7 +1050,8 @@ hr {
 }
 
 .ECH-Content img {
-    width: 100%;
+    width: 50%;
+    margin-top:1vh;
 }
 
 .ICC {
