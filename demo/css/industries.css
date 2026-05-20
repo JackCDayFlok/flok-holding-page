@@ -1133,6 +1133,8 @@ hr {
 
 .TSH ul {
     text-align: left;
+    width:66%;
+    margin:auto;
 }
 
 .TSH ul li {
@@ -1487,6 +1489,8 @@ hr {
 
     .TSH ul {
         padding-left: 40px;
+        width:66%;
+        margin:auto;
     }
 
     .TSH ul li {
