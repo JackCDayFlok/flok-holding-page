@@ -7,7 +7,7 @@
     const dots = Array.from(document.querySelectorAll('.hiw-dot'));
     if (steps.length <= 1) return;
 
-    const INTERVAL_MS = 3400;
+    const INTERVAL_MS = 4400;
     let idx = steps.findIndex(s => s.classList.contains('is-active'));
     if (idx < 0) idx = 0;
 
