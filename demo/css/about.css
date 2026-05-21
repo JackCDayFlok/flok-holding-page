@@ -587,8 +587,8 @@ a {
     }
 }
 
-.feature-icon {
-    font-size: 3.7rem;
+.feature-icon img {
+    width:120px;
 }
 
 @media (max-width: 767px) {
@@ -1099,7 +1099,7 @@ a {
     }
 
     .links-col-highlight {
-        font-weight: 700 !important;
+        font-weight: 900 !important;
     }
 
     .image-col {
