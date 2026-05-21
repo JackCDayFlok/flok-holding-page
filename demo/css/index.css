@@ -1488,7 +1488,6 @@ h1 {
 
 /* FlokAI — fix orbit drift (use CSS only, disable SMIL) */
 .flokai-svg {
-    margin-top:1vh;
     overflow: visible;
 }
 
@@ -1991,7 +1990,7 @@ h1 {
 
 
 .hospitality-hiring-list li{
-    width:300px;
+    width:350px;
     margin:auto;
 }
 
