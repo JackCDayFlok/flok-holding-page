@@ -454,7 +454,8 @@ h1::after {
     max-width: 1300px;
     margin: auto;
     font-size: 1.8rem;
-    margin-bottom: 70px;
+    margin-top:40px;
+    margin-bottom: 40px;
 }
 
 .main-form label {
