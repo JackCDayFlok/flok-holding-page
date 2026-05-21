@@ -870,7 +870,7 @@ h1 {
     padding: 18px 20px;
     border-bottom: 1px solid var(--line);
     line-height: 1.25;
-    text-align:center;
+    text-align: center;
 }
 
 .flok-compare__agency {
@@ -1296,9 +1296,9 @@ h1 {
 
     /* stack as a column so we can reorder */
     .post-match-row {
-        display: flex;
+        display: block;
         flex-direction: column;
-        gap:unset;
+        gap: unset;
     }
 
     /* move the image block before the steps */
@@ -1314,8 +1314,9 @@ h1 {
     .step-description {
         max-width: 370px;
     }
-    .step-arrow{
-        margin:-3.5rem 0.7rem 2rem;
+
+    .step-arrow {
+        margin: -3.5rem 0.7rem 2rem;
     }
 }
 
@@ -1350,7 +1351,7 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
-    margin-top:10vh;
+    margin-top: 10vh;
 }
 
 .flokai-orbit {
@@ -1567,6 +1568,10 @@ h1 {
     .flokai-left {
         width: 100%;
         max-width: 420px;
+    }
+
+    .flokai-svg {
+        margin-top: unset;
     }
 }
 
@@ -1980,18 +1985,18 @@ h1 {
 .hospitality-HIRING-heading {
     font-size: 3.5rem;
     text-align: center;
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
-.hospitality-hiring-list{
-    font-size:2.2em;
-    margin-bottom:4vh;
+.hospitality-hiring-list {
+    font-size: 2.2em;
+    margin-bottom: 4vh;
 }
 
 
-.hospitality-hiring-list li{
-    width:350px;
-    margin:auto;
+.hospitality-hiring-list li {
+    width: 350px;
+    margin: auto;
 }
 
 .industry-speaks-heading::before {
