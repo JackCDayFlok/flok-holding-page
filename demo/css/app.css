@@ -464,6 +464,14 @@ a {
 .icons img {
     width: 125px;
 }
+.icons img:hover{
+    cursor: pointer;
+}
+
+.download-text{
+    text-decoration:underline;
+    font-size:1.8rem;
+}
 
 @media (max-width: 767px) {
     .app-title {
