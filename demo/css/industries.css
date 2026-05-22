@@ -84,7 +84,6 @@ a {
 
 #main-content {
     scroll-margin-top: 96px;
-    margin-bottom: 96px;
 }
 
 .main-section {
@@ -1170,8 +1169,17 @@ hr {
 
 .why-flok-content ul {
     text-align: left;
-    list-style-type: "\2713";
+    list-style: none;
+    padding-left: 0;
 }
+
+.why-flok-content ul li::before {
+    content: "✓";
+    color: #ffdb15;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
 
 .why-flok-content ul li {
     font-size: 30px;
@@ -1223,6 +1231,11 @@ hr {
 .signup-btn a {
     color: black !important;
     text-decoration: none;
+}
+
+#special-button{
+    background:#ffdb15;
+    color:#000;
 }
 
 @media(max-width:767px) {
