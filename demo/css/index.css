@@ -126,6 +126,13 @@ a {
     height: 40px;
     width: auto;
     margin: 0;
+    display:none;
+}
+
+.mobile-logo {
+    height: 50px;
+    width: auto;
+    margin: 0;
 }
 
 /* Mobile Navigation */
@@ -314,7 +321,7 @@ a {
 }
 
 .overlay-logo {
-    height: clamp(30px, 6vh, 50px);
+    height: clamp(86px, 6vh, 90px);
     width: auto;
 }
 
@@ -1360,6 +1367,35 @@ h1 {
     padding: 4rem 1.5rem 0;
     color: #fff;
     position: relative;
+}
+
+.flokai::before {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+    left: -45px;
+    top:-25px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.35;
+}
+
+.flokai::after {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+    right: -45px;
+    transform:scaleX(-1);
+    top:320px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.35;
 }
 
 .flokai-inner {
@@ -2474,6 +2510,11 @@ h1 {
 
     .header-logo {
         height: 60px;
+        display:block;
+    }
+
+    .mobile-logo{
+        display:none;
     }
 
     .nav-btn {
