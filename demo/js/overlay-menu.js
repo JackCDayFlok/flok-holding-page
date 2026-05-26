@@ -76,6 +76,7 @@ function openMenu() {
   overlay.setAttribute('aria-hidden', 'false');
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
+  document.body.classList.add('menu-open');
 
   mobileToggle.setAttribute('aria-expanded', 'true');
 
@@ -91,6 +92,7 @@ function closeMenu() {
   overlay.classList.remove('open');
   overlay.setAttribute('aria-hidden', 'true');
   mobileToggle.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
 
   document.removeEventListener('keydown', onKeydown, true);
   unlockScroll();
