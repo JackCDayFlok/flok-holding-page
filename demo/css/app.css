@@ -464,13 +464,14 @@ a {
 .icons img {
     width: 125px;
 }
-.icons img:hover{
+
+.icons img:hover {
     cursor: pointer;
 }
 
-.download-text{
-    text-decoration:underline;
-    font-size:1.8rem;
+.download-text {
+    text-decoration: underline;
+    font-size: 1.8rem;
 }
 
 @media (max-width: 767px) {
@@ -844,13 +845,9 @@ a {
 
     .links-col-highlight {
         font-weight: 900 !important;
-        border:2px solid #ffdb15;
-        border-radius:24px;
-        padding-left:8px;
-        padding-right:8px;
-        padding-top:2px;
-        padding-bottom:5px;
+        text-decoration-color: #ffdb15
     }
+
     .image-col {
         display: flex;
         justify-content: center;

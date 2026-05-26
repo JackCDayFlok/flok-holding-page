@@ -119,7 +119,7 @@ a {
     height: 40px;
     width: auto;
     margin: 0;
-    display:none;
+    display: none;
 }
 
 .mobile-logo {
@@ -1092,11 +1092,11 @@ a {
 
     .header-logo {
         height: 60px;
-        display:block;
+        display: block;
     }
 
-    .mobile-logo{
-        display:none;
+    .mobile-logo {
+        display: none;
     }
 
     .nav-btn {
@@ -1275,12 +1275,7 @@ a {
 
     .links-col-highlight {
         font-weight: 900 !important;
-        border:2px solid #ffdb15;
-        border-radius:24px;
-        padding-left:8px;
-        padding-right:8px;
-        padding-top:2px;
-        padding-bottom:5px;
+        text-decoration-color: #ffdb15
     }
 
     .image-col {
