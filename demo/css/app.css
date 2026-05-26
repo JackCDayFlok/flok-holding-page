@@ -843,9 +843,14 @@ a {
     }
 
     .links-col-highlight {
-        font-weight: 700 !important;
+        font-weight: 900 !important;
+        border:2px solid #ffdb15;
+        border-radius:24px;
+        padding-left:8px;
+        padding-right:8px;
+        padding-top:2px;
+        padding-bottom:5px;
     }
-
     .image-col {
         display: flex;
         justify-content: center;
