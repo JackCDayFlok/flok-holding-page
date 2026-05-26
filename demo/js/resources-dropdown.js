@@ -11,7 +11,7 @@
 
   // keep the dropdown pinned just under the header height
   function positionPanel() {
-    panel.style.top = 104 + 'px';
+    panel.style.top = 101 + 'px';
 
     // If we're below the breakpoint and the panel is open, close it.
     if (isNarrow() && panel.classList.contains('open')) {
