@@ -243,7 +243,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: clamp(1rem, 4vh, 3rem) 1.5rem;
-    z-index: 2000;
+    z-index: 99999;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-10px);
@@ -286,6 +286,7 @@ a {
     pointer-events: auto;
     transform: translateY(0);
 }
+
 
 .overlay-content {
     width: 100%;
@@ -404,6 +405,12 @@ a {
     transform: rotate(90deg);
     width: clamp(24px, 5vh, 30px);
     height: clamp(24px, 5vh, 30px);
+}
+
+body.menu-open .back-to-top-container {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
 
 /* ==========================================================================
@@ -1321,7 +1328,7 @@ h1 {
     }
 
     .post-match-go {
-        padding-bottom: 8rem;
+        padding-bottom: 0rem;
     }
 
     .post-match-go::before {
