@@ -310,7 +310,7 @@ a {
 }
 
 .overlay-logo {
-    height: clamp(30px, 6vh, 50px);
+    height: clamp(86px, 6vh, 90px);
     width: auto;
 }
 
@@ -740,12 +740,7 @@ a {
 
     .links-col-highlight {
         font-weight: 900 !important;
-        border:2px solid #ffdb15;
-        border-radius:24px;
-        padding-left:8px;
-        padding-right:8px;
-        padding-top:2px;
-        padding-bottom:5px;
+        text-decoration-color: #ffdb15
     }
 
     .image-col {
