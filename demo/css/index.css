@@ -1359,6 +1359,10 @@ h1 {
         margin: auto;
     }
 
+    .post-match-steps{
+        gap:0rem;
+    }
+
     .step-description {
         max-width: 370px;
     }
@@ -1465,7 +1469,7 @@ h1 {
 }
 
 .flokai-title {
-    margin: 0 0 .5rem;
+    margin: 0 0 1rem;
     font-size: 3rem;
     line-height: 1.15;
     font-weight: 700;
@@ -2066,18 +2070,18 @@ h1 {
 }
 
 .hospitality-hiring-list {
-    font-size: 2.2em;
-    margin-bottom: 4vh;
+    font-size: 1.7em;
+    margin-bottom: 3vh;
 }
 
 
 .hospitality-hiring-list li {
-    width: 350px;
+    width: 272px;
     margin: auto;
 }
 
 .hospitality-desktop{
-    font-size:2em;
+    font-size:1.8em;
     width:fit-content;
     margin:auto;
     margin-top:2vh;
@@ -2279,8 +2283,8 @@ h1 {
 
 /* Back to Top */
 .back-to-top-container {
-    position: fixed;
-    bottom: 1.5rem;
+    position: absolute;
+    bottom: -246.5rem;
     right: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -2308,7 +2312,7 @@ h1 {
 .back-to-top-label {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: white;
+    color: #ffdb15;
 }
 
 @media(max-width:767px) {
