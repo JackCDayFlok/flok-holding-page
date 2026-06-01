@@ -658,7 +658,6 @@ h1 {
 
 .carousel-shell {
     position: relative;
-    height: clamp(320px, 48vw, 520px);
     border-radius: 70px;
     background: #1D1D40;
     overflow: hidden;
@@ -2284,7 +2283,7 @@ h1 {
 /* Back to Top */
 .back-to-top-container {
     position: absolute;
-    bottom: -246.5rem;
+    bottom: 0;
     right: 1.5rem;
     display: flex;
     flex-direction: column;

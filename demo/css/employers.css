@@ -314,7 +314,7 @@ a {
 }
 
 .overlay-logo {
-    height: clamp(30px, 6vh, 50px);
+    height: clamp(86px, 6vh, 90px);
     width: auto;
 }
 
@@ -403,7 +403,7 @@ a {
 
 .hero-section {
     background-color: #3A3A6F;
-    padding: 10rem 2rem 5rem 2rem;
+    padding: 10rem 2rem 2rem 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -412,7 +412,7 @@ a {
 }
 
 .hero-content {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -535,8 +535,7 @@ a {
 .why-flok-image-placeholder {
     background: #e5e5e5;
     border-radius: 8px;
-    width: 100%;
-    max-width: 620px;
+    max-height:1300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -572,8 +571,11 @@ a {
     /* Image comes second (order: 2) */
     .why-flok-visual {
         order: 2;
-        width: 80%;
         margin: 0 auto;
+    }
+
+    .why-flok-image-placeholder {
+        max-height:300px;
     }
 
     /* All points come after image (order: 3) */
@@ -859,7 +861,9 @@ a {
     .sectors-container::before {
         left: unset;
         right: 0;
-        transform: scaleX(-1) translateY(500px);
+        transform: scaleX(-1) translateY(664px);
+        width:325px;
+        height:325px;
     }
 
     .sectors-image {
