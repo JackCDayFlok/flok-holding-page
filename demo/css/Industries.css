@@ -803,6 +803,7 @@ p {
 
 .footer-links li {
     list-style: none;
+    text-align:center;
 }
 
 @media (max-width:767px) {
