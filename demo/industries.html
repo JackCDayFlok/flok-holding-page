@@ -6,30 +6,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index,follow">
-  <meta name="description"
-    content="Hospitality recruitment across every sector in the UK - from fine dining and pubs to events, contract catering, travel and specialist environments. Flok Jobs connects venues with verified hospitality professionals.">
+  <meta name="description" content="{{META_DESCRIPTION}}">
 
   <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
-  <link rel="canonical" href="https://www.flokjobs.com/industries">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
 
   <!-- ——————————— SOCIAL CARDS ——————————— -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.flokjobs.com/industries">
-  <meta property="og:title" content="Hospitality Sectors We Serve | Flok Jobs (UK)">
+  <meta property="og:type" content="{{OG_TYPE}}">
+  <meta property="og:url" content="{{OG_URL}}">
+  <meta property="og:title" content="{{OG_TITLE}}">
   <meta property="og:site_name" content="Flok Jobs">
-  <meta property="og:description"
-    content="Discover how Flok Jobs supplies hospitality staff across fine dining, pubs, events, contract catering, travel and specialist sectors throughout the UK.">
-  <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
-  <meta property="og:image:alt" content="Flok Jobs hospitality recruitment across UK sectors">
+  <meta property="og:description" content="{{OG_DESCRIPTION}}">
+  <meta property="og:image" content="{{OG_IMAGE_URL}}">
+  <meta property="og:image:alt" content="{{OG_IMAGE_ALT}}">
   <meta property="og:locale" content="en_GB">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Industries We Serve - Hospitality Recruitment | Flok Jobs">
-  <meta name="twitter:description"
-    content="From Michelin-starred restaurants to events, contract catering and specialist sites, Flok Jobs supplies verified hospitality staff across UK sectors.">
-  <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+  <meta name="twitter:title" content="{{TWITTER_TITLE}}">
+  <meta name="twitter:description" content="{{TWITTER_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{TWITTER_IMAGE_URL}}">
 
   <!-- ———————————  STRUCTURED DATA  ——————————— -->
   <script type="application/ld+json">
@@ -61,15 +58,17 @@
   <!-- <link rel="manifest" href="/site.webmanifest"> -->
 
   <!-- ———————————  PRELOADING ——————————— -->
-  <link rel="preload" as="font" href="fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="fonts/Inter-Bold.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/images/silverbackground1.svg" type="image/svg+xml" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/silverbackground2.svg" type="image/svg+xml" media="(min-width: 768px)">
+  <link rel="preload" as="font" href="/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/Inter-Bold.woff2" type="font/woff2" crossorigin>
 
   <!-- —————————————————  ASSETS  ————————————————— -->
-  <title>Hospitality Sectors We Serve | Flok Jobs (UK)</title>
-  <link rel="icon" href="images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon192.png">
-  <link rel="stylesheet" href="css/industries.css">
+  <title>Flok Jobs - Industries</title>
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192.png">
+  <link rel="stylesheet" href="css/IndustriesV2.css">
 </head>
 
 
@@ -83,6 +82,8 @@
       <!-- Logo -->
       <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.svg" class="header-logo" alt="Flok Logo"
           width="960" height="450"></a>
+      <a href="index.html"><img src="images/Flok_Logo_Mobile.svg" class="mobile-logo" alt="Flok Logo" width="960"
+          height="450"></a>
 
       <!-- Mobile Action Buttons -->
       <div class="header-buttons">
@@ -129,7 +130,7 @@
             </div>
           </div>
           <nav class="overlay-nav" aria-label="Mobile navigation">
-            <a class="overlay-link" href="index.html" {{HOME_ARIA}}>Home</a>
+            <a class="overlay-link" href="/" {{HOME_ARIA}}>Home</a>
             <a class="overlay-link" href="employers.html">Employers</a>
             <a class="overlay-link" href="workers.html">Workers</a>
             <a class="overlay-link" href="about.html">About</a>
@@ -159,8 +160,8 @@
         <div class="links-col">
           <h3>Resources</h3>
           <ul>
-            <li><a href="about.html">About Flok</a></li>
-            <li><a href="industries.html" class="links-col-highlight">Industries</a></li>
+            <li><a href="about.html" class="links-col-highlight">About Flok</a></li>
+            <li><a href="industries.html">Industries</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </div>
@@ -184,173 +185,145 @@
     </div>
   </div>
 
-
   <main id="main-content" tabindex="-1">
 
     <div class="main-section">
+      <h1>Hospitality Recruitment for Every Type of Venue</h1>
 
-      <div class="Hospitality">
-        <h1>Hospitality Recruitment <br>for Every Type of Venue</h1>
-
-        <!-- Navigation buttons -->
-        <div class="Go-To-Industry-Buttons">
-          <button class="industry-btn" data-target=".FineDining">Fine Dining & Luxury Hospitality</button>
-          <button class="industry-btn" data-target=".Pubs-Restaurants-CasualDining">Pubs, Restaurants & Casual
-            Dining</button>
-          <button class="industry-btn" data-target=".ECH">Events & Corporate Hospitality</button>
-          <button class="industry-btn" data-target=".ICC">Institutional & Contract Catering</button>
-          <button class="industry-btn" data-target=".TSH">Travel & Specialist Hospitality</button>
-          <button class="industry-btn" data-target=".why-flok">Why Choose Flok Jobs</button>
-          <button class="industry-btn" id='special-button' data-target=".readyfor">Ready to find your perfect
-            team</button>
-        </div>
-
-        <p class="subheading">Every venue is different. So is every hire.</p>
-        <p class="info">From head chefs to front-of-house, we connect UK venues with the right people, faster.</p>
+      <!-- Navigation buttons -->
+      <div class="Go-To-Industry-Buttons">
+        <button class="industry-btn" data-target="#FineDining">Fine Dining & Luxury Hospitality</button>
+        <button class="industry-btn" data-target="#Pubs">Pubs, Restaurants & Casual
+          Dining</button>
+        <button class="industry-btn" data-target="#Events">Events & Corporate Hospitality</button>
+        <button class="industry-btn" data-target="#InstitutionalCatering">Institutional & Contract Catering</button>
+        <button class="industry-btn" data-target="#Travel">Travel & Specialist Hospitality</button>
+        <button class="industry-btn" data-target="#WhyChoose">Why Choose Flok Jobs</button>
+        <button class="industry-btn" id='special-button' data-target="#Ready">Ready to find your perfect
+          team</button>
       </div>
 
+      <p class="subheading">Every venue is different. So is every hire.</p>
+      <p class="info">From head chefs to front-of-house, we connect UK venues with the right people, faster.</p>
       <hr>
 
-      <!-- Fine Dining & Luxury Hospitality -->
-      <div class="FineDining">
-        <h1>Fine Dining & <br>Luxury Hospitality</h1>
-
-
-        <!-- The Div FineDining-Content is used so that certain things can be done when it comes
-        to styling-->
-        <div class="FineDining-Content">
-          <ul>
+      <div class="Content">
+        <h1>Fine Dining & <br> Luxury Hospitality </h1>
+        <div class="asideContainer" id="FineDining">
+          <div class="textContainer">
             <p class="undertext">Exceptional venues need exceptional staff. Flok supports:</p>
-            <li><b>Michelin-Star Restaurants</b> - Head chefs, sous chefs, and experienced kitchen teams</li>
-            <li><b>
-                Fine Dining & AA Rosette Venues</b> - Front-of-house professionals,
-              wine waiters, chefs, and senior kitchen staff
-            </li>
-            <li><b>Luxury Hotels & 5-Star Resorts</b> - Hotel operations, concierge, guest
-              services, chefs, and food and beverage teams</li>
-            <li><b>Private Hospitality</b> - Private chefs for households, superyachts, chalets, and exclusive events
-            </li>
-          </ul>
-          <img src="images/FineDiningImage.png" alt="Chef Cooking">
+            <ul>
+              <li><b>Michelin-Star Restaurants</b> - Head chefs, sous chefs, and experienced kitchen teams</li>
+              <li><b>
+                  Fine Dining & AA Rosette Venues</b> - Front-of-house professionals,
+                wine waiters, chefs, and senior kitchen staff
+              </li>
+              <li><b>Luxury Hotels & 5-Star Resorts</b> - Hotel operations, concierge, guest
+                services, chefs, and food and beverage teams</li>
+              <li><b>Private Hospitality</b> - Private chefs for households, superyachts, chalets, and exclusive events
+              </li>
+            </ul>
+          </div>
+          <div class="imageContainer">
+            <img src="images/FineDiningImage.png" alt="Chef Cooking">
+          </div>
         </div>
-
-        <p class="undertext" id="undertext2">Find experienced hospitality professionals who understand luxury
+        <p>Find experienced hospitality professionals who understand luxury
           <br>service, precision, and high standards.
         </p>
-
-      </div>
-
-      <hr>
-
-      <!-- Pubs, Restaurants & Casual Dining (PRCD) -->
-      <div class="Pubs-Restaurants-CasualDining">
+        <hr>
         <h1>Pubs, Restaurants <br>& Casual Dining</h1>
-
-        <div class="PRCD-Content">
-          <img src="images/Pubs-Restaurants-CasualDining.png" alt="Waiter Serving at casual dinner">
-          <ul>
+        <!-- reverse is a modifer class that flips the aside content around -->
+        <div class="asideContainer reverse" id="Pubs">
+          <div class="textContainer">
             <p class="undertext">The heart of UK hospitality needs reliable people. Flok supplies staff for:</p>
-            <li><b>Gastro Pubs & Traditional Pubs</b> - Bar staff, kitchen teams, and pub managers</li>
-            <li><b>Restaurant Chains & Independent Eateries</b> - Servers, hosts, and kitchen porters</li>
-            <li><b>Cafés & Coffee Shops</b> - Baristas, café assistants, and shift supervisors</li>
-            <li><b>Fast-Casual Dining</b> - Line cooks, food prep staff, and customer service teams</li>
-          </ul>
+            <ul>
+              <li><b>Gastro Pubs & Traditional Pubs</b> - Bar staff, kitchen teams, and pub managers</li>
+              <li><b>Restaurant Chains & Independent Eateries</b> - Servers, hosts, and kitchen porters</li>
+              <li><b>Cafés & Coffee Shops</b> - Baristas, café assistants, and shift supervisors</li>
+              <li><b>Fast-Casual Dining</b> - Line cooks, food prep staff, and customer service teams</li>
+            </ul>
+          </div>
+          <div class="imageContainer">
+            <img src="images/Pubs-Restaurants-CasualDining.png" alt="Waiter Serving at casual dinner">
+          </div>
         </div>
-        <!-- The ID undertext2 is used for the mobile view
-        As the mobile uses display contents-->
-        <p class="undertext" id="undertext2">Flexible hospitality staff for busy venues that need quality and
-          consistency.</p>
-
-      </div>
-
-      <hr>
-
-      <!-- Events & Corporate Hospitality -->
-      <div class="ECH">
+        <hr>
         <h1>Events & Corporate <br>Hospitality</h1>
-
-
-        <div class="ECH-Content">
-          <ul>
+        <div class="asideContainer" id="Events">
+          <div class="textContainer">
             <p class="undertext">Fast-paced events need people you can trust. We provide staff for:</p>
-            <li><b>Weddings & Private Events</b> - Event servers, bartenders, and catering teams</li>
-            <li><b>Festivals & Stadium Catering</b> - High-volume food service and beverage staff</li>
-            <li><b>Corporate Events & Conferences</b> - Polished hospitality professionals and event teams</li>
-            <li><b>Exhibition & Trade Show Catering</b> - Experienced front-of-house and catering staff</li>
-          </ul>
-          <img src="images/events-corporate-hospitality.png" alt="Two Event Planners">
+            <ul>
+              <li><b>Weddings & Private Events</b> - Event servers, bartenders, and catering teams</li>
+              <li><b>Festivals & Stadium Catering</b> - High-volume food service and beverage staff</li>
+              <li><b>Corporate Events & Conferences</b> - Polished hospitality professionals and event teams</li>
+              <li><b>Exhibition & Trade Show Catering</b> - Experienced front-of-house and catering staff</li>
+            </ul>
+          </div>
+          <div class="imageContainer">
+            <img src="images/events-corporate-hospitality.png" alt="Two Event Planners">
+          </div>
         </div>
-
-        <p class="undertext">Vetted hospitality professionals, ready for any event size or setting.</p>
-
-      </div>
-
-      <hr>
-
-      <!-- Institutional & Contract Catering -->
-      <div class="ICC">
+        <p>Vetted hospitality professionals, ready for any event size or setting.</p>
+        <hr>
         <h1>Institutional <br>& Contract Catering</h1>
-
-
-        <div class="ICC-Content">
-          <img src="images/institutional-contract-catering.png" alt="Contract Catering">
-          <ul>
+        <div class="asideContainer reverse" id="InstitutionalCatering">
+          <div class="textContainer">
             <p class="undertext">Reliable staffing for essential services. Flok covers:</p>
-            <li><b>Healthcare Catering </b>- Hospitals, care homes, and medical facilities</li>
-            <li><b>Education Catering </b>- Schools, colleges, universities, and student dining</li>
-            <li><b>Government & Public Services </b>- Military bases, prisons, and public institutions</li>
-            <li><b>Corporate Dining </b>- Office canteens, executive dining, and workplace catering</li>
-          </ul>
+            <ul>
+              <li><b>Healthcare Catering </b>- Hospitals, care homes, and medical facilities</li>
+              <li><b>Education Catering </b>- Schools, colleges, universities, and student dining</li>
+              <li><b>Government & Public Services </b>- Military bases, prisons, and public institutions</li>
+              <li><b>Corporate Dining </b>- Office canteens, executive dining, and workplace catering</li>
+            </ul>
+          </div>
+          <div class="imageContainer">
+            <img src="images/institutional-contract-catering.png" alt="Contract Catering">
+          </div>
         </div>
-        <p class="undertext">Specialist hospitality recruitment for structured, high-volume, <br>and operationally
-          critical environments.</p>
-      </div>
-
-      <hr>
-
-      <!-- Travel & Specialist Hopstiality -->
-      <div class="TSH">
+        <hr>
         <h1>Travel & Specialist <br>Hospitality</h1>
-        <p class="undertext">Some hospitality roles need adaptable people in unique environments. Flok recruits for:</p>
-        <ul>
-          <li><b>Cruise Ships & Airlines</b> - Galley teams, onboard hospitality, and dining staff</li>
-          <li><b>Railway Catering</b> - Train service staff and mobile hospitality teams</li>
-          <li><b>Street Food & Food Trucks</b> - Mobile catering professionals and event vendors</li>
-          <li><b>Film & TV Location Catering</b> - Production catering teams</li>
-          <li><b>Remote and specialist locations</b> - Offshore sites, holiday parks, resorts, and community kitchens
-          </li>
-        </ul>
-        <p class="undertext">Adaptable hospitality professionals for any location, service style, or environment.</p>
-      </div>
-
-      <hr>
-
-      <!-- Why Choose Flok Jobs for Hospitality Recuritment -->
-      <div class="why-flok">
-        <h1>Why Choose Flok</h1>
-        <div class="why-flok-content">
-          <ul>
-            <li><b>Hospitality specialists</b> - Built around the realities of hospitality hiring</li>
-            <li><b>Verified Professionals</b> - Experienced workers you can trust</li>
-            <li><b>Faster hiring</b> - Connect with suitable candidates quickly</li>
-            <li><b>Flexible Staffing</b> - Permanent, temporary, and seasonal support</li>
-            <li><b>UK-Wide reach</b> - hospitality recruitment across every region</li>
-          </ul>
-          <img src="images/why-flok.png" alt="Chef at an outside restaurant">
+        <div class="asideContainer" id="Travel">
+          <div class="textContainer">
+            <p class="undertext">Some hospitality roles need adaptable people in unique environments. Flok recruits for:
+            </p>
+            <ul>
+              <li><b>Cruise Ships & Airlines</b> - Galley teams, onboard hospitality, and dining staff</li>
+              <li><b>Railway Catering</b> - Train service staff and mobile hospitality teams</li>
+              <li><b>Street Food & Food Trucks</b> - Mobile catering professionals and event vendors</li>
+              <li><b>Film & TV Location Catering</b> - Production catering teams</li>
+              <li><b>Remote and specialist locations</b> - Offshore sites, holiday parks, resorts, and community
+                kitchens
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <hr>
-
-      <div class="readyfor">
-        <h1>Ready to build your team?</h1>
-        <p class="undertext">The right people are out there. Let's find them.
-          <br>Post your vacancy today and start connecting with verified hospitality professionals near you.
+        <p class="undertext" style="width:fit-content;text-align:center;">Adaptable hospitality professionals for any
+          location, service style, or environment.</p>
+        <hr>
+        <h1>Why Choose Flok</h1>
+        <div class="asideContainer" id="WhyChoose">
+          <div class="textContainer">
+            <ul>
+              <li><b>Hospitality specialists</b> - Built around the realities of hospitality hiring</li>
+              <li><b>Verified Professionals</b> - Experienced workers you can trust</li>
+              <li><b>Faster hiring</b> - Connect with suitable candidates quickly</li>
+              <li><b>Flexible Staffing</b> - Permanent, temporary, and seasonal support</li>
+              <li><b>UK-Wide reach</b> - hospitality recruitment across every region</li>
+            </ul>
+          </div>
+          <div class="imageContainer">
+            <img src="images/why-flok.png" alt="Chef at an outside restaurant">
+          </div>
+        </div>
+        <hr>
+        <h1 id="Ready">Ready to build your team?</h1>
+        <p>The right people are out there. Let's find them.<br>
+          Post your vacancy today and start connecting with verified hospitality professionals near you.
         </p>
-      </div>
-
-      <div class="signup-wrapper">
-        <button type="submit" class="signup-btn"><a href="https://app.flokjobs.com/">Get Early Access</a></button>
+        <div class="signup-wrapper">
+          <button type="submit" class="signup-btn"><a href="https://app.flokjobs.com/">Get Early Access</a></button>
+        </div>
       </div>
 
     </div>
@@ -363,9 +336,9 @@
       <div class="footer-col account-col">
         <h3 class="footer-heading">Account</h3>
         <ul class="footer-links">
-          <li><a href="https://app.flokjobs.com/signup">Sign Up</a></li>
-          <li><a href="https://app.flokjobs.com/">Log In</a></li>
-          <li><a href="https://app.flokjobs.com/">Dashboard</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </div>
 
@@ -412,7 +385,7 @@
     <!-- Footer Bottom -->
     <div class="footer-bottom">
       <p class="copyright">© 2025 Flok</p>
-      <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.png" alt="Flok Logo" class="footer-logo"
+      <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.svg" alt="Flok Logo" class="footer-logo"
           width="960" height="450"></a>
     </div>
   </footer>
@@ -423,10 +396,9 @@
 <script src="js/overlay-menu.js"></script>
 <script src="js/back-to-top.js"></script>
 <script src="js/resources-dropdown.js"></script>
-<!-- Nav buttons -->
 <script>
   const headerEl = document.querySelector('.sticky-header');
-  const headerOffset = () => (headerEl ? headerEl.offsetHeight + 12 : 0); // add a little breathing room
+  const headerOffset = () => (headerEl ? headerEl.offsetHeight + 200 : 0); // add a little breathing room
 
   document.querySelectorAll('.industry-btn').forEach(button => {
     button.addEventListener('click', () => {
@@ -447,6 +419,5 @@
 
 
 </script>
-
 
 </html>
