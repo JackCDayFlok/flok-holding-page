@@ -126,7 +126,7 @@ a {
     height: 40px;
     width: auto;
     margin: 0;
-    display:none;
+    display: none;
 }
 
 .mobile-logo {
@@ -1358,8 +1358,8 @@ h1 {
         margin: auto;
     }
 
-    .post-match-steps{
-        gap:0rem;
+    .post-match-steps {
+        gap: 0rem;
     }
 
     .step-description {
@@ -1387,7 +1387,7 @@ h1 {
     pointer-events: none;
     z-index: 0;
     left: -45px;
-    top:-25px;
+    top: -25px;
     width: 400px;
     height: 400px;
     opacity: 0.35;
@@ -1401,8 +1401,8 @@ h1 {
     pointer-events: none;
     z-index: 0;
     right: -45px;
-    transform:scaleX(-1);
-    top:320px;
+    transform: scaleX(-1);
+    top: 320px;
     width: 400px;
     height: 400px;
     opacity: 0.35;
@@ -2079,11 +2079,11 @@ h1 {
     margin: auto;
 }
 
-.hospitality-desktop{
-    font-size:1.8em;
-    width:fit-content;
-    margin:auto;
-    margin-top:2vh;
+.hospitality-desktop {
+    font-size: 1.8em;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2vh;
 }
 
 .industry-speaks-heading::before {
@@ -2274,10 +2274,6 @@ h1 {
     .back-to-top-label {
         display: none;
     }
-
-    .back-to-top-container {
-        bottom: 1rem !important;
-    }
 }
 
 /* Back to Top */
@@ -2315,6 +2311,12 @@ h1 {
 }
 
 @media(max-width:767px) {
+    .back-to-top-container {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
     .hospitality-HIRING-heading {
         font-size: 3rem;
         text-align: center;
@@ -2332,8 +2334,8 @@ h1 {
         margin: auto;
     }
 
-    .hospitality-desktop{
-        display:none;
+    .hospitality-desktop {
+        display: none;
     }
 
 }
@@ -2520,11 +2522,11 @@ h1 {
 
     .header-logo {
         height: 60px;
-        display:block;
+        display: block;
     }
 
-    .mobile-logo{
-        display:none;
+    .mobile-logo {
+        display: none;
     }
 
     .nav-btn {
@@ -2705,7 +2707,7 @@ h1 {
 
     .links-col-highlight {
         font-weight: 900 !important;
-        text-decoration-color:#ffdb15
+        text-decoration-color: #ffdb15
     }
 
     .image-col {
