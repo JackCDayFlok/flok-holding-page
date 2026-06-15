@@ -223,6 +223,252 @@ p {
     max-width: none;
 }
 
+#Travel {
+    display: flex;
+    justify-content: center;
+    padding: 0rem 2rem;
+}
+
+#Travel .undertext {
+    width: fit-content;
+}
+
+#Travel .textContainer {
+    max-width: 1600px;
+    text-align: center;
+}
+
+#Travel ul {
+    display: inline-block;
+    text-align: left;
+}
+
+#WhyChoose ul {
+    text-align: left;
+    list-style: none;
+    padding-left: 0;
+}
+
+#WhyChoose ul li::before {
+    content: "✓";
+    color: #ffdb15;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.signup-wrapper {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.signup-btn {
+    background: #ffdb15;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    padding: 18px 55px;
+    border: 2px solid white;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.signup-btn a {
+    color: black !important;
+    text-decoration: none;
+}
+
+#FineDining::before {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 11;
+    top: 800px;
+    transform: scaleX(-1);
+    right: -20px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.15;
+}
+
+#Pubs::before {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 20;
+    left: -20px;
+    width: 400px;
+    height: 400px;
+    transform: scaleX(1)translateY(115px);
+    top: 1700px;
+    opacity: 0.15;
+}
+
+#Events::before {
+    content: '';
+    position: absolute;
+    background: url('../images/birds4.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 20;
+    right: 33px;
+    width: 400px;
+    height: 400px;
+    transform: scaleX(1)translateY(-245px);
+    opacity: 0.6;
+}
+
+#InstitutionalCatering::before {
+    content: '';
+    position: absolute;
+    background: url('../images/dots1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 20;
+    right: -65px;
+    width: 600px;
+    height: 600px;
+    transform: scaleX(-1)translateY(0px);
+    opacity: 0.15;
+}
+
+#Travel::before {
+    content: '';
+    position: absolute;
+    background: url('../images/birds1.webp') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 20;
+    top: unset;
+    left: 100px;
+    width: 1200px;
+    height: 1200px;
+    transform: scaleX(1)translateY(900px);
+    opacity: 0.03;
+}
+
+@media(max-width:767px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    ul,
+    li {
+        width: unset !important;
+    }
+
+    .main-section {
+        padding: 0px;
+        padding-top: 100px;
+        width: 90vw;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .Go-To-Industry-Buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        width: unset;
+        margin: 2rem auto 2rem;
+        padding: unset;
+    }
+
+    .industry-btn {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 1.25rem;
+        padding: 0.75rem 0.75rem;
+        background: transparent;
+        color: white;
+        border: 3px solid white;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .industry-btn:hover {
+        background: white;
+        color: black;
+        transform: translateY(-2px);
+    }
+
+    .industry-btn:focus {
+        outline: 3px solid #ffdb15;
+        outline-offset: 2px;
+    }
+
+    .subheading {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 19px;
+    }
+
+    .asideContainer,
+    .asideContainer.reverse {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .imageContainer {
+        width: 100%;
+        flex: unset;
+    }
+
+    .imageContainer img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .textContainer {
+        order: 2;
+    }
+
+
+    p,
+    .undertext {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    ul li {
+        font-size: 22px;
+        margin-top: 1rem;
+    }
+
+    #FineDining::before,
+    #Pubs::before,
+    #Events::before,
+    #InstitutionalCatering::before,
+    #Travel::before {
+        display: none;
+    }
+
+    .signup-btn{
+        margin-bottom:2vh;
+    }
+
+}
+
 /* ==========================================================================
    HEADER (Mobile-first)
    ========================================================================== */

@@ -318,7 +318,7 @@ a {
 }
 
 .overlay-logo {
-    height: clamp(30px, 6vh, 50px);
+    height: clamp(86px, 6vh, 90px);
     width: auto;
 }
 

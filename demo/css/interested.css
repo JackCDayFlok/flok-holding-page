@@ -315,7 +315,7 @@ a {
 }
 
 .overlay-logo {
-    height: 40px;
+    height: clamp(86px, 6vh, 90px);
     width: auto;
 }
 
