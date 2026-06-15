@@ -130,7 +130,7 @@
             </div>
           </div>
           <nav class="overlay-nav" aria-label="Mobile navigation">
-            <a class="overlay-link" href="/" {{HOME_ARIA}}>Home</a>
+            <a class="overlay-link" href="index.html" {{HOME_ARIA}}>Home</a>
             <a class="overlay-link" href="employers.html">Employers</a>
             <a class="overlay-link" href="workers.html">Workers</a>
             <a class="overlay-link" href="about.html">About</a>
@@ -192,14 +192,14 @@
 
       <!-- Navigation buttons -->
       <div class="Go-To-Industry-Buttons">
-        <button class="industry-btn" data-target="#FineDining">Fine Dining & Luxury Hospitality</button>
-        <button class="industry-btn" data-target="#Pubs">Pubs, Restaurants & Casual
+        <button class="industry-btn" data-target=".FineDining">Fine Dining & Luxury Hospitality</button>
+        <button class="industry-btn" data-target=".Pubs-Restaurants-CasualDining">Pubs, Restaurants & Casual
           Dining</button>
-        <button class="industry-btn" data-target="#Events">Events & Corporate Hospitality</button>
-        <button class="industry-btn" data-target="#InstitutionalCatering">Institutional & Contract Catering</button>
-        <button class="industry-btn" data-target="#Travel">Travel & Specialist Hospitality</button>
-        <button class="industry-btn" data-target="#WhyChoose">Why Choose Flok Jobs</button>
-        <button class="industry-btn" id='special-button' data-target="#Ready">Ready to find your perfect
+        <button class="industry-btn" data-target=".ECH">Events & Corporate Hospitality</button>
+        <button class="industry-btn" data-target=".ICC">Institutional & Contract Catering</button>
+        <button class="industry-btn" data-target=".TSH">Travel & Specialist Hospitality</button>
+        <button class="industry-btn" data-target=".why-flok">Why Choose Flok Jobs</button>
+        <button class="industry-btn" id='special-button' data-target=".readyfor">Ready to find your perfect
           team</button>
       </div>
 
@@ -209,7 +209,7 @@
 
       <div class="Content">
         <h1>Fine Dining & <br> Luxury Hospitality </h1>
-        <div class="asideContainer" id="FineDining">
+        <div class="asideContainer" id="fineDining">
           <div class="textContainer">
             <p class="undertext">Exceptional venues need exceptional staff. Flok supports:</p>
             <ul>
@@ -267,7 +267,7 @@
         <p>Vetted hospitality professionals, ready for any event size or setting.</p>
         <hr>
         <h1>Institutional <br>& Contract Catering</h1>
-        <div class="asideContainer reverse" id="InstitutionalCatering">
+        <div class="asideContainer reverse" id="institutionalCatering">
           <div class="textContainer">
             <p class="undertext">Reliable staffing for essential services. Flok covers:</p>
             <ul>
@@ -282,47 +282,20 @@
           </div>
         </div>
         <hr>
-        <h1>Travel & Specialist <br>Hospitality</h1>
-        <div class="asideContainer" id="Travel">
+        <h1>Events & Corporate <br>Hospitality</h1>
+        <div class="asideContainer" id="Events">
           <div class="textContainer">
-            <p class="undertext">Some hospitality roles need adaptable people in unique environments. Flok recruits for:
-            </p>
+            <p class="undertext">Fast-paced events need people you can trust. We provide staff for:</p>
             <ul>
-              <li><b>Cruise Ships & Airlines</b> - Galley teams, onboard hospitality, and dining staff</li>
-              <li><b>Railway Catering</b> - Train service staff and mobile hospitality teams</li>
-              <li><b>Street Food & Food Trucks</b> - Mobile catering professionals and event vendors</li>
-              <li><b>Film & TV Location Catering</b> - Production catering teams</li>
-              <li><b>Remote and specialist locations</b> - Offshore sites, holiday parks, resorts, and community
-                kitchens
-              </li>
-            </ul>
-          </div>
-        </div>
-        <p class="undertext" style="width:fit-content;text-align:center;">Adaptable hospitality professionals for any
-          location, service style, or environment.</p>
-        <hr>
-        <h1>Why Choose Flok</h1>
-        <div class="asideContainer" id="WhyChoose">
-          <div class="textContainer">
-            <ul>
-              <li><b>Hospitality specialists</b> - Built around the realities of hospitality hiring</li>
-              <li><b>Verified Professionals</b> - Experienced workers you can trust</li>
-              <li><b>Faster hiring</b> - Connect with suitable candidates quickly</li>
-              <li><b>Flexible Staffing</b> - Permanent, temporary, and seasonal support</li>
-              <li><b>UK-Wide reach</b> - hospitality recruitment across every region</li>
+              <li><b>Weddings & Private Events</b> - Event servers, bartenders, and catering teams</li>
+              <li><b>Festivals & Stadium Catering</b> - High-volume food service and beverage staff</li>
+              <li><b>Corporate Events & Conferences</b> - Polished hospitality professionals and event teams</li>
+              <li><b>Exhibition & Trade Show Catering</b> - Experienced front-of-house and catering staff</li>
             </ul>
           </div>
           <div class="imageContainer">
-            <img src="images/why-flok.png" alt="Chef at an outside restaurant">
+            <img src="images/events-corporate-hospitality.png" alt="Two Event Planners">
           </div>
-        </div>
-        <hr>
-        <h1 id="Ready">Ready to build your team?</h1>
-        <p>The right people are out there. Let's find them.<br>
-          Post your vacancy today and start connecting with verified hospitality professionals near you.
-        </p>
-        <div class="signup-wrapper">
-          <button type="submit" class="signup-btn"><a href="https://app.flokjobs.com/">Get Early Access</a></button>
         </div>
       </div>
 
@@ -396,28 +369,5 @@
 <script src="js/overlay-menu.js"></script>
 <script src="js/back-to-top.js"></script>
 <script src="js/resources-dropdown.js"></script>
-<script>
-  const headerEl = document.querySelector('.sticky-header');
-  const headerOffset = () => (headerEl ? headerEl.offsetHeight + 200 : 0); // add a little breathing room
-
-  document.querySelectorAll('.industry-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const targetSelector = button.dataset.target;
-      const targetElement = document.querySelector(targetSelector);
-
-      if (targetElement) {
-        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerOffset();
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-
-</script>
 
 </html>
