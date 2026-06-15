@@ -115,6 +115,13 @@ a {
     height: 40px;
     width: auto;
     margin: 0;
+    display: none;
+}
+
+.mobile-logo {
+    height: 50px;
+    width: auto;
+    margin: 0;
 }
 
 /* Mobile Navigation */
@@ -881,6 +888,11 @@ textarea {
 
     .header-logo {
         height: 60px;
+        display: block;
+    }
+
+    .mobile-logo {
+        display: none;
     }
 
     .nav-btn {

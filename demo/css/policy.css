@@ -123,6 +123,13 @@ a {
     height: 40px;
     width: auto;
     margin: 0;
+    display: none;
+}
+
+.mobile-logo {
+    height: 50px;
+    width: auto;
+    margin: 0;
 }
 
 
@@ -318,7 +325,7 @@ a {
 }
 
 .overlay-logo {
-    height: clamp(86px, 6vh, 90px);
+    height: clamp(30px, 6vh, 50px);
     width: auto;
 }
 
@@ -646,6 +653,11 @@ hr {
 
     .header-logo {
         height: 60px;
+        display: block;
+    }
+
+    .mobile-logo {
+        display: none;
     }
 
     .nav-btn {

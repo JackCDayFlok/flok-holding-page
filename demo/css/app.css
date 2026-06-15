@@ -71,6 +71,19 @@ a {
     color: #ffdb15;
 }
 
+.header-logo {
+    height: 40px;
+    width: auto;
+    margin: 0;
+    display: none;
+}
+
+.mobile-logo {
+    height: 50px;
+    width: auto;
+    margin: 0;
+}
+
 /* Accessibility */
 .skip-link {
     position: absolute;
@@ -123,12 +136,6 @@ a {
     max-width: 100%;
     height: 100%;
     min-height: 44px;
-}
-
-.header-logo {
-    height: 40px;
-    width: auto;
-    margin: 0;
 }
 
 /* Mobile Navigation */
@@ -318,7 +325,7 @@ a {
 }
 
 .overlay-logo {
-    height: clamp(86px, 6vh, 90px);
+    height: clamp(30px, 6vh, 50px);
     width: auto;
 }
 
@@ -667,7 +674,13 @@ a {
 
     .header-logo {
         height: 60px;
+        display: block;
     }
+
+    .mobile-logo {
+        display: none;
+    }
+
 
     .nav-btn {
         font-family: 'Inter', sans-serif;
