@@ -1,864 +1,391 @@
 /* ==========================================================================
-   FONTS
+   REGISTER INTEREST PAGE
+   Page-specific styles only. Header, footer, fonts and base styles live in
+   template.css, which is loaded first.
    ========================================================================== */
-
-@font-face {
-    font-family: "Inter";
-    src: url("../fonts/Inter-Regular.woff2") format("woff2");
-    /* fallback */
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("../fonts/Inter-Bold.woff2") format("woff2");
-    /* fallback */
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* ==========================================================================
-   BASE STYLES
-   ========================================================================== */
-
-html,
-body {
-    overflow-x: hidden;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    margin: 0;
-    background: #fff;
-    color: white;
-}
-
-body.menu-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-main {
-    position: relative;
-}
 
 :root {
-    --container-min: 1200px;
-    --container-max: 1600px;
-}
-
-
-a {
-    color: #ffdb15;
-}
-
-/* Show skip link only when tabbed to */
-.skip-link {
-    position: absolute;
-    left: 0.75rem;
-    top: 0.75rem;
-    transform: translateY(-200%);
-    background: #ffdb15;
-    color: #000;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    font: 600 0.95rem/1 'Inter', sans-serif;
-    text-decoration: none;
-    z-index: 3000;
-    /* higher than .sticky-header (1000) and overlay (2000) */
-}
-
-.skip-link:focus,
-.skip-link:focus-visible {
-    transform: translateY(0);
-    outline: 3px solid #000;
-}
-
-#main-content {
-    scroll-margin-top: 96px;
-    /* works for in-page anchor jumps */
+    --flok-navy: #1F1F50;
+    --flok-yellow: #FFDB15;
+    --interest-bg: #F4F5F9;
+    --interest-text: #1F1F50;
+    --interest-muted: #5A5A78;
+    --interest-border: #C9CBD8;
+    --interest-error: #C62828;
+    --interest-radius: 10px;
+    --interest-header-offset: 88px;
 }
 
 /* ==========================================================================
-   HEADER STYLES
+   LAYOUT (Mobile-first)
    ========================================================================== */
 
-.sticky-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    padding: 2rem 1rem;
-    min-height: 60px;
+.interest-page {
+    display: block;
+    padding-top: var(--interest-header-offset);
+    background: var(--interest-bg);
+}
+
+.interest-form-side {
+    padding: 1.5rem 1rem 3rem;
+}
+
+/* Header logo already identifies the site on mobile, so drop the navy panel. */
+.interest-brand-side {
+    display: none;
+}
+
+/* ==========================================================================
+   CARD
+   ========================================================================== */
+
+.interest-card {
     box-sizing: border-box;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 100%;
-    height: 100%;
-    min-height: 44px;
-    /* Minimum touch target */
-}
-
-.header-logo {
-    height: 40px;
-    width: auto;
-    margin: 0;
-    display: none;
-}
-
-.mobile-logo {
-    height: 50px;
-    width: auto;
-    margin: 0;
-}
-
-/* Mobile Navigation */
-.header-buttons {
-    display: flex;
-    gap: clamp(0.2rem, 1vw, 0.5rem);
-    flex: 1;
-    justify-content: center;
-    margin: 0 clamp(0.3rem, 2vw, 1rem);
-}
-
-.header-btn {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
-    color: #ffdb15;
-    border: none;
-    padding: clamp(0.4rem, 1.5vw, 0.7rem) clamp(0.6rem, 2.5vw, 1.2rem);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: normal;
-    flex: 1;
-    text-align: center;
-    word-break: break-word;
-}
-
-.header-btn:hover {
-    background: rgba(62, 73, 137, 1);
-    transform: translateY(-1px);
-}
-
-.header-btn:active {
-    transform: translateY(0);
-}
-
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    cursor: pointer;
-    flex-shrink: 0;
-    padding: 8px;
-    min-width: 32px;
-    align-items: center;
-    background: none;
-    border: none;
-}
-
-.hamburger-menu span {
-    width: 25px;
-    height: 4px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.hamburger-menu:hover span {
-    background: #ffdb15;
-}
-
-/* Desktop Navigation - Hidden by default */
-.desktop-nav {
-    display: none;
-}
-
-.login-link {
-    display: none;
-}
-
-.nav-btn {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 0.7rem 1.3rem;
-    background: #fff;
-    border-radius: 999px;
-    color: #000;
-    text-decoration: none;
-    display: inline-block;
-    border: none;
-    transition: transform 0.2s ease, background 0.25s ease;
-    box-shadow: none;
-    position: relative;
-}
-
-.nav-btn-highlight {
-    font-weight: 700;
-}
-
-.nav-btn-highlight::after {
-    content: '.';
-    position: absolute;
-    pointer-events: none;
-    color: white;
-    font-size: 1.5rem;
-
-    left: 50%;
-    bottom: -25px;
-    /* keep your current vertical position */
-    transform: translateX(-50%);
-    /* true center */
-
-    transition: none;
-    /* no independent movement */
-}
-
-/* Keep hover/focus identical (optional, but clean) */
-.nav-btn-highlight:hover::after,
-.nav-btn-highlight:focus-visible::after {
-    transform: translateX(-50%);
-}
-
-.nav-btn-highlight:hover,
-.nav-btn-highlight:focus-visible {
-    transform: none;
-}
-
-.nav-btn:hover {
-    transform: translateY(-5px);
-}
-
-.nav-btn.active {
-    background: #ffdb15;
-    color: black;
-}
-
-.nav-btn.cta {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    background: #ffdb15;
-    font-weight: 700;
-    color: black;
-    padding: 1rem 2rem;
-    border: 2px solid white;
-}
-
-/* ========================
-   MOBILE OVERLAY MENU
-   ======================== */
-
-.mobile-overlay {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    padding: 3rem 1.5rem;
-    z-index: 2000;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity .35s ease, transform .35s ease;
-    overflow-x: hidden;
-}
-
-.mobile-overlay.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.logo-wrapper::after {
-    content: '';
-    position: absolute;
-    background: url('../images/birds3.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 11;
-    top: -80px;
-    right: -175px;
-    width: 405px;
-    height: 315px;
-    opacity: 0.05;
-}
-
-.overlay-content {
     width: 100%;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: relative;
-    margin-top: -1rem;
-}
-
-.overlay-login-wrapper {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.overlay-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: -2rem;
-}
-
-.overlay-logo {
-    height: 40px;
-    width: auto;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    position: absolute;
-    bottom: -5rem;
-    right: 0rem;
-    width: 56px;
-    height: 56px;
-}
-
-.circle-arrow {
-    background: #ffdb15;
-    border: 3px solid white;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.circle-arrow .arrow {
-    display: block;
-    transform: rotate(90deg);
-    /* showing left arrow to indicate close */
-    width: 30px;
-    height: 30px;
-}
-
-/* Navigation links as big pills */
-.overlay-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.overlay-nav::before {
-    content: '';
-    position: absolute;
-    background: url('../images/dots1.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 11;
-    top: 185px;
-    left: 0px;
-    width: 400px;
-    height: 430px;
-    opacity: 0.1;
-}
-
-.overlay-nav::after {
-    content: '';
-    position: absolute;
-    background: url('../images/dots1.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 11;
-    top: 300px;
-    right: 0px;
-    width: 400px;
-    height: 430px;
-    opacity: 0.1;
-    transform: scaleX(-1);
-}
-
-.overlay-link {
-    background: white;
-    color: black;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    padding: 1.4rem 2rem;
-    border-radius: 38px;
-    text-align: center;
-    display: block;
-    transition: transform .2s ease;
-}
-
-.overlay-link:hover {
-    transform: translateY(-2px);
-}
-
-.overlay-link.active {
-    background: #ffdb15;
-    color: #1f1f50;
-}
-
-.overlay-link.interested {
-    border: 3px solid white;
-    background: #ffdb15;
-}
-
-/* Overlay Login */
-.overlay-login {
-    display: inline-block;
-    width: auto;
-    padding: 0;
-    color: #ffdb15;
-    text-decoration: underline;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 1.75rem 1.25rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(31, 31, 80, 0.08), 0 1px 3px rgba(31, 31, 80, 0.06);
+    color: var(--interest-text);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
-    cursor: pointer;
+}
+
+.interest-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.interest-subtitle {
+    margin: 0 0 1.5rem;
+    color: var(--interest-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* ==========================================================================
-   MAIN CONTENT SECTIONS - INTERESTED PAGE
+   TABS
    ========================================================================== */
 
-/* Main Section */
-.main-section {
-    background: linear-gradient(to bottom, #1f1f50, #3a3a6f);
-    padding: 14rem 1.5rem 17rem 1.5rem;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.interest-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+    padding: 4px;
+    background: #ECEDF3;
+    border-radius: var(--interest-radius);
 }
 
-.content {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    text-align: center;
+.interest-tab {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--interest-muted);
+    font: 700 0.9rem/1.2 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.3;
-    margin: 0 0 3rem;
-    color: white;
-    font-weight: 700;
+.interest-tab:hover {
+    color: var(--interest-text);
 }
 
-.highlight {
-    color: #ffdb15;
+.interest-tab[aria-selected="true"] {
+    background: var(--flok-navy);
+    color: #fff;
 }
 
-/* Button Container */
-.button-container {
+.interest-tab:focus-visible {
+    outline: 3px solid var(--flok-yellow);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   FORM FIELDS
+   ========================================================================== */
+
+.interest-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
+    gap: 1rem;
 }
 
-.choice-btn {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    background: #ffdb15;
-    color: #000;
-    border: 3px solid white;
-    padding: 1.5rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    min-height: 70px;
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.field {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    min-width: 0;
 }
 
-.choice-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    background: #ffe55c;
+.field[hidden] {
+    display: none;
 }
 
-.choice-btn:active {
-    transform: translateY(0);
-}
-
-.content::before {
-    content: '';
-    position: absolute;
-    background: url('../images/dots1.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 11;
-    top: 150px;
-    left: 0px;
-    width: 400px;
-    height: 430px;
-    opacity: 0.1;
-}
-
-.content::after {
-    content: '';
-    position: absolute;
-    background: url('../images/dots1.webp') no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 11;
-    top: 400px;
-    right: 0px;
-    width: 400px;
-    height: 430px;
-    opacity: 0.1;
-    transform: scaleX(-1);
-}
-
-p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 0.94rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-/* ==========================================================================
-    FOOTER STYLES
-    ========================================================================== */
-
-.footer {
-    background-color: #1f1f50;
-    color: white;
-    padding: 2rem 1.5rem 4rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    position: relative;
-    min-height: 200px;
-}
-
-.footer-columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-stretch;
-}
-
-.footer-column {
-    width: 45%;
-}
-
-.footer-divider {
-    width: 1px;
-    background-color: #fff;
-    height: auto;
-    margin: 0 1rem;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1rem;
-}
-
-.footer-links li {
-    margin-bottom: 0.3rem;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.social-heading {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.social-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social-links li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.social-links a {
-    color: white;
-    text-decoration: underline;
-    font-size: 0.95rem;
-}
-
-.footer-bottom {
-    position: absolute;
-    bottom: 1rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.footer-logo {
-    height: 40px;
-    width: auto;
-    margin: 0;
-}
-
-.copyright {
+.field label {
+    margin-bottom: 0.4rem;
     font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+    padding: 0 0.85rem;
+    border: 1px solid var(--interest-border);
+    border-radius: var(--interest-radius);
+    background-color: #fff;
+    color: var(--interest-text);
+    font: 400 1rem 'Inter', sans-serif;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231F1F50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    cursor: pointer;
+}
+
+.field input[type="file"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px dashed var(--interest-border);
+    border-radius: var(--interest-radius);
+    color: var(--interest-muted);
+    font: 400 0.9rem 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+.field input[type="file"]::file-selector-button {
+    margin-right: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    border: 0;
+    border-radius: 8px;
+    background: #ECEDF3;
+    color: var(--interest-text);
+    font: 700 0.85rem 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+    outline: none;
+    border-color: var(--flok-navy);
+    box-shadow: 0 0 0 3px rgba(31, 31, 80, 0.2);
+}
+
+.field [aria-invalid="true"] {
+    border-color: var(--interest-error);
+}
+
+.field [aria-invalid="true"]:focus-visible {
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.2);
+}
+
+.field-hint {
+    margin: 0.35rem 0 0;
+    color: var(--interest-muted);
+    font-size: 0.8rem;
+}
+
+.field-error,
+.form-error {
     margin: 0;
-    align-self: flex-end;
-    font-family: 'Inter';
+    color: var(--interest-error);
+    font-size: 0.85rem;
     font-weight: 400;
+    line-height: 1.4;
+}
+
+.field-error:not(:empty) {
+    margin-top: 0.35rem;
+}
+
+.form-error:empty {
+    display: none;
+}
+
+/* Checkbox */
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+/* Native checkbox, explicitly visible and tinted with the brand navy. */
+.privacy-agree {
+    -webkit-appearance: checkbox;
+    appearance: auto;
+    display: block;
+    position: static;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: 1;
+    visibility: visible;
+    accent-color: var(--flok-navy);
+    cursor: pointer;
+}
+
+.privacy-agree:focus-visible {
+    outline: 3px solid var(--flok-navy);
+    outline-offset: 2px;
+}
+
+.field .checkbox-row label {
+    margin: 0;
+    font-weight: 400;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.checkbox-row a {
+    color: var(--flok-navy);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.privacy-agree[aria-invalid="true"] {
+    outline: 2px solid var(--interest-error);
+    outline-offset: 1px;
+}
+
+.privacy-agree[aria-invalid="true"]:focus-visible {
+    outline-width: 3px;
+    outline-offset: 2px;
+}
+
+/* Line the error up with the label text rather than the checkbox. */
+.field-checkbox .field-error {
+    padding-left: calc(20px + 0.6rem);
 }
 
 /* ==========================================================================
-   DESKTOP STYLES (768px and up)
+   SUBMIT
+   ========================================================================== */
+
+.interest-submit {
+    width: 100%;
+    height: 48px;
+    margin-top: 0.5rem;
+    border: 0;
+    border-radius: var(--interest-radius);
+    background: var(--flok-yellow);
+    color: var(--flok-navy);
+    font: 700 1rem 'Inter', sans-serif;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.interest-submit:hover:not(:disabled) {
+    filter: brightness(0.95);
+}
+
+.interest-submit:focus-visible {
+    outline: 3px solid var(--flok-navy);
+    outline-offset: 2px;
+}
+
+.interest-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* ==========================================================================
+   PLACEHOLDER + CONFIRMATION
+   ========================================================================== */
+
+.interest-placeholder,
+.interest-confirmation {
+    padding: 1rem 0 0.5rem;
+    text-align: center;
+}
+
+.interest-placeholder h2,
+.interest-confirmation h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.interest-confirmation h2:focus {
+    outline: none;
+}
+
+.interest-placeholder p,
+.interest-confirmation p {
+    margin: 0;
+    color: var(--interest-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   DESKTOP
    ========================================================================== */
 
 @media (min-width: 768px) {
-
-    .header-content,
-    .gradient-box .content,
-    .how-it-works-section .content,
-    .gradient-box-bottom .content,
-    .footer-columns,
-    .footer-bottom {
-        /* clamp(min, fluid, max): grows with viewport but never exceeds max */
-        max-width: clamp(var(--container-min), 85vw, var(--container-max)) !important;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 2rem;
-        padding-right: 2rem;
+    :root {
+        --interest-header-offset: 104px;
     }
 
-    /* Header Desktop Styles */
-    .header-buttons,
-    .hamburger-menu {
-        display: none;
-    }
-
-    .desktop-nav {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .header-content {
-        max-width: min(1200px, 95%);
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .header-logo {
-        height: 60px;
-        display: block;
-    }
-
-    .mobile-logo {
-        display: none;
-    }
-
-    .login-link {
-        font-size: 1rem;
-        font-family: 'Inter';
-        font-weight: 400;
-        color: #ffdb15;
-        text-decoration: underline;
-        margin-left: 20px;
-        display: inline-block;
-    }
-
-    /* Main Section Desktop */
-    .main-section {
-        padding: 17rem 2rem 17rem 2rem;
-    }
-
-    .main-section .content {
-        margin: 0 auto;
-    }
-
-    h1 {
-        font-size: 3.5rem;
-        margin-bottom: 4rem;
-    }
-
-    /* Desktop Button Layout */
-    .button-container {
-        flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .choice-btn {
-        font-size: 1.5rem;
-        padding: 2rem 3rem;
-        width: 100%;
-        /* Scale with container width like overlay buttons */
-
-        min-height: 90px;
-        flex: none;
-        /* Remove flex: 1 to use width instead */
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    .content::before {
-        top: 150px;
-        left: 0px;
-        width: 300px;
-        height: 530px;
-    }
-
-    .content::after {
-        top: 400px;
-        right: 0px;
-        width: 300px;
-        height: 530px;
-    }
-
-    /* Footer Desktop */
-    .footer {
-        padding: 4rem 2rem 5rem;
-    }
-
-    .footer-columns {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: stretch;
-        gap: 2rem;
-        max-width: min(1200px, 95%);
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-    }
-
-    .footer-column {
+    .interest-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
         box-sizing: border-box;
-        padding: 0 0;
-        text-align: center;
+    }
+
+    .interest-form-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 2rem;
+    }
+
+    .interest-card {
+        padding: 2.5rem 2.25rem;
+    }
+
+    .interest-title {
         font-size: 2rem;
     }
 
-    .footer-divider {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-        width: 1px;
-        height: 100%;
-        background-color: white;
-        opacity: 1;
-        margin: 0 0;
+    .field-row {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .footer-heading {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 1.6rem;
-        color: #ffdb15;
-        margin-bottom: 1.5rem;
-    }
-
-    .footer-links {
+    .interest-brand-side {
         display: flex;
+        align-items: center;
         justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-        margin-left: -1.5rem;
-        line-height: 1.6;
-        font-size: 1.5rem;
+        padding: 3rem;
+        background: var(--flok-navy);
     }
 
-    .footer-links li {
-        margin: 0;
-        font-size: 1rem;
-    }
-
-    .footer-links a {
-        font-size: 1rem;
-    }
-
-    .footer-left {
-        padding-left: 4rem;
-    }
-
-    .footer-left .footer-links a {
-        font-size: 1.2rem;
-    }
-
-    .social-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-
-    .social-links li {
-        font-size: 1.5rem;
-        gap: 0.4rem;
-    }
-
-    .social-links a {
-        font-size: 1.2rem;
-    }
-
-    .footer-bottom {
-        margin-top: 3rem;
-        max-width: min(1200px, 95%);
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 1rem;
-    }
-
-    .footer-logo {
-        height: 40px;
+    .interest-brand-logo {
+        width: 60%;
+        max-width: 360px;
+        height: auto;
     }
 }
