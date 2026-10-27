@@ -69,6 +69,25 @@
     return false;
   }
 
+  // Optional: choose ONE normal form to store/display
+  // - "national": force 0XXXXXXXXXX
+  // - "e164": force +44XXXXXXXXXX
+  function toUkFormat(raw, mode = "national") {
+    const s = normalizeUkPhone(raw);
+    if (s === "") return "";
+
+    if (/^0[1-9]\d{9}$/.test(s)) {
+      return mode === "e164" ? "+44" + s.slice(1) : s;
+    }
+    if (/^\+44[1-9]\d{9}$/.test(s)) {
+      return mode === "national" ? "0" + s.slice(3) : s;
+    }
+    if (/^[1-9]\d{9}$/.test(s)) {
+      return mode === "e164" ? "+44" + s : "0" + s;
+    }
+    return raw; // leave as-is if weird
+  }
+
   /* ------------------------------------------------------------------------
      Validation
      ------------------------------------------------------------------------ */
@@ -172,7 +191,7 @@
       firstName: formData.firstName,
       lastName: formData.lastName,
       email: formData.email,
-      phone: normalizeUkPhone(formData.phone),
+      phone: toUkFormat(formData.phone, "e164"),
       location: formData.location,
       workType: formData.workType,
       privacyConsent: formData.agreePrivacy === true,
