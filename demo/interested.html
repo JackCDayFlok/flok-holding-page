@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ——————————————— CORE ——————————————— -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Register your interest in Flok Jobs. Get early access to hospitality shifts as a worker, or to verified staff as an employer.">
+
+  <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
+  <link rel="canonical" href="https://www.flokjobs.com/interested">
+
+  <!-- ——————————— SOCIAL CARDS ——————————— -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flokjobs.com/interested">
+  <meta property="og:title" content="Register your interest | Flok Jobs">
+  <meta property="og:site_name" content="Flok Jobs">
+  <meta property="og:description" content="Get early access to Flok Jobs, the UK hospitality recruitment platform. Register your interest today.">
+  <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
+  <meta property="og:image:alt" content="Flok Jobs logo on a navy background">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Register your interest | Flok Jobs">
+  <meta name="twitter:description" content="Get early access to Flok Jobs, the UK hospitality recruitment platform. Register your interest today.">
+  <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+
+  <!-- ———————————  STRUCTURED DATA  ——————————— -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Flok Jobs",
+    "url":"https://www.flokjobs.com",
+    "logo":"https://www.flokjobs.com/images/flokjobs-logo.png",
+    "description":"UK's leading hospitality recruitment platform connecting venues with verified chefs, bar staff, waiters and hospitality professionals.",
+    "sameAs":[
+      "https://www.facebook.com/people/Flok-Jobs/61576512420509",
+      "https://www.linkedin.com/company/flokjobs",
+      "https://www.instagram.com/flokjobs"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"GB"
+    }
+  }
+  </script>
+
+  <!-- ———————————  PWA / THEME  ——————————— -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Flok Jobs">
+  <meta name="theme-color" content="#121212">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+  <!-- ———————————  PRELOADING ——————————— -->
+  <link rel="preload" as="image" href="/images/silverbackground1.svg" type="image/svg+xml" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/silverbackground2.svg" type="image/svg+xml" media="(min-width: 768px)">
+  <link rel="preload" as="font" href="/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/Inter-Bold.woff2" type="font/woff2" crossorigin>
+
+  <!-- —————————————————  ASSETS  ————————————————— -->
+  <title>Register your interest | Flok Jobs</title>
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192.png">
+  <link rel="stylesheet" href="css/template.css">
+  <link rel="stylesheet" href="css/interested.css">
+</head>
+
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Fixed Header Navigation -->
+  <header class="sticky-header">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.svg" class="header-logo" alt="Flok Logo"
+          width="960" height="450"></a>
+      <a href="index.html"><img src="images/Flok_Logo_Mobile.svg" class="mobile-logo" alt="Flok Logo" width="960"
+          height="450"></a>
+
+      <!-- Mobile Action Buttons -->
+      <div class="header-buttons">
+        <button class="header-btn app-btn" onclick="window.open('app.html')">Get the App</button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary">
+        <div class="menu-group">
+          <a href="index.html" class="nav-btn">Home</a>
+          <a href="employers.html" class="nav-btn">Employers</a>
+          <a href="workers.html" class="nav-btn">Workers</a>
+
+          <!-- Resources toggle -->
+          <button id="resourcesToggle" class="nav-btn resources-btn" type="button" aria-expanded="false"
+            aria-controls="resourcesDropdown">
+            Resources
+          </button>
+
+          <!-- Get the App -->
+          <a href="app.html" class="nav-btn cta-app">Get the App</a>
+        </div>
+
+        <!-- Auth links -->
+        <div class="auth-links">
+          <a href="https://app.flokjobs.com/">Dashboard</a>
+        </div>
+      </nav>
+
+
+      <!-- Mobile Hamburger Menu -->
+      <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Open menu" aria-controls="mobileOverlay"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Mobile Overlay Menu -->
+      <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true">
+        <div class="overlay-content">
+          <div class="overlay-header">
+            <div class="logo-wrapper">
+              <a href="index.html"><img src="images/Flok_Logo_Mobile_Menu.svg" class="overlay-logo" alt="Flok Logo"
+                  width="960" height="450"></a>
+            </div>
+          </div>
+          <nav class="overlay-nav" aria-label="Mobile navigation">
+            <a class="overlay-link" href="index.html">Home</a>
+            <a class="overlay-link" href="employers.html">Employers</a>
+            <a class="overlay-link" href="workers.html">Workers</a>
+            <a class="overlay-link" href="about.html">About</a>
+          </nav>
+          <div class="overlay-login-wrapper">
+            <a href="https://app.flokjobs.com/">Dashboard</a>
+          </div>
+
+          <button id="closeOverlay" class="close-btn" aria-label="Close menu">
+            <div class="circle-arrow">
+              <img src="images/arrow.png" class="arrow" alt="Back arrow" width="50" height="50">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="resourcesDropdown" class="resources-dropdown" role="region" aria-labelledby="resourcesToggle">
+    <div class="resources-inner">
+      <!-- decorative dots -->
+      <img class="dropdown-decor-left" src="images/dots1.png" alt="" aria-hidden="true">
+      <img class="dropdown-decor-bottom" src="images/dots1.png" alt="" aria-hidden="true">
+
+      <div class="resources-grid">
+        <!-- columns -->
+        <div class="links-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="about.html">About Flok</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="links-col">
+          <h3>Get Help</h3>
+          <ul>
+            <li><a href="contact-us.html" target="_blank">Contact Us</a></li>
+            <li><a href="help-centre.html">Help Centre</a></li>
+          </ul>
+        </div>
+
+        <!-- right-side image with left fade -->
+        <div class="image-col">
+          <div class="fade-wrap">
+            <img src="images/footerimage.png" alt="Hospitality staff at work">
+            <span class="fade-left" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main-content" tabindex="-1">
+
+    <section class="interest-page" aria-labelledby="interest-heading">
+      <div class="interest-form-side">
+        <div class="interest-card">
+          <h1 id="interest-heading" class="interest-title">Get early access</h1>
+          <p class="interest-subtitle">Flok is opening up soon. Register your interest and we'll let you know as soon as access opens.</p>
+
+          <div class="interest-tabs" role="tablist" aria-label="Register as">
+            <button type="button" class="interest-tab" role="tab" id="tab-worker" aria-controls="panel-worker"
+              aria-selected="true">I'm looking for work</button>
+            <button type="button" class="interest-tab" role="tab" id="tab-employer" aria-controls="panel-employer"
+              aria-selected="false" tabindex="-1">I'm hiring</button>
+          </div>
+
+          <!-- Worker panel -->
+          <div id="panel-worker" class="interest-panel" role="tabpanel" aria-labelledby="tab-worker">
+            <form id="workerForm" class="interest-form" novalidate>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="firstName">First name</label>
+                  <input type="text" id="firstName" name="firstName" autocomplete="given-name" required
+                    aria-describedby="firstName-error">
+                  <p class="field-error" id="firstName-error"></p>
+                </div>
+
+                <div class="field">
+                  <label for="lastName">Last name</label>
+                  <input type="text" id="lastName" name="lastName" autocomplete="family-name" required
+                    aria-describedby="lastName-error">
+                  <p class="field-error" id="lastName-error"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required
+                  aria-describedby="email-error">
+                <p class="field-error" id="email-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required
+                  placeholder="e.g. 07123 456789" aria-describedby="phone-error">
+                <p class="field-error" id="phone-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="location">Location</label>
+                <select id="location" name="location" required aria-describedby="location-error">
+                  <option value="">Select your location</option>
+                  <!-- Options populated from LOCATIONS in js/form-options.js -->
+                </select>
+                <p class="field-error" id="location-error"></p>
+              </div>
+
+              <div class="field" id="locationOtherField" hidden>
+                <label for="locationOther">Please enter your location</label>
+                <input type="text" id="locationOther" name="locationOther" autocomplete="address-level2"
+                  aria-describedby="locationOther-error">
+                <p class="field-error" id="locationOther-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="workType">Preferred work type</label>
+                <select id="workType" name="workType" required aria-describedby="workType-error">
+                  <option value="">Choose a work type</option>
+                  <!-- Options populated from WORK_TYPES in js/form-options.js -->
+                </select>
+                <p class="field-error" id="workType-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="cv">CV</label>
+                <input type="file" id="cv" name="cv" accept="application/pdf,.pdf" required
+                  aria-describedby="cv-hint cv-error">
+                <p class="field-hint" id="cv-hint">PDF only, up to 10MB.</p>
+                <p class="field-error" id="cv-error"></p>
+              </div>
+
+              <div class="field field-checkbox">
+                <div class="checkbox-row">
+                  <input type="checkbox" class="privacy-agree" id="agreePrivacy" name="agreePrivacy" required
+                    aria-describedby="agreePrivacy-error">
+                  <label for="agreePrivacy">I agree to the <a href="pdf/privacy-policy.pdf" target="_blank"
+                      rel="noopener noreferrer">Privacy Policy</a></label>
+                </div>
+                <p class="field-error" id="agreePrivacy-error"></p>
+              </div>
+
+              <p class="form-error" id="workerForm-error" role="alert"></p>
+
+              <button type="submit" class="interest-submit">Register interest</button>
+            </form>
+          </div>
+
+          <!-- Employer panel (built in a later PR) -->
+          <div id="panel-employer" class="interest-panel" role="tabpanel" aria-labelledby="tab-employer" hidden>
+            <div class="interest-placeholder">
+              <h2>Employer registration coming soon</h2>
+              <p>We're putting the finishing touches on employer sign-up. Check back shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="interest-brand-side" aria-hidden="true">
+        <img src="images/Flok_Logo_Trademark_Logo.svg" class="interest-brand-logo" alt="" width="960" height="450">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-col account-col">
+        <h3 class="footer-heading">Account</h3>
+        <ul class="footer-links">
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col resources-col">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="industries.html">Industries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col legal-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="fairprocessingnotice.html">Fair Processing Policy</a></li>
+          <li><a href="cookiepolicy.html">Cookies Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col support-col">
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact-us.html" target="_blank">Contact Us</a></li>
+          <li><a href="help-centre.html">Help Centre</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col socials-col">
+        <h3 class="footer-heading">Socials</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/company/flokjobs/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/flokjobs/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Flok-Jobs/61576512420509/" target="_blank"
+              rel="noopener noreferrer">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 Flok</p>
+      <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.svg" alt="Flok Logo" class="footer-logo"
+          width="960" height="450"></a>
+    </div>
+  </footer>
+
+</body>
+
+<!-- JavaScript -->
+<script src="js/overlay-menu.js"></script>
+<script src="js/back-to-top.js"></script>
+<script src="js/resources-dropdown.js"></script>
+<script src="js/form-options.js"></script>
+<script src="js/interested.js"></script>
+
+</html>
