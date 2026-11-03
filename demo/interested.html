@@ -73,7 +73,7 @@
 </head>
 
 
-<body>
+<body class="interest-body">
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -190,113 +190,149 @@
   <main id="main-content" tabindex="-1">
 
     <section class="interest-page" aria-labelledby="interest-heading">
-      <div class="interest-form-side">
-        <div class="interest-card">
-          <h1 id="interest-heading" class="interest-title">Get early access</h1>
-          <p class="interest-subtitle">Flok is opening up soon. Register your interest and we'll let you know as soon as access opens.</p>
+      <header class="interest-intro">
+        <h1 id="interest-heading" class="interest-intro-title">How do I join the Flok?</h1>
+        <p class="interest-intro-text">Whether you're looking for hospitality shifts that work around your life or great
+          people who can help your business deliver brilliant service, you're in the right place. Tell us a little
+          about yourself below and take the first step towards a fresh approach to hospitality work and staffing.</p>
+      </header>
 
-          <div class="interest-tabs" role="tablist" aria-label="Register as">
-            <button type="button" class="interest-tab" role="tab" id="tab-worker" aria-controls="panel-worker"
-              aria-selected="true">I'm looking for work</button>
-            <button type="button" class="interest-tab" role="tab" id="tab-employer" aria-controls="panel-employer"
-              aria-selected="false" tabindex="-1">I'm hiring</button>
-          </div>
+      <div class="interest-card">
+        <!-- Shown by js/interested.js while PREVIEW_MODE is true -->
+        <p class="preview-notice" id="previewNotice" hidden>Preview: submissions are simulated and no details are
+          saved.</p>
 
-          <!-- Worker panel -->
-          <div id="panel-worker" class="interest-panel" role="tabpanel" aria-labelledby="tab-worker">
-            <form id="workerForm" class="interest-form" novalidate>
+        <div class="interest-tabs" role="tablist" aria-label="Register as">
+          <button type="button" class="interest-tab" role="tab" id="tab-worker" aria-controls="panel-worker"
+            aria-selected="true">I'm looking for work</button>
+          <button type="button" class="interest-tab" role="tab" id="tab-employer" aria-controls="panel-employer"
+            aria-selected="false" tabindex="-1">I'm hiring</button>
+        </div>
 
-              <div class="field-row">
-                <div class="field">
-                  <label for="firstName">First name</label>
-                  <input type="text" id="firstName" name="firstName" autocomplete="given-name" required
-                    aria-describedby="firstName-error">
-                  <p class="field-error" id="firstName-error"></p>
-                </div>
+        <!-- Worker panel -->
+        <div id="panel-worker" class="interest-panel" role="tabpanel" aria-labelledby="tab-worker">
+          <h2 id="worker-heading" class="panel-title">Be first in the Flok</h2>
+          <p class="panel-intro">You bring the skills and the experience, and we're building a better way to put them
+            to work through hospitality shifts that fit around your life. With clear pay and no platform fees for
+            workers, Flok is about giving you more choice and less running around.</p>
+          <p class="panel-intro">Tell us where you're based, the work you're looking for and what you bring to the
+            team, then upload your CV to register your interest.</p>
 
-                <div class="field">
-                  <label for="lastName">Last name</label>
-                  <input type="text" id="lastName" name="lastName" autocomplete="family-name" required
-                    aria-describedby="lastName-error">
-                  <p class="field-error" id="lastName-error"></p>
-                </div>
+          <form id="workerForm" class="interest-form" aria-labelledby="worker-heading" novalidate>
+            <p class="required-note" aria-hidden="true"><span class="req">*</span> Required</p>
+
+            <div class="field">
+              <label for="firstName">First name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" required
+                aria-describedby="firstName-error">
+              <p class="field-error" id="firstName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" required
+                aria-describedby="lastName-error">
+              <p class="field-error" id="lastName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required
+                aria-describedby="email-error">
+              <p class="field-error" id="email-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required
+                placeholder="e.g. 07123 456789" aria-describedby="phone-error">
+              <p class="field-error" id="phone-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="location">Location <span class="req" aria-hidden="true">*</span></label>
+              <select id="location" name="location" required aria-describedby="location-error">
+                <option value="">Select your location</option>
+                <!-- Options populated from LOCATIONS in js/form-options.js -->
+              </select>
+              <p class="field-error" id="location-error"></p>
+            </div>
+
+            <div class="field" id="locationOtherField" hidden>
+              <label for="locationOther">Your location <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="locationOther" name="locationOther" autocomplete="address-level2"
+                aria-describedby="locationOther-error">
+              <p class="field-error" id="locationOther-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="workType">Work type <span class="req" aria-hidden="true">*</span></label>
+              <select id="workType" name="workType" required aria-describedby="workType-error">
+                <option value="">Choose a work type</option>
+                <!-- Options populated from WORK_TYPES in js/form-options.js -->
+              </select>
+              <p class="field-error" id="workType-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="cv">Upload your CV <span class="req" aria-hidden="true">*</span></label>
+              <p class="field-hint" id="cv-hint">Show us what you bring to the shift by uploading your CV as a PDF. The
+                maximum file size is 10MB.</p>
+              <input type="file" id="cv" name="cv" accept="application/pdf,.pdf" required
+                aria-describedby="cv-hint cv-error">
+              <div class="cv-attached" id="cvAttached" hidden>
+                <span class="cv-tick" aria-hidden="true">&#10003;</span>
+                <span class="cv-name" id="cvName"></span>
+                <span class="cv-status">Attached</span>
+                <button type="button" class="cv-replace" id="cvReplace" aria-describedby="cvName">Replace</button>
               </div>
+              <p class="field-error" id="cv-error"></p>
+            </div>
 
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required
-                  aria-describedby="email-error">
-                <p class="field-error" id="email-error"></p>
+            <fieldset class="keep-in-touch" aria-describedby="keepInTouch-hint">
+              <legend class="section-title">Keep in touch with Flok</legend>
+              <p class="field-hint" id="keepInTouch-hint">These choices are optional. You can unsubscribe at any
+                time.</p>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="marketingEmail" name="marketingEmail">
+                <label for="marketingEmail">I'd like to receive emails from Flok about news, offers and
+                  services.</label>
               </div>
-
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required
-                  placeholder="e.g. 07123 456789" aria-describedby="phone-error">
-                <p class="field-error" id="phone-error"></p>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="marketingSms" name="marketingSms">
+                <label for="marketingSms">I'd like to receive text messages from Flok about news, offers and
+                  services.</label>
               </div>
+            </fieldset>
 
-              <div class="field">
-                <label for="location">Location</label>
-                <select id="location" name="location" required aria-describedby="location-error">
-                  <option value="">Select your location</option>
-                  <!-- Options populated from LOCATIONS in js/form-options.js -->
-                </select>
-                <p class="field-error" id="location-error"></p>
-              </div>
-
-              <div class="field" id="locationOtherField" hidden>
-                <label for="locationOther">Please enter your location</label>
-                <input type="text" id="locationOther" name="locationOther" autocomplete="address-level2"
-                  aria-describedby="locationOther-error">
-                <p class="field-error" id="locationOther-error"></p>
-              </div>
-
-              <div class="field">
-                <label for="workType">Preferred work type</label>
-                <select id="workType" name="workType" required aria-describedby="workType-error">
-                  <option value="">Choose a work type</option>
-                  <!-- Options populated from WORK_TYPES in js/form-options.js -->
-                </select>
-                <p class="field-error" id="workType-error"></p>
-              </div>
-
-              <div class="field">
-                <label for="cv">CV</label>
-                <input type="file" id="cv" name="cv" accept="application/pdf,.pdf" required
-                  aria-describedby="cv-hint cv-error">
-                <p class="field-hint" id="cv-hint">PDF only, up to 10MB.</p>
-                <p class="field-error" id="cv-error"></p>
-              </div>
-
+            <div class="privacy-section">
+              <p class="privacy-text">We'll use your details to manage your interest in Flok and contact you about
+                getting started. Read our <a href="pdf/privacy-policy.pdf" target="_blank"
+                  rel="noopener noreferrer">Privacy Policy</a> for more information.</p>
               <div class="field field-checkbox">
                 <div class="checkbox-row">
                   <input type="checkbox" class="privacy-agree" id="agreePrivacy" name="agreePrivacy" required
                     aria-describedby="agreePrivacy-error">
-                  <label for="agreePrivacy">I agree to the <a href="pdf/privacy-policy.pdf" target="_blank"
-                      rel="noopener noreferrer">Privacy Policy</a></label>
+                  <label for="agreePrivacy">I have read the Privacy Policy. <span class="req"
+                      aria-hidden="true">*</span></label>
                 </div>
                 <p class="field-error" id="agreePrivacy-error"></p>
               </div>
-
-              <p class="form-error" id="workerForm-error" role="alert"></p>
-
-              <button type="submit" class="interest-submit">Register interest</button>
-            </form>
-          </div>
-
-          <!-- Employer panel (built in a later PR) -->
-          <div id="panel-employer" class="interest-panel" role="tabpanel" aria-labelledby="tab-employer" hidden>
-            <div class="interest-placeholder">
-              <h2>Employer registration coming soon</h2>
-              <p>We're putting the finishing touches on employer sign-up. Check back shortly.</p>
             </div>
+
+            <p class="form-error" id="workerForm-error" role="alert"></p>
+
+            <button type="submit" class="interest-submit">Register interest</button>
+          </form>
+        </div>
+
+        <!-- Employer panel (built in a later PR) -->
+        <div id="panel-employer" class="interest-panel" role="tabpanel" aria-labelledby="tab-employer" hidden>
+          <div class="interest-placeholder">
+            <h2>Employer registration coming soon</h2>
+            <p>We're putting the finishing touches on employer sign-up. Check back shortly.</p>
           </div>
         </div>
-      </div>
-
-      <div class="interest-brand-side" aria-hidden="true">
-        <img src="images/Flok_Logo_Trademark_Logo.svg" class="interest-brand-logo" alt="" width="960" height="450">
       </div>
     </section>
 

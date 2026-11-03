@@ -11,9 +11,39 @@
     --interest-text: #1F1F50;
     --interest-muted: #5A5A78;
     --interest-border: #C9CBD8;
-    --interest-error: #C62828;
+    --interest-error: #CC3B3B; /* softer red, 4.9:1 on white */
+    --interest-success: #1E7B4A;
     --interest-radius: 10px;
     --interest-header-offset: 88px;
+}
+
+/* ==========================================================================
+   PAGE SHELL
+   Overrides template.css's navy body for this page only, and makes a sticky
+   footer: short states (employer tab, confirmation) push the footer to the
+   bottom of the screen; long ones flow normally. The header stays fixed.
+   ========================================================================== */
+
+body.interest-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--interest-bg);
+}
+
+body.interest-body > main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+}
+
+body.interest-body > main > .interest-page {
+    flex: 1 0 auto;
+}
+
+body.interest-body > .footer {
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -21,17 +51,27 @@
    ========================================================================== */
 
 .interest-page {
-    display: block;
-    padding-top: var(--interest-header-offset);
+    padding: calc(var(--interest-header-offset) + 1.5rem) 1rem 3rem;
     background: var(--interest-bg);
+    color: var(--interest-text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
-.interest-form-side {
-    padding: 1.5rem 1rem 3rem;
+/* Mobile goes straight to the card. The h1 stays available to screen readers. */
+.interest-intro-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-/* Header logo already identifies the site on mobile, so drop the navy panel. */
-.interest-brand-side {
+.interest-intro-text {
     display: none;
 }
 
@@ -42,29 +82,42 @@
 .interest-card {
     box-sizing: border-box;
     width: 100%;
-    max-width: 520px;
+    max-width: 560px;
     margin: 0 auto;
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.25rem 1.75rem;
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(31, 31, 80, 0.08), 0 1px 3px rgba(31, 31, 80, 0.06);
-    color: var(--interest-text);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
 }
 
-.interest-title {
-    margin: 0 0 0.5rem;
-    font-size: 1.75rem;
+.preview-notice {
+    margin: 0 0 1rem;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #E8C200;
+    border-radius: 8px;
+    background: #FFF6C2;
+    color: var(--interest-text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.preview-notice[hidden] {
+    display: none;
+}
+
+.panel-title {
+    margin: 0 0 0.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.interest-subtitle {
-    margin: 0 0 1.5rem;
+.panel-intro {
+    margin: 0 0 0.75rem;
     color: var(--interest-muted);
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -115,12 +168,18 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1.25rem;
 }
 
-.field-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+.required-note {
+    margin: 0;
+    color: var(--interest-muted);
+    font-size: 0.85rem;
+}
+
+.req {
+    color: var(--interest-error);
+    font-weight: 700;
 }
 
 .field {
@@ -194,18 +253,25 @@
     box-shadow: 0 0 0 3px rgba(31, 31, 80, 0.2);
 }
 
-.field [aria-invalid="true"] {
-    border-color: var(--interest-error);
-}
-
-.field [aria-invalid="true"]:focus-visible {
-    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.2);
-}
-
 .field-hint {
-    margin: 0.35rem 0 0;
+    margin: 0 0 0.5rem;
     color: var(--interest-muted);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+/* --- Errors: one red border treatment for every invalid control --- */
+
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"] {
+    border-style: solid;
+    border-color: var(--interest-error);
+    box-shadow: 0 0 0 1px var(--interest-error);
+}
+
+.field input[aria-invalid="true"]:focus-visible,
+.field select[aria-invalid="true"]:focus-visible {
+    box-shadow: 0 0 0 1px var(--interest-error), 0 0 0 4px rgba(204, 59, 59, 0.2);
 }
 
 .field-error,
@@ -225,15 +291,88 @@
     display: none;
 }
 
-/* Checkbox */
+/* ==========================================================================
+   CV ATTACHED STATE
+   ========================================================================== */
+
+/* File input stays in the form (it holds the file) but is hidden once attached. */
+.field input[type="file"].is-attached {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.cv-attached {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 46px;
+    box-sizing: border-box;
+    padding: 0.4rem 0.5rem 0.4rem 0.85rem;
+    border: 1px solid var(--interest-border);
+    border-radius: var(--interest-radius);
+    font-size: 0.9rem;
+}
+
+.cv-attached[hidden] {
+    display: none;
+}
+
+.cv-tick {
+    flex: 0 0 auto;
+    color: var(--interest-success);
+    font-weight: 700;
+}
+
+.cv-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.cv-status {
+    flex: 0 0 auto;
+    color: var(--interest-success);
+    font-size: 0.85rem;
+}
+
+.cv-replace {
+    flex: 0 0 auto;
+    padding: 0.5rem 0.85rem;
+    border: 0;
+    border-radius: 8px;
+    background: #ECEDF3;
+    color: var(--interest-text);
+    font: 700 0.85rem 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+.cv-replace:focus-visible {
+    outline: 3px solid var(--flok-navy);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   CHECKBOXES
+   ========================================================================== */
+
 .checkbox-row {
     display: flex;
     align-items: flex-start;
     gap: 0.6rem;
 }
 
-/* Native checkbox, explicitly visible and tinted with the brand navy. */
-.privacy-agree {
+/* Native checkboxes, explicitly visible and tinted with the brand navy. */
+.privacy-agree,
+.marketing-check {
     -webkit-appearance: checkbox;
     appearance: auto;
     display: block;
@@ -248,22 +387,18 @@
     cursor: pointer;
 }
 
-.privacy-agree:focus-visible {
+.privacy-agree:focus-visible,
+.marketing-check:focus-visible {
     outline: 3px solid var(--flok-navy);
     outline-offset: 2px;
 }
 
-.field .checkbox-row label {
+.checkbox-row label {
     margin: 0;
+    font-size: 0.9rem;
     font-weight: 400;
     line-height: 20px;
     cursor: pointer;
-}
-
-.checkbox-row a {
-    color: var(--flok-navy);
-    font-weight: 700;
-    text-decoration: underline;
 }
 
 .privacy-agree[aria-invalid="true"] {
@@ -281,6 +416,57 @@
     padding-left: calc(20px + 0.6rem);
 }
 
+/* --- Keep in touch (optional marketing choices) --- */
+
+.keep-in-touch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+    margin: 0.25rem 0 0;
+    padding: 1rem;
+    border: 1px solid #E3E4EC;
+    border-radius: var(--interest-radius);
+    background: #FAFAFC;
+}
+
+/* float makes the legend a normal block inside the box instead of sitting on its border */
+.section-title {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.keep-in-touch .field-hint {
+    margin: -0.4rem 0 0;
+}
+
+/* --- Privacy (required) --- */
+
+.privacy-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E3E4EC;
+}
+
+.privacy-text {
+    margin: 0;
+    color: var(--interest-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.privacy-text a {
+    color: var(--flok-navy);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
 /* ==========================================================================
    SUBMIT
    ========================================================================== */
@@ -288,7 +474,7 @@
 .interest-submit {
     width: 100%;
     height: 48px;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     border: 0;
     border-radius: var(--interest-radius);
     background: var(--flok-yellow);
@@ -350,42 +536,42 @@
     }
 
     .interest-page {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-height: 100vh;
-        box-sizing: border-box;
+        padding: calc(var(--interest-header-offset) + 2.5rem) 2rem 4rem;
     }
 
-    .interest-form-side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 3rem 2rem;
+    .interest-intro {
+        max-width: 720px;
+        margin: 0 auto 2rem;
+        text-align: center;
+    }
+
+    .interest-intro-title {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0 0 0.75rem;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        font-size: clamp(2rem, 3.2vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.15;
+    }
+
+    .interest-intro-text {
+        display: block;
+        max-width: 62ch;
+        margin: 0 auto;
+        color: var(--interest-muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 
     .interest-card {
-        padding: 2.5rem 2.25rem;
+        padding: 2rem 2.25rem 2.25rem;
     }
 
-    .interest-title {
-        font-size: 2rem;
-    }
-
-    .field-row {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .interest-brand-side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 3rem;
-        background: var(--flok-navy);
-    }
-
-    .interest-brand-logo {
-        width: 60%;
-        max-width: 360px;
-        height: auto;
+    .panel-title {
+        font-size: 1.75rem;
     }
 }

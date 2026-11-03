@@ -7,9 +7,19 @@
 (function () {
   "use strict";
 
+  // PREVIEW MODE: submissions are simulated and nothing is saved.
+  // This MUST be set to false, with the real API call in place
+  // (WORKER_INTEREST_ENDPOINT below), before the page goes live.
+  const PREVIEW_MODE = true;
+
+  // TODO: Set to the confirmed AWS endpoint. While this is empty and
+  // PREVIEW_MODE is false, submissions fail rather than pretend to succeed.
+  const WORKER_INTEREST_ENDPOINT = "";
+
   const OTHER_LOCATION = "Other";
   const CV_MAX_BYTES = 10 * 1024 * 1024; // 10MB
   const CV_MIME_TYPE = "application/pdf";
+  const SUBMIT_FAILED_MESSAGE = "Something went wrong and your details weren't sent. Please try again.";
 
   /* ------------------------------------------------------------------------
      Tabs
@@ -93,23 +103,21 @@
      ------------------------------------------------------------------------ */
 
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const EMAIL_MESSAGE = "Please enter a valid email address, for example name@example.com.";
 
   // { fieldName: (value, formData) => errorMessage or "" }
   // Declared in DOM order so the first error found is the first on screen.
+  // marketingEmail and marketingSms are optional and deliberately have no validator.
   const validators = {
     firstName: (value) => (value ? "" : "Please enter your first name."),
 
     lastName: (value) => (value ? "" : "Please enter your last name."),
 
-    email: (value) => {
-      if (!value) return "Please enter your email address.";
-      if (!EMAIL_PATTERN.test(value)) return "Please enter a valid email address, like name@example.com.";
-      return "";
-    },
+    email: (value) => (value && EMAIL_PATTERN.test(value) ? "" : EMAIL_MESSAGE),
 
     phone: (value) => {
       if (!value) return "Please enter your phone number.";
-      if (!isValidUkPhone(value)) return "Please enter a valid UK phone number, like 07123 456789.";
+      if (!isValidUkPhone(value)) return "Please enter a valid UK phone number, for example 07123 456789.";
       return "";
     },
 
@@ -124,12 +132,12 @@
 
     cv: (file) => {
       if (!file) return "Please upload your CV.";
-      if (file.type !== CV_MIME_TYPE) return "Your CV must be a PDF file.";
-      if (file.size > CV_MAX_BYTES) return "Your CV must be 10MB or smaller.";
+      if (file.type !== CV_MIME_TYPE) return "Please upload a PDF file.";
+      if (file.size > CV_MAX_BYTES) return "That file is over 10MB. Please upload a smaller PDF.";
       return "";
     },
 
-    agreePrivacy: (checked) => (checked ? "" : "Please agree to the Privacy Policy to continue."),
+    agreePrivacy: (checked) => (checked ? "" : "Please confirm you have read the Privacy Policy."),
   };
 
   function readFormData(form) {
@@ -143,6 +151,12 @@
     return formData;
   }
 
+  // Fields inside a hidden container (e.g. "Your location" when Other isn't
+  // selected, or the other tab's panel) are never validated.
+  function isFieldActive(field) {
+    return !field.closest("[hidden]");
+  }
+
   function setFieldError(form, name, message) {
     const field = form.elements[name];
     const errorEl = document.getElementById(name + "-error");
@@ -154,7 +168,7 @@
 
   function validateField(form, name) {
     const formData = readFormData(form);
-    const message = validators[name](formData[name], formData);
+    const message = isFieldActive(form.elements[name]) ? validators[name](formData[name], formData) : "";
     setFieldError(form, name, message);
     return message;
   }
@@ -173,16 +187,79 @@
   }
 
   /* ------------------------------------------------------------------------
-     Submission (stub)
+     CV attached state
+     ------------------------------------------------------------------------ */
+
+  function initCvField(form) {
+    const input = form.elements.cv;
+    const attached = document.getElementById("cvAttached");
+    const nameEl = document.getElementById("cvName");
+    const replaceBtn = document.getElementById("cvReplace");
+    let attachedFile = null;
+
+    function render() {
+      const isAttached = attachedFile !== null;
+      attached.hidden = !isAttached;
+      input.classList.toggle("is-attached", isAttached);
+      // The visually hidden input shouldn't be a separate, invisible tab stop.
+      input.tabIndex = isAttached ? -1 : 0;
+      nameEl.textContent = isAttached ? attachedFile.name : "";
+    }
+
+    function restoreAttachedFile() {
+      try {
+        const transfer = new DataTransfer();
+        transfer.items.add(attachedFile);
+        input.files = transfer.files;
+      } catch (err) {
+        // Browsers without DataTransfer support: treat the CV as removed.
+        attachedFile = null;
+      }
+    }
+
+    // Called on every change to the file input.
+    function update() {
+      const file = input.files[0] || null;
+
+      if (!file && attachedFile) {
+        // Picker was cancelled after "Replace": some browsers clear the input,
+        // so put the previously attached CV back.
+        restoreAttachedFile();
+      } else {
+        attachedFile = file && !validators.cv(file) ? file : null;
+      }
+      render();
+    }
+
+    replaceBtn.addEventListener("click", () => input.click());
+
+    return { update };
+  }
+
+  /* ------------------------------------------------------------------------
+     Submission
      ------------------------------------------------------------------------ */
 
   async function submitWorkerInterest(payload) {
-    // TODO: POST the payload to the AWS endpoint once it has been confirmed.
     // TODO: The CV is not part of this payload. It will be uploaded separately
     // via a pre-signed S3 URL returned by the backend, then linked to this
     // submission.
-    console.log("submitWorkerInterest", payload);
-    return new Promise((resolve) => setTimeout(resolve, 800));
+    if (PREVIEW_MODE) {
+      console.log("[PREVIEW] submitWorkerInterest (simulated, not sent)", payload);
+      return new Promise((resolve) => setTimeout(resolve, 800));
+    }
+
+    if (!WORKER_INTEREST_ENDPOINT) {
+      throw new Error("WORKER_INTEREST_ENDPOINT is not configured.");
+    }
+
+    // TODO: Confirm request shape and auth with the AWS endpoint.
+    const response = await fetch(WORKER_INTEREST_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) throw new Error("Submission failed with status " + response.status);
   }
 
   function buildPayload(formData) {
@@ -194,13 +271,15 @@
       phone: toUkFormat(formData.phone, "e164"),
       location: formData.location,
       workType: formData.workType,
+      marketingEmail: formData.marketingEmail === true,
+      marketingSms: formData.marketingSms === true,
       privacyConsent: formData.agreePrivacy === true,
     };
     if (formData.location === OTHER_LOCATION) payload.locationOther = formData.locationOther;
     return payload;
   }
 
-  function showConfirmation(form, firstName) {
+  function showConfirmation(panel, firstName) {
     const confirmation = document.createElement("div");
     confirmation.className = "interest-confirmation";
 
@@ -210,11 +289,12 @@
 
     const text = document.createElement("p");
     text.textContent =
-      "Thanks, " + firstName + ". This isn't a full Flok account yet. " +
-      "We'll be in touch with next steps when access opens.";
+      (firstName ? "Thanks, " + firstName + ". " : "Thanks. ") +
+      "This isn't a full Flok account yet. We'll be in touch with next steps when access opens.";
 
     confirmation.append(heading, text);
-    form.replaceWith(confirmation);
+    // Replace the whole worker panel (heading, intro and form) with the confirmation.
+    panel.replaceChildren(confirmation);
     heading.focus();
   }
 
@@ -226,28 +306,38 @@
     options.forEach((value) => select.add(new Option(value, value)));
   }
 
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
   function initWorkerForm() {
     const form = document.getElementById("workerForm");
     if (!form) return;
 
+    const panel = document.getElementById("panel-worker");
     const submitBtn = form.querySelector(".interest-submit");
     const formError = document.getElementById("workerForm-error");
     const submitLabel = submitBtn.textContent;
+    const cvField = initCvField(form);
+    let isSubmitting = false;
 
     populateSelect(form.elements.location, [...window.LOCATIONS, OTHER_LOCATION]);
     populateSelect(form.elements.workType, window.WORK_TYPES);
 
-    // One handler for both "input" and "change". Committed changes (selects,
-    // file, checkbox, text on blur) validate; typing only re-validates a field
-    // that is already showing an error, so it clears as soon as it's valid.
+    // One handler for both "input" and "change". Typing never shows a new
+    // error; it only re-validates a field that is already showing one, so the
+    // error clears as soon as the value is valid. Selects, the CV and the
+    // checkbox are validated when their value is committed.
     function handleFieldChange(e) {
       const name = e.target.name;
+      if (name === "cv" && e.type === "change") cvField.update();
       if (!validators[name]) return;
 
       if (name === "location") toggleLocationOther(form);
 
       const isInvalid = e.target.getAttribute("aria-invalid") === "true";
-      if (e.type === "change" || isInvalid) validateField(form, name);
+      const isTextEntry = e.target.tagName === "INPUT" && !["checkbox", "file"].includes(e.target.type);
+      if (isInvalid || (e.type === "change" && !isTextEntry)) validateField(form, name);
     }
 
     function handleFieldBlur(e) {
@@ -260,35 +350,40 @@
 
     async function handleSubmit(e) {
       e.preventDefault();
+      if (isSubmitting) return;
       formError.textContent = "";
 
       const formData = readFormData(form);
       let firstInvalid = null;
 
       Object.keys(validators).forEach((name) => {
-        const message = validators[name](formData[name], formData);
+        const field = form.elements[name];
+        const message = isFieldActive(field) ? validators[name](formData[name], formData) : "";
         setFieldError(form, name, message);
-        if (message && !firstInvalid) firstInvalid = form.elements[name];
+        if (message && !firstInvalid) firstInvalid = field;
       });
 
       if (firstInvalid) {
-        firstInvalid.focus();
+        firstInvalid.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "center" });
+        firstInvalid.focus({ preventScroll: true });
         return;
       }
 
+      isSubmitting = true;
       submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
+      submitBtn.textContent = "Sending...";
       form.setAttribute("aria-busy", "true");
 
       try {
         await submitWorkerInterest(buildPayload(formData));
-        showConfirmation(form, formData.firstName);
+        showConfirmation(panel, formData.firstName);
       } catch (err) {
         console.error(err);
-        formError.textContent = "Sorry, something went wrong. Please try again.";
+        formError.textContent = SUBMIT_FAILED_MESSAGE;
         submitBtn.disabled = false;
         submitBtn.textContent = submitLabel;
         form.removeAttribute("aria-busy");
+        isSubmitting = false;
       }
     }
 
@@ -298,6 +393,12 @@
     form.addEventListener("submit", handleSubmit);
   }
 
+  function initPreviewNotice() {
+    const notice = document.getElementById("previewNotice");
+    if (notice) notice.hidden = !PREVIEW_MODE;
+  }
+
+  initPreviewNotice();
   initTabs();
   initWorkerForm();
 })();
