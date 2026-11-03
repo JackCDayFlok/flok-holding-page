@@ -1,22 +1,24 @@
 /* ==========================================================================
    REGISTER INTEREST PAGE
-   Tabs, worker form validation, conditional fields and submission.
-   Depends on js/form-options.js (LOCATIONS, WORK_TYPES).
+   Tabs, shared form engine (validation, conditional fields, submission) and
+   the worker and employer forms built on it.
+   Depends on js/form-options.js (LOCATIONS, WORK_TYPES, BUSINESS_TYPES).
    ========================================================================== */
 
 (function () {
   "use strict";
 
   // PREVIEW MODE: submissions are simulated and nothing is saved.
-  // This MUST be set to false, with the real API call in place
-  // (WORKER_INTEREST_ENDPOINT below), before the page goes live.
+  // This MUST be set to false, with the real API calls in place
+  // (the *_INTEREST_ENDPOINT constants below), before the page goes live.
   const PREVIEW_MODE = true;
 
-  // TODO: Set to the confirmed AWS endpoint. While this is empty and
-  // PREVIEW_MODE is false, submissions fail rather than pretend to succeed.
+  // TODO: Set to the confirmed AWS endpoints. While an endpoint is empty and
+  // PREVIEW_MODE is false, that form's submissions fail rather than pretend to succeed.
   const WORKER_INTEREST_ENDPOINT = "";
+  const EMPLOYER_INTEREST_ENDPOINT = "";
 
-  const OTHER_LOCATION = "Other";
+  const OTHER = "Other";
   const CV_MAX_BYTES = 10 * 1024 * 1024; // 10MB
   const CV_MIME_TYPE = "application/pdf";
   const SUBMIT_FAILED_MESSAGE = "Something went wrong and your details weren't sent. Please try again.";
@@ -25,6 +27,7 @@
      Tabs
      ------------------------------------------------------------------------ */
 
+  // Panels are only hidden, never re-rendered, so each form keeps what was entered.
   function initTabs() {
     const tabs = Array.from(document.querySelectorAll(".interest-tab"));
 
@@ -68,7 +71,7 @@
   // - 0 + 10 digits (11 total): 07123456789, 02079460000
   // - +44 + 10 digits (no leading 0 after +44): +447123456789, +442079460000
   // - 10 digits with no prefix (missing trunk 0): 7123456789, 2079460000
-  // Empty values are handled by the required check in the phone validator.
+  // Empty values are handled by the required check in the phone validators.
   function isValidUkPhone(raw) {
     const s = normalizeUkPhone(raw);
 
@@ -99,46 +102,60 @@
   }
 
   /* ------------------------------------------------------------------------
-     Validation
+     Website helper
+     ------------------------------------------------------------------------ */
+
+  const HOSTNAME_PATTERN = /^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i;
+
+  // Returns the website with https:// added if no scheme was typed, or null if
+  // it isn't a plausible website. "example.co.uk" -> "https://example.co.uk".
+  function normalizeWebsite(raw) {
+    const value = (raw || "").trim();
+    if (!value || /\s/.test(value)) return null;
+
+    const withScheme = /^https?:\/\//i.test(value) ? value : "https://" + value;
+    try {
+      const url = new URL(withScheme);
+      // Reject "name@example.com" style input, which URL parses as user@host.
+      if (url.username || url.password) return null;
+      return HOSTNAME_PATTERN.test(url.hostname) ? withScheme : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  /* ------------------------------------------------------------------------
+     Reusable validation rules
+     Each returns a validator: (value, formData) => errorMessage or "".
      ------------------------------------------------------------------------ */
 
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const EMAIL_MESSAGE = "Please enter a valid email address, for example name@example.com.";
 
-  // { fieldName: (value, formData) => errorMessage or "" }
-  // Declared in DOM order so the first error found is the first on screen.
-  // marketingEmail and marketingSms are optional and deliberately have no validator.
-  const validators = {
-    firstName: (value) => (value ? "" : "Please enter your first name."),
+  const rules = {
+    required: (message) => (value) => (value ? "" : message),
 
-    lastName: (value) => (value ? "" : "Please enter your last name."),
+    email: () => (value) =>
+      value && EMAIL_PATTERN.test(value) ? "" : "Please enter a valid email address, for example name@example.com.",
 
-    email: (value) => (value && EMAIL_PATTERN.test(value) ? "" : EMAIL_MESSAGE),
-
-    phone: (value) => {
-      if (!value) return "Please enter your phone number.";
+    ukPhone: (emptyMessage) => (value) => {
+      if (!value) return emptyMessage;
       if (!isValidUkPhone(value)) return "Please enter a valid UK phone number, for example 07123 456789.";
       return "";
     },
 
-    location: (value) => (value ? "" : "Please select your location."),
+    // Required only while `parentName` is set to "Other".
+    otherText: (parentName, message) => (value, formData) =>
+      formData[parentName] !== OTHER || value ? "" : message,
 
-    locationOther: (value, formData) => {
-      if (formData.location !== OTHER_LOCATION) return "";
-      return value ? "" : "Please enter your location.";
-    },
+    website: () => (value) =>
+      !value || normalizeWebsite(value) ? "" : "Please enter a valid website, for example example.co.uk.",
 
-    workType: (value) => (value ? "" : "Please choose a work type."),
-
-    cv: (file) => {
-      if (!file) return "Please upload your CV.";
-      if (file.type !== CV_MIME_TYPE) return "Please upload a PDF file.";
-      if (file.size > CV_MAX_BYTES) return "That file is over 10MB. Please upload a smaller PDF.";
-      return "";
-    },
-
-    agreePrivacy: (checked) => (checked ? "" : "Please confirm you have read the Privacy Policy."),
+    checked: (message) => (checked) => (checked ? "" : message),
   };
+
+  /* ------------------------------------------------------------------------
+     Shared form engine
+     ------------------------------------------------------------------------ */
 
   function readFormData(form) {
     const formData = {};
@@ -151,47 +168,184 @@
     return formData;
   }
 
-  // Fields inside a hidden container (e.g. "Your location" when Other isn't
-  // selected, or the other tab's panel) are never validated.
+  // Fields inside a hidden container (an "Other" field that isn't needed, or
+  // the other tab's panel) are never validated.
   function isFieldActive(field) {
     return !field.closest("[hidden]");
   }
 
+  // Error elements are "<field id>-error", so ids can differ between forms
+  // (e.g. "firstName" vs "employer-firstName") while names stay the same.
   function setFieldError(form, name, message) {
     const field = form.elements[name];
-    const errorEl = document.getElementById(name + "-error");
+    const errorEl = form.querySelector("#" + CSS.escape(field.id + "-error"));
 
     errorEl.textContent = message;
     if (message) field.setAttribute("aria-invalid", "true");
     else field.removeAttribute("aria-invalid");
   }
 
-  function validateField(form, name) {
-    const formData = readFormData(form);
-    const message = isFieldActive(form.elements[name]) ? validators[name](formData[name], formData) : "";
+  function getFieldError(form, validators, name, formData) {
+    return isFieldActive(form.elements[name]) ? validators[name](formData[name], formData) : "";
+  }
+
+  function validateField(form, validators, name) {
+    const message = getFieldError(form, validators, name, readFormData(form));
     setFieldError(form, name, message);
     return message;
   }
 
-  /* ------------------------------------------------------------------------
-     Conditional "Other" location field
-     ------------------------------------------------------------------------ */
+  // Show the "Other" text field only while its parent select is set to Other.
+  function toggleOtherField(form, parentName, otherName) {
+    const isOther = form.elements[parentName].value === OTHER;
+    const otherField = form.elements[otherName];
 
-  function toggleLocationOther(form) {
-    const isOther = form.elements.location.value === OTHER_LOCATION;
-    const wrapper = document.getElementById("locationOtherField");
+    otherField.closest(".field").hidden = !isOther;
+    otherField.required = isOther;
+    if (!isOther) setFieldError(form, otherName, "");
+  }
 
-    wrapper.hidden = !isOther;
-    form.elements.locationOther.required = isOther;
-    if (!isOther) setFieldError(form, "locationOther", "");
+  // A missing list (e.g. a stale cached form-options.js) is logged rather than
+  // thrown, so it can't stop the rest of the form from being set up.
+  function populateSelect(select, options, { addOther = false } = {}) {
+    if (!Array.isArray(options)) {
+      console.error("Missing options for #" + select.id + ". Is js/form-options.js up to date?");
+    }
+    const values = (Array.isArray(options) ? options : []).concat(addOther ? [OTHER] : []);
+    values.forEach((value) => select.add(new Option(value, value)));
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  // Simulated while PREVIEW_MODE is true; otherwise POSTs JSON to the endpoint.
+  async function sendInterest(endpoint, payload, label) {
+    if (PREVIEW_MODE) {
+      console.log("[PREVIEW] " + label + " (simulated, not sent)", payload);
+      return new Promise((resolve) => setTimeout(resolve, 800));
+    }
+
+    if (!endpoint) throw new Error(label + ": endpoint is not configured.");
+
+    // TODO: Confirm request shape and auth with the AWS endpoint.
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) throw new Error(label + ": submission failed with status " + response.status);
+  }
+
+  function showConfirmation(panel, firstName) {
+    const confirmation = document.createElement("div");
+    confirmation.className = "interest-confirmation";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "You've registered your interest";
+    heading.tabIndex = -1;
+
+    const text = document.createElement("p");
+    text.textContent =
+      (firstName ? "Thanks, " + firstName + ". " : "Thanks. ") +
+      "This isn't a full Flok account yet. We'll be in touch with next steps when access opens.";
+
+    confirmation.append(heading, text);
+    // Replace the whole panel (heading, intro and form) with the confirmation.
+    panel.replaceChildren(confirmation);
+    heading.focus();
+  }
+
+  /**
+   * Wires a form to the shared behaviour.
+   *   validators:    { fieldName: (value, formData) => errorMessage or "" }, in DOM order
+   *   otherFields:   { selectName: otherTextName } for "Other" conditional fields
+   *   buildPayload:  (formData) => payload
+   *   submit:        async (payload) => void, throws on failure
+   *   onFieldChange: optional (event) => void, runs before validation
+   */
+  function setupInterestForm(form, { validators, otherFields = {}, buildPayload, submit, onFieldChange }) {
+    const panel = form.closest(".interest-panel");
+    const submitBtn = form.querySelector(".interest-submit");
+    const formError = form.querySelector("#" + CSS.escape(form.id + "-error"));
+    const submitLabel = submitBtn.textContent;
+    let isSubmitting = false;
+
+    // One handler for both "input" and "change". Typing never shows a new
+    // error; it only re-validates a field that is already showing one, so the
+    // error clears as soon as the value is valid. Selects, files and
+    // checkboxes are validated when their value is committed.
+    function handleFieldChange(e) {
+      if (onFieldChange) onFieldChange(e);
+
+      const name = e.target.name;
+      if (!validators[name]) return;
+
+      if (otherFields[name]) toggleOtherField(form, name, otherFields[name]);
+
+      const isInvalid = e.target.getAttribute("aria-invalid") === "true";
+      const isTextEntry = e.target.tagName === "INPUT" && !["checkbox", "file"].includes(e.target.type);
+      if (isInvalid || (e.type === "change" && !isTextEntry)) validateField(form, validators, name);
+    }
+
+    function handleFieldBlur(e) {
+      const name = e.target.name;
+      if (!validators[name]) return;
+      // Ignore blur caused by the window losing focus (e.g. the file picker opening).
+      if (!document.hasFocus()) return;
+      validateField(form, validators, name);
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      if (isSubmitting) return;
+      formError.textContent = "";
+
+      const formData = readFormData(form);
+      let firstInvalid = null;
+
+      Object.keys(validators).forEach((name) => {
+        const message = getFieldError(form, validators, name, formData);
+        setFieldError(form, name, message);
+        if (message && !firstInvalid) firstInvalid = form.elements[name];
+      });
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "center" });
+        firstInvalid.focus({ preventScroll: true });
+        return;
+      }
+
+      isSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      form.setAttribute("aria-busy", "true");
+
+      try {
+        await submit(buildPayload(formData));
+        showConfirmation(panel, formData.firstName);
+      } catch (err) {
+        console.error(err);
+        formError.textContent = SUBMIT_FAILED_MESSAGE;
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+        form.removeAttribute("aria-busy");
+        isSubmitting = false;
+      }
+    }
+
+    form.addEventListener("input", handleFieldChange);
+    form.addEventListener("change", handleFieldChange);
+    form.addEventListener("focusout", handleFieldBlur);
+    form.addEventListener("submit", handleSubmit);
   }
 
   /* ------------------------------------------------------------------------
-     CV attached state
+     Worker form
      ------------------------------------------------------------------------ */
 
-  function initCvField(form) {
-    const input = form.elements.cv;
+  // Shows the attached CV (tick, filename, "Attached", Replace) once valid.
+  function initCvField(input, isValidCv) {
     const attached = document.getElementById("cvAttached");
     const nameEl = document.getElementById("cvName");
     const replaceBtn = document.getElementById("cvReplace");
@@ -226,7 +380,7 @@
         // so put the previously attached CV back.
         restoreAttachedFile();
       } else {
-        attachedFile = file && !validators.cv(file) ? file : null;
+        attachedFile = file && isValidCv(file) ? file : null;
       }
       render();
     }
@@ -236,33 +390,32 @@
     return { update };
   }
 
-  /* ------------------------------------------------------------------------
-     Submission
-     ------------------------------------------------------------------------ */
+  const workerValidators = {
+    firstName: rules.required("Please enter your first name."),
+    lastName: rules.required("Please enter your last name."),
+    email: rules.email(),
+    phone: rules.ukPhone("Please enter your phone number."),
+    location: rules.required("Please select your location."),
+    locationOther: rules.otherText("location", "Please enter your location."),
+    workType: rules.required("Please choose a work type."),
+    cv: (file) => {
+      if (!file) return "Please upload your CV.";
+      if (file.type !== CV_MIME_TYPE) return "Please upload a PDF file.";
+      if (file.size > CV_MAX_BYTES) return "That file is over 10MB. Please upload a smaller PDF.";
+      return "";
+    },
+    agreePrivacy: rules.checked("Please confirm you have read the Privacy Policy."),
+    // marketingEmail and marketingSms are optional and deliberately have no validator.
+  };
 
   async function submitWorkerInterest(payload) {
     // TODO: The CV is not part of this payload. It will be uploaded separately
     // via a pre-signed S3 URL returned by the backend, then linked to this
     // submission.
-    if (PREVIEW_MODE) {
-      console.log("[PREVIEW] submitWorkerInterest (simulated, not sent)", payload);
-      return new Promise((resolve) => setTimeout(resolve, 800));
-    }
-
-    if (!WORKER_INTEREST_ENDPOINT) {
-      throw new Error("WORKER_INTEREST_ENDPOINT is not configured.");
-    }
-
-    // TODO: Confirm request shape and auth with the AWS endpoint.
-    const response = await fetch(WORKER_INTEREST_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (!response.ok) throw new Error("Submission failed with status " + response.status);
+    return sendInterest(WORKER_INTEREST_ENDPOINT, payload, "submitWorkerInterest");
   }
 
-  function buildPayload(formData) {
+  function buildWorkerPayload(formData) {
     const payload = {
       formType: "worker",
       firstName: formData.firstName,
@@ -275,123 +428,96 @@
       marketingSms: formData.marketingSms === true,
       privacyConsent: formData.agreePrivacy === true,
     };
-    if (formData.location === OTHER_LOCATION) payload.locationOther = formData.locationOther;
+    if (formData.location === OTHER) payload.locationOther = formData.locationOther;
     return payload;
-  }
-
-  function showConfirmation(panel, firstName) {
-    const confirmation = document.createElement("div");
-    confirmation.className = "interest-confirmation";
-
-    const heading = document.createElement("h2");
-    heading.textContent = "You've registered your interest";
-    heading.tabIndex = -1;
-
-    const text = document.createElement("p");
-    text.textContent =
-      (firstName ? "Thanks, " + firstName + ". " : "Thanks. ") +
-      "This isn't a full Flok account yet. We'll be in touch with next steps when access opens.";
-
-    confirmation.append(heading, text);
-    // Replace the whole worker panel (heading, intro and form) with the confirmation.
-    panel.replaceChildren(confirmation);
-    heading.focus();
-  }
-
-  /* ------------------------------------------------------------------------
-     Worker form wiring
-     ------------------------------------------------------------------------ */
-
-  function populateSelect(select, options) {
-    options.forEach((value) => select.add(new Option(value, value)));
-  }
-
-  function prefersReducedMotion() {
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
   function initWorkerForm() {
     const form = document.getElementById("workerForm");
     if (!form) return;
 
-    const panel = document.getElementById("panel-worker");
-    const submitBtn = form.querySelector(".interest-submit");
-    const formError = document.getElementById("workerForm-error");
-    const submitLabel = submitBtn.textContent;
-    const cvField = initCvField(form);
-    let isSubmitting = false;
+    const cvField = initCvField(form.elements.cv, (file) => !workerValidators.cv(file));
 
-    populateSelect(form.elements.location, [...window.LOCATIONS, OTHER_LOCATION]);
+    // Handlers are attached before anything else, so the form can never fall
+    // back to a native submit (page reload) if later setup fails.
+    setupInterestForm(form, {
+      validators: workerValidators,
+      otherFields: { location: "locationOther" },
+      buildPayload: buildWorkerPayload,
+      submit: submitWorkerInterest,
+      onFieldChange: (e) => {
+        if (e.target.name === "cv" && e.type === "change") cvField.update();
+      },
+    });
+
+    populateSelect(form.elements.location, window.LOCATIONS, { addOther: true });
     populateSelect(form.elements.workType, window.WORK_TYPES);
-
-    // One handler for both "input" and "change". Typing never shows a new
-    // error; it only re-validates a field that is already showing one, so the
-    // error clears as soon as the value is valid. Selects, the CV and the
-    // checkbox are validated when their value is committed.
-    function handleFieldChange(e) {
-      const name = e.target.name;
-      if (name === "cv" && e.type === "change") cvField.update();
-      if (!validators[name]) return;
-
-      if (name === "location") toggleLocationOther(form);
-
-      const isInvalid = e.target.getAttribute("aria-invalid") === "true";
-      const isTextEntry = e.target.tagName === "INPUT" && !["checkbox", "file"].includes(e.target.type);
-      if (isInvalid || (e.type === "change" && !isTextEntry)) validateField(form, name);
-    }
-
-    function handleFieldBlur(e) {
-      const name = e.target.name;
-      if (!validators[name]) return;
-      // Ignore blur caused by the window losing focus (e.g. the file picker opening).
-      if (!document.hasFocus()) return;
-      validateField(form, name);
-    }
-
-    async function handleSubmit(e) {
-      e.preventDefault();
-      if (isSubmitting) return;
-      formError.textContent = "";
-
-      const formData = readFormData(form);
-      let firstInvalid = null;
-
-      Object.keys(validators).forEach((name) => {
-        const field = form.elements[name];
-        const message = isFieldActive(field) ? validators[name](formData[name], formData) : "";
-        setFieldError(form, name, message);
-        if (message && !firstInvalid) firstInvalid = field;
-      });
-
-      if (firstInvalid) {
-        firstInvalid.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "center" });
-        firstInvalid.focus({ preventScroll: true });
-        return;
-      }
-
-      isSubmitting = true;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
-      form.setAttribute("aria-busy", "true");
-
-      try {
-        await submitWorkerInterest(buildPayload(formData));
-        showConfirmation(panel, formData.firstName);
-      } catch (err) {
-        console.error(err);
-        formError.textContent = SUBMIT_FAILED_MESSAGE;
-        submitBtn.disabled = false;
-        submitBtn.textContent = submitLabel;
-        form.removeAttribute("aria-busy");
-        isSubmitting = false;
-      }
-    }
-
-    form.addEventListener("input", handleFieldChange);
-    form.addEventListener("change", handleFieldChange);
-    form.addEventListener("focusout", handleFieldBlur);
-    form.addEventListener("submit", handleSubmit);
   }
+
+  /* ------------------------------------------------------------------------
+     Employer form
+     ------------------------------------------------------------------------ */
+
+  const employerValidators = {
+    firstName: rules.required("Please enter your first name."),
+    lastName: rules.required("Please enter your last name."),
+    businessEmail: rules.email(),
+    businessContactNumber: rules.ukPhone("Please enter your business contact number."),
+    companyName: rules.required("Please enter your company name."),
+    website: rules.website(),
+    location: rules.required("Please select your location."),
+    locationOther: rules.otherText("location", "Please enter your location."),
+    businessType: rules.required("Please select your business type."),
+    businessTypeOther: rules.otherText("businessType", "Please describe your business type."),
+    companyRegistrationNumber: rules.required("Please enter your company registration number."),
+    agreePrivacy: rules.checked("Please confirm you have read the Privacy Policy."),
+    // marketingEmail and marketingSms are optional and deliberately have no validator.
+  };
+
+  async function submitEmployerInterest(payload) {
+    return sendInterest(EMPLOYER_INTEREST_ENDPOINT, payload, "submitEmployerInterest");
+  }
+
+  function buildEmployerPayload(formData) {
+    const payload = {
+      formType: "employer",
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      businessEmail: formData.businessEmail,
+      businessContactNumber: toUkFormat(formData.businessContactNumber, "e164"),
+      companyName: formData.companyName,
+      location: formData.location,
+      businessType: formData.businessType,
+      companyRegistrationNumber: formData.companyRegistrationNumber,
+      marketingEmail: formData.marketingEmail === true,
+      marketingSms: formData.marketingSms === true,
+      privacyConsent: formData.agreePrivacy === true,
+    };
+    if (formData.website) payload.website = normalizeWebsite(formData.website);
+    if (formData.location === OTHER) payload.locationOther = formData.locationOther;
+    if (formData.businessType === OTHER) payload.businessTypeOther = formData.businessTypeOther;
+    return payload;
+  }
+
+  function initEmployerForm() {
+    const form = document.getElementById("employerForm");
+    if (!form) return;
+
+    // Handlers first (see initWorkerForm), then the option lists.
+    setupInterestForm(form, {
+      validators: employerValidators,
+      otherFields: { location: "locationOther", businessType: "businessTypeOther" },
+      buildPayload: buildEmployerPayload,
+      submit: submitEmployerInterest,
+    });
+
+    populateSelect(form.elements.location, window.LOCATIONS, { addOther: true });
+    populateSelect(form.elements.businessType, window.BUSINESS_TYPES, { addOther: true });
+  }
+
+  /* ------------------------------------------------------------------------
+     Init
+     ------------------------------------------------------------------------ */
 
   function initPreviewNotice() {
     const notice = document.getElementById("previewNotice");
@@ -401,4 +527,5 @@
   initPreviewNotice();
   initTabs();
   initWorkerForm();
+  initEmployerForm();
 })();

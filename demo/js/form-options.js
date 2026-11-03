@@ -89,3 +89,21 @@ window.WORK_TYPES = Object.freeze([
   "Housekeeping",
   "Cleaner"
 ]);
+
+// "Other" is appended by interested.js (as with LOCATIONS) because it drives
+// the conditional "Please describe your business type" field.
+window.BUSINESS_TYPES = Object.freeze([
+  "Bar",
+  "Café",
+  "Care Home",
+  "Catering Company",
+  "Coffee Shop",
+  "Event Venue",
+  "Gastropub",
+  "Hotel",
+  "Nightclub",
+  "Pub",
+  "Restaurant",
+  "School",
+  "Stadium"
+]);

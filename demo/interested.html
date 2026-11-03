@@ -258,7 +258,7 @@
               <p class="field-error" id="location-error"></p>
             </div>
 
-            <div class="field" id="locationOtherField" hidden>
+            <div class="field" hidden>
               <label for="locationOther">Your location <span class="req" aria-hidden="true">*</span></label>
               <input type="text" id="locationOther" name="locationOther" autocomplete="address-level2"
                 aria-describedby="locationOther-error">
@@ -326,12 +326,145 @@
           </form>
         </div>
 
-        <!-- Employer panel (built in a later PR) -->
+        <!-- Employer panel -->
         <div id="panel-employer" class="interest-panel" role="tabpanel" aria-labelledby="tab-employer" hidden>
-          <div class="interest-placeholder">
-            <h2>Employer registration coming soon</h2>
-            <p>We're putting the finishing touches on employer sign-up. Check back shortly.</p>
-          </div>
+          <h2 id="employer-heading" class="panel-title">Good hospitality starts with good people</h2>
+          <p class="panel-intro">Finding the right hospitality staff should support your business, not become another
+            job on your already busy list. Flok is building a more straightforward way to connect with verified
+            hospitality professionals, with clear pricing and less time spent going back and forth.</p>
+          <p class="panel-intro">Register your business interest and tell us about the people you need, so we can
+            understand your requirements and discuss how Flok could support your team.</p>
+
+          <form id="employerForm" class="interest-form" aria-labelledby="employer-heading" novalidate>
+            <p class="required-note" aria-hidden="true"><span class="req">*</span> Required</p>
+
+            <h3 class="form-subheading">Contact details</h3>
+
+            <div class="field">
+              <label for="employer-firstName">First name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-firstName" name="firstName" autocomplete="given-name" required
+                aria-describedby="employer-firstName-error">
+              <p class="field-error" id="employer-firstName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-lastName">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-lastName" name="lastName" autocomplete="family-name" required
+                aria-describedby="employer-lastName-error">
+              <p class="field-error" id="employer-lastName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-businessEmail">Business email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="employer-businessEmail" name="businessEmail" autocomplete="work email"
+                inputmode="email" required aria-describedby="employer-businessEmail-error">
+              <p class="field-error" id="employer-businessEmail-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-businessContactNumber">Business contact number <span class="req"
+                  aria-hidden="true">*</span></label>
+              <input type="tel" id="employer-businessContactNumber" name="businessContactNumber"
+                autocomplete="work tel" inputmode="tel" required placeholder="e.g. 020 7946 0000"
+                aria-describedby="employer-businessContactNumber-error">
+              <p class="field-error" id="employer-businessContactNumber-error"></p>
+            </div>
+
+            <h3 class="form-subheading">Business details</h3>
+
+            <div class="field">
+              <label for="employer-companyName">Company name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-companyName" name="companyName" autocomplete="organization" required
+                aria-describedby="employer-companyName-error">
+              <p class="field-error" id="employer-companyName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-website">Website <span class="optional">(optional)</span></label>
+              <input type="text" id="employer-website" name="website" autocomplete="url" inputmode="url"
+                placeholder="e.g. example.co.uk" aria-describedby="employer-website-error">
+              <p class="field-error" id="employer-website-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-location">Location <span class="req" aria-hidden="true">*</span></label>
+              <select id="employer-location" name="location" required aria-describedby="employer-location-error">
+                <option value="">Select your location</option>
+                <!-- Options populated from LOCATIONS in js/form-options.js -->
+              </select>
+              <p class="field-error" id="employer-location-error"></p>
+            </div>
+
+            <div class="field" hidden>
+              <label for="employer-locationOther">Your location <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-locationOther" name="locationOther" autocomplete="address-level2"
+                aria-describedby="employer-locationOther-error">
+              <p class="field-error" id="employer-locationOther-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-businessType">Business type <span class="req" aria-hidden="true">*</span></label>
+              <p class="field-hint" id="employer-businessType-hint">Choose the option that best describes the venue or
+                business you need hospitality staff for.</p>
+              <select id="employer-businessType" name="businessType" required
+                aria-describedby="employer-businessType-hint employer-businessType-error">
+                <option value="">Select your business type</option>
+                <!-- Options populated from BUSINESS_TYPES in js/form-options.js -->
+              </select>
+              <p class="field-error" id="employer-businessType-error"></p>
+            </div>
+
+            <div class="field" hidden>
+              <label for="employer-businessTypeOther">Please describe your business type <span class="req"
+                  aria-hidden="true">*</span></label>
+              <input type="text" id="employer-businessTypeOther" name="businessTypeOther"
+                aria-describedby="employer-businessTypeOther-error">
+              <p class="field-error" id="employer-businessTypeOther-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-companyRegistrationNumber">Company registration number <span class="req"
+                  aria-hidden="true">*</span></label>
+              <input type="text" id="employer-companyRegistrationNumber" name="companyRegistrationNumber" required
+                aria-describedby="employer-companyRegistrationNumber-error">
+              <p class="field-error" id="employer-companyRegistrationNumber-error"></p>
+            </div>
+
+            <fieldset class="keep-in-touch" aria-describedby="employer-keepInTouch-hint">
+              <legend class="section-title">Keep in touch with Flok</legend>
+              <p class="field-hint" id="employer-keepInTouch-hint">These choices are optional. You can unsubscribe at
+                any time.</p>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="employer-marketingEmail" name="marketingEmail">
+                <label for="employer-marketingEmail">I'd like to receive emails from Flok about news, offers and
+                  services.</label>
+              </div>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="employer-marketingSms" name="marketingSms">
+                <label for="employer-marketingSms">I'd like to receive text messages from Flok about news, offers and
+                  services.</label>
+              </div>
+            </fieldset>
+
+            <div class="privacy-section">
+              <p class="privacy-text">We'll use your details to manage your interest in Flok and contact you about
+                getting started. Read our <a href="pdf/privacy-policy.pdf" target="_blank"
+                  rel="noopener noreferrer">Privacy Policy</a> for more information.</p>
+              <div class="field field-checkbox">
+                <div class="checkbox-row">
+                  <input type="checkbox" class="privacy-agree" id="employerAgreePrivacy" name="agreePrivacy" required
+                    aria-describedby="employerAgreePrivacy-error">
+                  <label for="employerAgreePrivacy">I have read the Privacy Policy. <span class="req"
+                      aria-hidden="true">*</span></label>
+                </div>
+                <p class="field-error" id="employerAgreePrivacy-error"></p>
+              </div>
+            </div>
+
+            <p class="form-error" id="employerForm-error" role="alert"></p>
+
+            <button type="submit" class="interest-submit">Register interest</button>
+          </form>
         </div>
       </div>
     </section>
