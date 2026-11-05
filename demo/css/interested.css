@@ -134,6 +134,11 @@ body.interest-body > .footer {
     border-radius: var(--interest-radius);
 }
 
+/* Hidden after a successful submission. */
+.interest-tabs[hidden] {
+    display: none;
+}
+
 .interest-tab {
     min-height: 44px;
     padding: 0.5rem 0.75rem;
@@ -522,25 +527,96 @@ body.interest-body > .footer {
    CONFIRMATION
    ========================================================================== */
 
+/* min-height (never a fixed height) gives the confirmation the screen and
+   pushes the footer down; longer content on small screens just grows. */
 .interest-confirmation {
-    padding: 1rem 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 55vh;
+    min-height: 55dvh;
+    padding: 1.5rem 0 0.5rem;
     text-align: center;
+    scroll-margin-top: calc(var(--interest-header-offset) + 1rem);
 }
 
-.interest-confirmation h2 {
-    margin: 0 0 0.5rem;
-    font-size: 1.25rem;
+.interest-confirmation[hidden] {
+    display: none;
+}
+
+/* Placeholder for the bird animation (not built yet). Empty, so it takes no space. */
+.confirmation-animation:empty {
+    display: none;
+}
+
+.confirmation-title {
+    margin: 0;
+    font-size: 1.6rem;
     font-weight: 700;
+    line-height: 1.2;
 }
 
-.interest-confirmation h2:focus {
+/* Focus is moved here programmatically for screen readers; no visible ring needed. */
+.confirmation-title:focus {
     outline: none;
 }
 
-.interest-confirmation p {
+.confirmation-text {
+    max-width: 46ch;
     margin: 0;
     color: var(--interest-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.confirmation-closing {
+    max-width: 46ch;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
     line-height: 1.5;
+}
+
+/* "Back to home" is a link styled like the yellow submit button. */
+.confirmation-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 320px;
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+.confirmation-home:hover {
+    filter: brightness(0.95);
+}
+
+.venue-signup {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.venue-signup[hidden] {
+    display: none;
+}
+
+.venue-signup-link {
+    color: var(--flok-navy);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.venue-signup-link:focus-visible {
+    outline: 3px solid var(--flok-navy);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.new-tab-note {
+    font-weight: 400;
 }
 
 /* ==========================================================================
@@ -590,6 +666,10 @@ body.interest-body > .footer {
 
     .panel-title {
         font-size: 1.75rem;
+    }
+
+    .confirmation-title {
+        font-size: 2rem;
     }
 }
 

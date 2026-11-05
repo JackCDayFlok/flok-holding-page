@@ -466,6 +466,43 @@
             <button type="submit" class="interest-submit">Register interest</button>
           </form>
         </div>
+
+        <!-- Confirmations: shown by js/interested.js in place of the tabs and forms after a successful
+             submission. The heading text (with the first name) is set by the JS. -->
+        <section id="worker-confirmation" class="interest-confirmation" aria-labelledby="worker-confirmation-heading"
+          hidden>
+          <!-- BIRD ANIMATION PLACEHOLDER: the bird animation will go here later. Intentionally empty. -->
+          <div class="confirmation-animation" aria-hidden="true"></div>
+          <h2 id="worker-confirmation-heading" class="confirmation-title" tabindex="-1">You’re in the Flok!</h2>
+          <p class="confirmation-text">Thanks for registering your interest. Your details and CV have landed safely,
+            which means you can officially stop wrestling with this form. We’re building a fresh approach to
+            hospitality work with fewer hoops to jump through and more say over the shifts you choose.</p>
+          <p class="confirmation-text">We’ll email you with the next steps as we bring workers on board. Availability
+            will depend on location, and registering your interest does not guarantee shifts.</p>
+          <p class="confirmation-closing">You’ve done your bit for now. We’ll take it from here.</p>
+          <a href="index.html" class="interest-submit confirmation-home">Back to home</a>
+        </section>
+
+        <section id="employer-confirmation" class="interest-confirmation"
+          aria-labelledby="employer-confirmation-heading" hidden>
+          <!-- BIRD ANIMATION PLACEHOLDER: the bird animation will go here later. Intentionally empty. -->
+          <div class="confirmation-animation" aria-hidden="true"></div>
+          <h2 id="employer-confirmation-heading" class="confirmation-title" tabindex="-1">
+            Thank you for your interest</h2>
+          <p class="confirmation-text">We’ve received your business details and look forward to learning more about
+            your staffing requirements. Flok is building a more straightforward approach to hospitality staffing, with
+            clear pricing and a focus on the people who help your business deliver great service.</p>
+          <p class="confirmation-text">We’ll be in touch to discuss your requirements and the next steps for your
+            business.</p>
+          <p class="confirmation-closing">Because finding great people should leave you more time to look after
+            yours.</p>
+          <a href="index.html" class="interest-submit confirmation-home">Back to home</a>
+          <!-- Stays hidden until ENABLE_VENUE_SIGNUP_LINK is true in js/interested.js. -->
+          <p class="venue-signup" id="venueSignup" hidden>
+            <a href="https://app.flokjobs.com/signup" class="venue-signup-link" id="venueSignupLink">Create your venue
+              account<span class="new-tab-note" id="venueSignupNewTab" hidden> (opens in a new tab)</span></a>
+          </p>
+        </section>
       </div>
     </section>
 

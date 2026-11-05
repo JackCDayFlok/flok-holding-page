@@ -13,6 +13,11 @@
   // (the *_INTEREST_ENDPOINT constants below), before the page goes live.
   const PREVIEW_MODE = true;
 
+  // Shows "Create your venue account" on the employer confirmation.
+  // This MUST stay false until Jack confirms the app's employer sign-up
+  // journey is ready.
+  const ENABLE_VENUE_SIGNUP_LINK = false;
+
   // TODO: Set to the confirmed AWS endpoints. While an endpoint is empty and
   // PREVIEW_MODE is false, that form's submissions fail rather than pretend to succeed.
   const WORKER_INTEREST_ENDPOINT = "";
@@ -237,35 +242,36 @@
     if (!response.ok) throw new Error(label + ": submission failed with status " + response.status);
   }
 
-  function showConfirmation(panel, firstName) {
-    const confirmation = document.createElement("div");
-    confirmation.className = "interest-confirmation";
+  // Hides the desktop intro, the tabs and both panels (the preview notice
+  // stays), then shows the given confirmation and moves focus to its heading.
+  function showConfirmation(confirmationId, headingText) {
+    const confirmation = document.getElementById(confirmationId);
+    const heading = confirmation.querySelector(".confirmation-title");
 
-    const heading = document.createElement("h2");
-    heading.textContent = "You've registered your interest";
-    heading.tabIndex = -1;
+    document.querySelectorAll(".interest-intro, .interest-tabs, .interest-panel").forEach((el) => {
+      el.hidden = true;
+    });
 
-    const text = document.createElement("p");
-    text.textContent =
-      (firstName ? "Thanks, " + firstName + ". " : "Thanks. ") +
-      "This isn't a full Flok account yet. We'll be in touch with next steps when access opens.";
-
-    confirmation.append(heading, text);
-    // Replace the whole panel (heading, intro and form) with the confirmation.
-    panel.replaceChildren(confirmation);
-    heading.focus();
+    heading.textContent = headingText; // textContent, never innerHTML: the name is user input
+    confirmation.hidden = false;
+    confirmation.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" });
+    heading.focus({ preventScroll: true });
   }
 
   /**
    * Wires a form to the shared behaviour.
-   *   validators:    { fieldName: (value, formData) => errorMessage or "" }, in DOM order
-   *   otherFields:   { selectName: otherTextName } for "Other" conditional fields
-   *   buildPayload:  (formData) => payload
-   *   submit:        async (payload) => void, throws on failure
-   *   onFieldChange: optional (event) => void, runs before validation
+   *   validators:          { fieldName: (value, formData) => errorMessage or "" }, in DOM order
+   *   otherFields:         { selectName: otherTextName } for "Other" conditional fields
+   *   buildPayload:        (formData) => payload
+   *   submit:              async (payload) => void, throws on failure
+   *   confirmationId:      id of the confirmation shown on success
+   *   confirmationHeading: (firstName) => heading text for the confirmation
+   *   onFieldChange:       optional (event) => void, runs before validation
    */
-  function setupInterestForm(form, { validators, otherFields = {}, buildPayload, submit, onFieldChange }) {
-    const panel = form.closest(".interest-panel");
+  function setupInterestForm(
+    form,
+    { validators, otherFields = {}, buildPayload, submit, confirmationId, confirmationHeading, onFieldChange }
+  ) {
     const submitBtn = form.querySelector(".interest-submit");
     const formError = form.querySelector("#" + CSS.escape(form.id + "-error"));
     const submitLabel = submitBtn.textContent;
@@ -323,7 +329,7 @@
 
       try {
         await submit(buildPayload(formData));
-        showConfirmation(panel, formData.firstName);
+        showConfirmation(confirmationId, confirmationHeading(formData.firstName));
       } catch (err) {
         console.error(err);
         formError.textContent = SUBMIT_FAILED_MESSAGE;
@@ -445,6 +451,8 @@
       otherFields: { location: "locationOther" },
       buildPayload: buildWorkerPayload,
       submit: submitWorkerInterest,
+      confirmationId: "worker-confirmation",
+      confirmationHeading: (firstName) => (firstName ? "You’re in the Flok, " + firstName + "!" : "You’re in the Flok!"),
       onFieldChange: (e) => {
         if (e.target.name === "cv" && e.type === "change") cvField.update();
       },
@@ -509,10 +517,40 @@
       otherFields: { location: "locationOther", businessType: "businessTypeOther" },
       buildPayload: buildEmployerPayload,
       submit: submitEmployerInterest,
+      confirmationId: "employer-confirmation",
+      confirmationHeading: (firstName) =>
+        firstName ? "Thank you for your interest, " + firstName : "Thank you for your interest",
     });
 
     populateSelect(form.elements.location, window.LOCATIONS, { addOther: true });
     populateSelect(form.elements.businessType, window.BUSINESS_TYPES, { addOther: true });
+  }
+
+  // "Create your venue account" on the employer confirmation. Stays hidden
+  // (hidden attribute) unless ENABLE_VENUE_SIGNUP_LINK is true. Opens in a new
+  // tab on desktop only; on mobile it opens in the same tab.
+  function initVenueSignupLink() {
+    const wrapper = document.getElementById("venueSignup");
+    if (!wrapper || !ENABLE_VENUE_SIGNUP_LINK) return;
+
+    const link = document.getElementById("venueSignupLink");
+    const newTabNote = document.getElementById("venueSignupNewTab");
+    const desktop = window.matchMedia("(min-width: 768px)");
+
+    function update() {
+      if (desktop.matches) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      } else {
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      }
+      newTabNote.hidden = !desktop.matches;
+    }
+
+    update();
+    desktop.addEventListener("change", update);
+    wrapper.hidden = false;
   }
 
   /* ------------------------------------------------------------------------
@@ -528,4 +566,5 @@
   initTabs();
   initWorkerForm();
   initEmployerForm();
+  initVenueSignupLink();
 })();
