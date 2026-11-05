@@ -15,6 +15,7 @@
     --interest-success: #1E7B4A;
     --interest-radius: 10px;
     --interest-header-offset: 88px;
+    --interest-header-max: 1040px; /* desktop header column */
 }
 
 /* ==========================================================================
@@ -44,6 +45,29 @@ body.interest-body > main > .interest-page {
 
 body.interest-body > .footer {
     flex-shrink: 0;
+}
+
+/* ==========================================================================
+   HEADER (this page only)
+   The header here has no "Get the App" button or "Dashboard" link. That
+   button was the flex spacer between the logo and the hamburger, so the
+   hamburger is pushed right explicitly. On desktop the header content is
+   held to a centred column closer to the page content width.
+   ========================================================================== */
+
+body.interest-body .hamburger-menu {
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    body.interest-body .header-content {
+        max-width: var(--interest-header-max);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-sizing: border-box;
+    }
 }
 
 /* ==========================================================================
