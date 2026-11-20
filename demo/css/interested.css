@@ -576,10 +576,87 @@ body.interest-body .hamburger-menu {
     display: none;
 }
 
-/* Placeholder for the bird animation (not built yet). Collapsed so it takes no
-   space; remove this rule when the animation is added. */
+/* ---- Bird animation -------------------------------------------------------
+   Plays once when the confirmation is shown (animations start when the
+   section stops being display:none), about 1.7s, never loops. The box has a
+   fixed height, so the heading and text never move and are not delayed.
+   Each .bird animates in the SVG's own units: it starts lower-left (--fx,
+   --fy), rises up and across, and settles at the position set on its path.
+   Final state is fully shown; the low opacity comes from fill-opacity. */
 .confirmation-animation {
-    display: none;
+    height: 96px;
+    margin-bottom: -0.25rem;
+}
+
+.birds {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--flok-navy);
+}
+
+.bird {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: bird-take-off var(--dur) cubic-bezier(0.22, 0.61, 0.36, 1) var(--d, 0s) 1 both;
+}
+
+/* Worker: playful. More birds, more lift and spread, slight overshoot. */
+.birds--worker {
+    --dur: 1.3s;
+    --s0: 0.55;
+    --r0: -14deg;
+    --os: -0.1;
+}
+
+/* Employer: subtle. Shorter, gentler path, no overshoot. */
+.birds--employer {
+    --dur: 1.45s;
+    --s0: 0.85;
+    --r0: -5deg;
+    --os: 0;
+}
+
+@keyframes bird-take-off {
+    0% {
+        opacity: 0;
+        transform: translate(var(--fx), var(--fy)) rotate(var(--r0)) scale(var(--s0));
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        transform: translate(calc(var(--fx) * var(--os)), calc(var(--fy) * var(--os))) rotate(0deg) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Reduced motion: the same flock, static, in its final positions. */
+@media (prefers-reduced-motion: reduce) {
+    .bird {
+        animation: none;
+    }
+}
+
+/* TEMPORARY, for review only: "Replay animation" button added by
+   js/interested.js when the URL has ?replayBirds. Remove with that code. */
+.birds-replay {
+    align-self: flex-start;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--interest-border);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--flok-navy);
+    font: 400 0.85rem 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+.birds-replay:focus-visible {
+    outline: 3px solid var(--flok-navy);
+    outline-offset: 2px;
 }
 
 .confirmation-title {

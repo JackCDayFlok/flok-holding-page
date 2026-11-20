@@ -555,6 +555,35 @@
   }
 
   /* ------------------------------------------------------------------------
+     TEMPORARY, for review only: bird animation replay
+     With ?replayBirds in the URL, adds a "Replay animation" button under each
+     confirmation that restarts its bird animation. Remove this function, its
+     call in Init and the .birds-replay styles once the animation is signed off.
+     ------------------------------------------------------------------------ */
+
+  function initBirdReplay() {
+    if (!new URLSearchParams(window.location.search).has("replayBirds")) return;
+
+    document.querySelectorAll(".interest-confirmation").forEach((confirmation) => {
+      const birds = confirmation.querySelector(".birds");
+      if (!birds) return;
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "birds-replay";
+      button.textContent = "Replay animation";
+      button.addEventListener("click", () => {
+        // Restart each bird's CSS animation. Under reduced motion there are none.
+        birds.getAnimations({ subtree: true }).forEach((animation) => {
+          animation.cancel();
+          animation.play();
+        });
+      });
+      confirmation.appendChild(button);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
      Init
      ------------------------------------------------------------------------ */
 
@@ -568,4 +597,5 @@
   initWorkerForm();
   initEmployerForm();
   initVenueSignupLink();
+  initBirdReplay(); // TEMPORARY, for review only
 })();

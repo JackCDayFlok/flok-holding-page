@@ -446,8 +446,19 @@
              submission. The heading text (with the first name) is set by the JS. -->
         <section id="worker-confirmation" class="interest-confirmation" aria-labelledby="worker-confirmation-heading"
           hidden>
-          <!-- BIRD ANIMATION PLACEHOLDER: the bird animation will go here later. Intentionally empty. -->
-          <div class="confirmation-animation" aria-hidden="true"></div>
+          <!-- Bird animation (worker, playful): 6 silhouettes traced from images/birds3.webp, one path
+               each so they move individually. Decorative only. Animated in css/interested.css. -->
+          <div class="confirmation-animation" aria-hidden="true">
+            <svg class="birds birds--worker" viewBox="0 0 320 96" preserveAspectRatio="xMinYMid meet"
+              focusable="false" aria-hidden="true">
+              <g class="bird" style="--d:0s;--fx:-26px;--fy:40px"><path transform="translate(6 42) rotate(-6) scale(0.34)" fill-opacity="0.45" d="M0 0 13 9 36 33 48 41 69 69 72 72 79 75 89 76 105 68 117 64 153 59 169 60 151 71 124 77 109 83 96 91 91 96 91 99 95 108 104 116 103 118 93 119 73 115 66 111 60 105 56 95 55 83 51 81 56 76 57 69 31 41 12 25 3 9Z"/></g>
+              <g class="bird" style="--d:0.08s;--fx:-40px;--fy:46px"><path transform="translate(80 30) rotate(4) scale(0.4)" fill-opacity="0.4" d="M6 0 9 0 12 6 15 2 19 8 21 5 26 12 29 10 31 12 43 31 60 51 63 60 81 57 88 64 91 73 91 80 79 81 71 79 70 80 72 84 72 94 64 113 61 112 59 117 54 116 52 121 48 119 44 124 40 122 35 128 33 128 37 97 35 80 20 78 13 75 1 76 5 74 10 68 15 66 26 65 31 61 27 52 14 36 3 18 0 2 1 1 4 6Z"/></g>
+              <g class="bird" style="--d:0.16s;--fx:-60px;--fy:52px"><path transform="translate(134 24) rotate(-8) scale(0.55)" fill-opacity="0.3" d="M38 0 38 2 27 12 27 15 31 17 26 19 22 19 17 14 18 12 16 10 7 7 0 2 14 7 20 11 23 11 28 6Z"/></g>
+              <g class="bird" style="--d:0.24s;--fx:-76px;--fy:60px"><path transform="translate(168 8) rotate(6) scale(0.42)" fill-opacity="0.35" d="M28 0 30 4 32 1 34 2 35 8 37 6 39 7 39 11 42 12 42 17 45 17 46 19 47 39 51 56 50 65 54 68 62 69 65 72 66 84 62 91 49 83 44 93 32 104 29 103 27 105 24 105 22 103 18 105 17 102 11 104 10 101 3 104 12 89 18 82 23 70 9 58 0 54 5 54 8 52 13 52 20 55 27 54 28 45 24 27 24 10Z"/></g>
+              <g class="bird" style="--d:0.32s;--fx:-96px;--fy:44px"><path transform="translate(214 46) rotate(-4) scale(0.36)" fill-opacity="0.4" d="M2 0 5 3 8 0 12 4 17 3 20 8 23 7 26 12 30 13 31 16 33 15 39 19 44 28 49 43 57 51 68 67 110 68 135 72 109 77 79 76 67 80 95 91 115 93 117 95 117 99 113 103 97 98 77 104 54 104 35 100 18 88 10 89 0 96 2 91 6 87 8 78 13 73 29 73 34 71 21 47 10 36 3 25 0 16 0 5Z"/></g>
+              <g class="bird" style="--d:0.4s;--fx:-120px;--fy:58px"><path transform="translate(276 14) rotate(10) scale(0.4)" fill-opacity="0.3" d="M0 0 19 17 34 34 41 35 51 30 70 27 76 28 70 32 56 35 44 41 41 44 41 46 47 54 34 53 30 51 26 46 25 38 23 37 26 34 26 31 4 10Z"/></g>
+            </svg>
+          </div>
           <h2 id="worker-confirmation-heading" class="confirmation-title" tabindex="-1">Thanks for registering!</h2>
           <p class="confirmation-text">We’ve received your details and CV. We’ll be in touch with next steps.</p>
           <p class="confirmation-closing">Welcome to the Flok. Good things are coming.</p>
@@ -456,8 +467,16 @@
 
         <section id="employer-confirmation" class="interest-confirmation"
           aria-labelledby="employer-confirmation-heading" hidden>
-          <!-- BIRD ANIMATION PLACEHOLDER: the bird animation will go here later. Intentionally empty. -->
-          <div class="confirmation-animation" aria-hidden="true"></div>
+          <!-- Bird animation (employer, subtle): 3 silhouettes traced from images/birds3.webp, one path
+               each so they move individually. Decorative only. Animated in css/interested.css. -->
+          <div class="confirmation-animation" aria-hidden="true">
+            <svg class="birds birds--employer" viewBox="0 0 320 96" preserveAspectRatio="xMinYMid meet"
+              focusable="false" aria-hidden="true">
+              <g class="bird" style="--d:0s;--fx:-12px;--fy:16px"><path transform="translate(8 44) rotate(-4) scale(0.3)" fill-opacity="0.45" d="M0 0 13 9 36 33 48 41 69 69 72 72 79 75 89 76 105 68 117 64 153 59 169 60 151 71 124 77 109 83 96 91 91 96 91 99 95 108 104 116 103 118 93 119 73 115 66 111 60 105 56 95 55 83 51 81 56 76 57 69 31 41 12 25 3 9Z"/></g>
+              <g class="bird" style="--d:0.12s;--fx:-18px;--fy:18px"><path transform="translate(80 20) rotate(4) scale(0.38)" fill-opacity="0.38" d="M28 0 30 4 32 1 34 2 35 8 37 6 39 7 39 11 42 12 42 17 45 17 46 19 47 39 51 56 50 65 54 68 62 69 65 72 66 84 62 91 49 83 44 93 32 104 29 103 27 105 24 105 22 103 18 105 17 102 11 104 10 101 3 104 12 89 18 82 23 70 9 58 0 54 5 54 8 52 13 52 20 55 27 54 28 45 24 27 24 10Z"/></g>
+              <g class="bird" style="--d:0.24s;--fx:-22px;--fy:20px"><path transform="translate(130 12) rotate(-6) scale(0.6)" fill-opacity="0.3" d="M37 0 39 0 38 2 32 6 27 12 27 14 31 17 24 19 19 15 17 10 6 6 0 2 13 6 20 10 24 10Z"/></g>
+            </svg>
+          </div>
           <h2 id="employer-confirmation-heading" class="confirmation-title" tabindex="-1">Thanks for registering!</h2>
           <p class="confirmation-text">We’ve received your business details. We’ll be in touch to talk about your
             staffing needs and how Flok can help.</p>
