@@ -16,6 +16,7 @@
     --interest-radius: 10px;
     --interest-header-offset: 88px;
     --interest-header-max: 1040px; /* desktop header column */
+    --interest-card-max: 560px; /* form card; the desktop intro shares it */
 }
 
 /* ==========================================================================
@@ -45,6 +46,14 @@ body.interest-body > main > .interest-page {
 
 body.interest-body > .footer {
     flex-shrink: 0;
+}
+
+/* While a confirmation is showing, the card wraps its content and sits near
+   the top; main takes a full screen so the footer sits further down.
+   Browsers without :has() fall back to the sticky footer above. */
+body.interest-body > main:has(.interest-confirmation:not([hidden])) {
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 /* ==========================================================================
@@ -106,7 +115,7 @@ body.interest-body .hamburger-menu {
 .interest-card {
     box-sizing: border-box;
     width: 100%;
-    max-width: 560px;
+    max-width: var(--interest-card-max);
     margin: 0 auto;
     padding: 1.5rem 1.25rem 1.75rem;
     background: #fff;
@@ -551,18 +560,15 @@ body.interest-body .hamburger-menu {
    CONFIRMATION
    ========================================================================== */
 
-/* min-height (never a fixed height) gives the confirmation the screen and
-   pushes the footer down; longer content on small screens just grows. */
+/* Wraps its content (no min-height); main's min-height keeps the footer down.
+   Copy and the "Back to home" button are left-aligned inside the centred card. */
 .interest-confirmation {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
     gap: 1rem;
-    min-height: 55vh;
-    min-height: 55dvh;
     padding: 1.5rem 0 0.5rem;
-    text-align: center;
+    text-align: left;
     scroll-margin-top: calc(var(--interest-header-offset) + 1rem);
 }
 
@@ -570,8 +576,9 @@ body.interest-body .hamburger-menu {
     display: none;
 }
 
-/* Placeholder for the bird animation (not built yet). Empty, so it takes no space. */
-.confirmation-animation:empty {
+/* Placeholder for the bird animation (not built yet). Collapsed so it takes no
+   space; remove this rule when the animation is added. */
+.confirmation-animation {
     display: none;
 }
 
@@ -588,7 +595,6 @@ body.interest-body .hamburger-menu {
 }
 
 .confirmation-text {
-    max-width: 46ch;
     margin: 0;
     color: var(--interest-muted);
     font-size: 0.95rem;
@@ -596,7 +602,6 @@ body.interest-body .hamburger-menu {
 }
 
 .confirmation-closing {
-    max-width: 46ch;
     margin: 0;
     font-size: 1rem;
     font-weight: 700;
@@ -656,10 +661,13 @@ body.interest-body .hamburger-menu {
         padding: calc(var(--interest-header-offset) + 2.5rem) 2rem 4rem;
     }
 
+    /* Same width and centring as the card, so the intro's left edge lines up
+       with the card's. */
     .interest-intro {
-        max-width: 720px;
+        box-sizing: border-box;
+        max-width: var(--interest-card-max);
         margin: 0 auto 2rem;
-        text-align: center;
+        text-align: left;
     }
 
     .interest-intro-title {
@@ -677,8 +685,7 @@ body.interest-body .hamburger-menu {
 
     .interest-intro-text {
         display: block;
-        max-width: 62ch;
-        margin: 0 auto;
+        margin: 0;
         color: var(--interest-muted);
         font-size: 1.05rem;
         line-height: 1.6;

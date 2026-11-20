@@ -452,7 +452,8 @@
       buildPayload: buildWorkerPayload,
       submit: submitWorkerInterest,
       confirmationId: "worker-confirmation",
-      confirmationHeading: (firstName) => (firstName ? "You’re in the Flok, " + firstName + "!" : "You’re in the Flok!"),
+      confirmationHeading: (firstName) =>
+        firstName ? "Thanks for registering, " + firstName + "!" : "Thanks for registering!",
       onFieldChange: (e) => {
         if (e.target.name === "cv" && e.type === "change") cvField.update();
       },
@@ -519,7 +520,7 @@
       submit: submitEmployerInterest,
       confirmationId: "employer-confirmation",
       confirmationHeading: (firstName) =>
-        firstName ? "Thank you for your interest, " + firstName : "Thank you for your interest",
+        firstName ? "Thanks for registering, " + firstName + "!" : "Thanks for registering!",
     });
 
     populateSelect(form.elements.location, window.LOCATIONS, { addOther: true });
