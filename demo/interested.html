@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ——————————————— CORE ——————————————— -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Register your interest in Flok Jobs. Get early access to hospitality shifts as a worker, or to verified staff as an employer.">
+
+  <!-- ——————————— ABSOLUTE CANONICAL ——————————— -->
+  <link rel="canonical" href="https://www.flokjobs.com/interested">
+
+  <!-- ——————————— SOCIAL CARDS ——————————— -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flokjobs.com/interested">
+  <meta property="og:title" content="Register your interest | Flok Jobs">
+  <meta property="og:site_name" content="Flok Jobs">
+  <meta property="og:description" content="Get early access to Flok Jobs, the UK hospitality recruitment platform. Register your interest today.">
+  <meta property="og:image" content="https://www.flokjobs.com/images/og-home.png">
+  <meta property="og:image:alt" content="Flok Jobs logo on a navy background">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Register your interest | Flok Jobs">
+  <meta name="twitter:description" content="Get early access to Flok Jobs, the UK hospitality recruitment platform. Register your interest today.">
+  <meta name="twitter:image" content="https://www.flokjobs.com/images/og-home.png">
+
+  <!-- ———————————  STRUCTURED DATA  ——————————— -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Flok Jobs",
+    "url":"https://www.flokjobs.com",
+    "logo":"https://www.flokjobs.com/images/flokjobs-logo.png",
+    "description":"UK's leading hospitality recruitment platform connecting venues with verified chefs, bar staff, waiters and hospitality professionals.",
+    "sameAs":[
+      "https://www.facebook.com/people/Flok-Jobs/61576512420509",
+      "https://www.linkedin.com/company/flokjobs",
+      "https://www.instagram.com/flokjobs"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"GB"
+    }
+  }
+  </script>
+
+  <!-- ———————————  PWA / THEME  ——————————— -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Flok Jobs">
+  <meta name="theme-color" content="#121212">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+
+  <!-- ———————————  PRELOADING ——————————— -->
+  <link rel="preload" as="image" href="/images/silverbackground1.svg" type="image/svg+xml" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/silverbackground2.svg" type="image/svg+xml" media="(min-width: 768px)">
+  <link rel="preload" as="font" href="/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/Inter-Bold.woff2" type="font/woff2" crossorigin>
+
+  <!-- —————————————————  ASSETS  ————————————————— -->
+  <title>Register your interest | Flok Jobs</title>
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192.png">
+  <link rel="stylesheet" href="css/template.css">
+  <link rel="stylesheet" href="css/interested.css">
+</head>
+
+
+<body class="interest-body">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Fixed Header Navigation -->
+  <header class="sticky-header">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.svg" class="header-logo" alt="Flok Logo"
+          width="960" height="450"></a>
+      <a href="index.html"><img src="images/Flok_Logo_Mobile.svg" class="mobile-logo" alt="Flok Logo" width="960"
+          height="450"></a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Primary">
+        <div class="menu-group">
+          <a href="index.html" class="nav-btn">Home</a>
+          <a href="employers.html" class="nav-btn">Employers</a>
+          <a href="workers.html" class="nav-btn">Workers</a>
+
+          <!-- Resources toggle -->
+          <button id="resourcesToggle" class="nav-btn resources-btn" type="button" aria-expanded="false"
+            aria-controls="resourcesDropdown">
+            Resources
+          </button>
+        </div>
+      </nav>
+
+
+      <!-- Mobile Hamburger Menu -->
+      <button id="mobileMenuToggle" class="hamburger-menu" aria-label="Open menu" aria-controls="mobileOverlay"
+        aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Mobile Overlay Menu -->
+      <div id="mobileOverlay" class="mobile-overlay" aria-hidden="true">
+        <div class="overlay-content">
+          <div class="overlay-header">
+            <div class="logo-wrapper">
+              <a href="index.html"><img src="images/Flok_Logo_Mobile_Menu.svg" class="overlay-logo" alt="Flok Logo"
+                  width="960" height="450"></a>
+            </div>
+          </div>
+          <nav class="overlay-nav" aria-label="Mobile navigation">
+            <a class="overlay-link" href="index.html">Home</a>
+            <a class="overlay-link" href="employers.html">Employers</a>
+            <a class="overlay-link" href="workers.html">Workers</a>
+            <a class="overlay-link" href="about.html">About</a>
+          </nav>
+
+          <button id="closeOverlay" class="close-btn" aria-label="Close menu">
+            <div class="circle-arrow">
+              <img src="images/arrow.png" class="arrow" alt="Back arrow" width="50" height="50">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="resourcesDropdown" class="resources-dropdown" role="region" aria-labelledby="resourcesToggle">
+    <div class="resources-inner">
+      <!-- decorative dots -->
+      <img class="dropdown-decor-left" src="images/dots1.png" alt="" aria-hidden="true">
+      <img class="dropdown-decor-bottom" src="images/dots1.png" alt="" aria-hidden="true">
+
+      <div class="resources-grid">
+        <!-- columns -->
+        <div class="links-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="about.html">About Flok</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="links-col">
+          <h3>Get Help</h3>
+          <ul>
+            <li><a href="contact-us.html" target="_blank">Contact Us</a></li>
+            <li><a href="help-centre.html">Help Centre</a></li>
+          </ul>
+        </div>
+
+        <!-- right-side image with left fade -->
+        <div class="image-col">
+          <div class="fade-wrap">
+            <img src="images/footerimage.png" alt="Hospitality staff at work">
+            <span class="fade-left" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main-content" tabindex="-1">
+
+    <section class="interest-page" aria-labelledby="interest-heading">
+      <header class="interest-intro">
+        <h1 id="interest-heading" class="interest-intro-title">Join the Flok</h1>
+        <p class="interest-intro-text">Looking for hospitality work or people for your team? Register your interest
+          below.</p>
+      </header>
+
+      <div class="interest-card">
+        <!-- Shown by js/interested.js while PREVIEW_MODE is true -->
+        <p class="preview-notice" id="previewNotice" hidden>Preview: submissions are simulated and no details are
+          saved.</p>
+
+        <div class="interest-tabs" role="tablist" aria-label="Register as">
+          <button type="button" class="interest-tab" role="tab" id="tab-worker" aria-controls="panel-worker"
+            aria-selected="true">I'm looking for work</button>
+          <button type="button" class="interest-tab" role="tab" id="tab-employer" aria-controls="panel-employer"
+            aria-selected="false" tabindex="-1">I'm hiring</button>
+        </div>
+
+        <!-- Worker panel -->
+        <div id="panel-worker" class="interest-panel" role="tabpanel" aria-labelledby="tab-worker">
+          <h2 id="worker-heading" class="panel-title">Your details</h2>
+          <p class="panel-intro">Tell us a bit about yourself, choose the work you’re looking for and upload your CV.</p>
+
+          <form id="workerForm" class="interest-form" aria-labelledby="worker-heading" novalidate>
+            <p class="required-note" aria-hidden="true"><span class="req">*</span> Required</p>
+
+            <div class="field">
+              <label for="firstName">First name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" required
+                aria-describedby="firstName-error">
+              <p class="field-error" id="firstName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" required
+                aria-describedby="lastName-error">
+              <p class="field-error" id="lastName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required
+                aria-describedby="email-error">
+              <p class="field-error" id="email-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required
+                placeholder="e.g. 07123 456789" aria-describedby="phone-error">
+              <p class="field-error" id="phone-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="location">Location <span class="req" aria-hidden="true">*</span></label>
+              <select id="location" name="location" required aria-describedby="location-error">
+                <option value="">Select your location</option>
+                <!-- Options populated from LOCATIONS in js/form-options.js -->
+              </select>
+              <p class="field-error" id="location-error"></p>
+            </div>
+
+            <div class="field" hidden>
+              <label for="locationOther">Your location <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="locationOther" name="locationOther" autocomplete="address-level2"
+                aria-describedby="locationOther-error">
+              <p class="field-error" id="locationOther-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="workType">Work type <span class="req" aria-hidden="true">*</span></label>
+              <select id="workType" name="workType" required aria-describedby="workType-error">
+                <option value="">Choose a work type</option>
+                <!-- Options populated from WORK_TYPES in js/form-options.js -->
+              </select>
+              <p class="field-error" id="workType-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="cv">Upload your CV <span class="req" aria-hidden="true">*</span></label>
+              <p class="field-hint" id="cv-hint">Upload a PDF of your CV. Maximum file size 10MB.</p>
+              <input type="file" id="cv" name="cv" accept="application/pdf,.pdf" required
+                aria-describedby="cv-hint cv-error">
+              <div class="cv-attached" id="cvAttached" hidden>
+                <span class="cv-tick" aria-hidden="true">&#10003;</span>
+                <span class="cv-name" id="cvName"></span>
+                <span class="cv-status">Attached</span>
+                <button type="button" class="cv-replace" id="cvReplace" aria-describedby="cvName">Replace</button>
+              </div>
+              <p class="field-error" id="cv-error"></p>
+            </div>
+
+            <fieldset class="keep-in-touch" aria-describedby="keepInTouch-hint">
+              <legend class="section-title">Keep in touch with Flok</legend>
+              <p class="field-hint" id="keepInTouch-hint">These choices are optional. You can unsubscribe at any
+                time.</p>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="marketingEmail" name="marketingEmail">
+                <label for="marketingEmail">I'd like to receive emails from Flok about news, offers and
+                  services.</label>
+              </div>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="marketingSms" name="marketingSms">
+                <label for="marketingSms">I'd like to receive text messages from Flok about news, offers and
+                  services.</label>
+              </div>
+            </fieldset>
+
+            <div class="privacy-section">
+              <p class="privacy-text">We'll use your details to manage your interest in Flok and contact you about
+                getting started. Read our <a href="pdf/privacy-policy.pdf" target="_blank"
+                  rel="noopener noreferrer">Privacy Policy</a> for more information.</p>
+              <div class="field field-checkbox">
+                <div class="checkbox-row">
+                  <input type="checkbox" class="privacy-agree" id="agreePrivacy" name="agreePrivacy" required
+                    aria-describedby="agreePrivacy-error">
+                  <label for="agreePrivacy">I have read the Privacy Policy. <span class="req"
+                      aria-hidden="true">*</span></label>
+                </div>
+                <p class="field-error" id="agreePrivacy-error"></p>
+              </div>
+            </div>
+
+            <p class="form-error" id="workerForm-error" role="alert"></p>
+
+            <button type="submit" class="interest-submit">Register interest</button>
+          </form>
+        </div>
+
+        <!-- Employer panel -->
+        <div id="panel-employer" class="interest-panel" role="tabpanel" aria-labelledby="tab-employer" hidden>
+          <h2 id="employer-heading" class="panel-title">Tell us about your business</h2>
+          <p class="panel-intro">Share a few details about you and your business so we can understand your staffing
+            needs.</p>
+
+          <form id="employerForm" class="interest-form" aria-labelledby="employer-heading" novalidate>
+            <p class="required-note" aria-hidden="true"><span class="req">*</span> Required</p>
+
+            <h3 class="form-subheading">Contact details</h3>
+
+            <div class="field">
+              <label for="employer-firstName">First name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-firstName" name="firstName" autocomplete="given-name" required
+                aria-describedby="employer-firstName-error">
+              <p class="field-error" id="employer-firstName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-lastName">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-lastName" name="lastName" autocomplete="family-name" required
+                aria-describedby="employer-lastName-error">
+              <p class="field-error" id="employer-lastName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-businessEmail">Business email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="employer-businessEmail" name="businessEmail" autocomplete="work email"
+                inputmode="email" required aria-describedby="employer-businessEmail-error">
+              <p class="field-error" id="employer-businessEmail-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-businessContactNumber">Business contact number <span class="req"
+                  aria-hidden="true">*</span></label>
+              <input type="tel" id="employer-businessContactNumber" name="businessContactNumber"
+                autocomplete="work tel" inputmode="tel" required placeholder="e.g. 020 7946 0000"
+                aria-describedby="employer-businessContactNumber-error">
+              <p class="field-error" id="employer-businessContactNumber-error"></p>
+            </div>
+
+            <h3 class="form-subheading">Business details</h3>
+
+            <div class="field">
+              <label for="employer-companyName">Company name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-companyName" name="companyName" autocomplete="organization" required
+                aria-describedby="employer-companyName-error">
+              <p class="field-error" id="employer-companyName-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-website">Website <span class="optional">(optional)</span></label>
+              <input type="text" id="employer-website" name="website" autocomplete="url" inputmode="url"
+                placeholder="e.g. example.co.uk" aria-describedby="employer-website-error">
+              <p class="field-error" id="employer-website-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-location">Location <span class="req" aria-hidden="true">*</span></label>
+              <select id="employer-location" name="location" required aria-describedby="employer-location-error">
+                <option value="">Select your location</option>
+                <!-- Options populated from LOCATIONS in js/form-options.js -->
+              </select>
+              <p class="field-error" id="employer-location-error"></p>
+            </div>
+
+            <div class="field" hidden>
+              <label for="employer-locationOther">Your location <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="employer-locationOther" name="locationOther" autocomplete="address-level2"
+                aria-describedby="employer-locationOther-error">
+              <p class="field-error" id="employer-locationOther-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-businessType">Business type <span class="req" aria-hidden="true">*</span></label>
+              <p class="field-hint" id="employer-businessType-hint">Choose the option that best describes the venue or
+                business you need hospitality staff for.</p>
+              <select id="employer-businessType" name="businessType" required
+                aria-describedby="employer-businessType-hint employer-businessType-error">
+                <option value="">Select your business type</option>
+                <!-- Options populated from BUSINESS_TYPES in js/form-options.js -->
+              </select>
+              <p class="field-error" id="employer-businessType-error"></p>
+            </div>
+
+            <div class="field" hidden>
+              <label for="employer-businessTypeOther">Please describe your business type <span class="req"
+                  aria-hidden="true">*</span></label>
+              <input type="text" id="employer-businessTypeOther" name="businessTypeOther"
+                aria-describedby="employer-businessTypeOther-error">
+              <p class="field-error" id="employer-businessTypeOther-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="employer-companyRegistrationNumber">Company registration number <span class="req"
+                  aria-hidden="true">*</span></label>
+              <input type="text" id="employer-companyRegistrationNumber" name="companyRegistrationNumber" required
+                aria-describedby="employer-companyRegistrationNumber-error">
+              <p class="field-error" id="employer-companyRegistrationNumber-error"></p>
+            </div>
+
+            <fieldset class="keep-in-touch" aria-describedby="employer-keepInTouch-hint">
+              <legend class="section-title">Keep in touch with Flok</legend>
+              <p class="field-hint" id="employer-keepInTouch-hint">These choices are optional. You can unsubscribe at
+                any time.</p>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="employer-marketingEmail" name="marketingEmail">
+                <label for="employer-marketingEmail">I'd like to receive emails from Flok about news, offers and
+                  services.</label>
+              </div>
+              <div class="checkbox-row">
+                <input type="checkbox" class="marketing-check" id="employer-marketingSms" name="marketingSms">
+                <label for="employer-marketingSms">I'd like to receive text messages from Flok about news, offers and
+                  services.</label>
+              </div>
+            </fieldset>
+
+            <div class="privacy-section">
+              <p class="privacy-text">We'll use your details to manage your interest in Flok and contact you about
+                getting started. Read our <a href="pdf/privacy-policy.pdf" target="_blank"
+                  rel="noopener noreferrer">Privacy Policy</a> for more information.</p>
+              <div class="field field-checkbox">
+                <div class="checkbox-row">
+                  <input type="checkbox" class="privacy-agree" id="employerAgreePrivacy" name="agreePrivacy" required
+                    aria-describedby="employerAgreePrivacy-error">
+                  <label for="employerAgreePrivacy">I have read the Privacy Policy. <span class="req"
+                      aria-hidden="true">*</span></label>
+                </div>
+                <p class="field-error" id="employerAgreePrivacy-error"></p>
+              </div>
+            </div>
+
+            <p class="form-error" id="employerForm-error" role="alert"></p>
+
+            <button type="submit" class="interest-submit">Register interest</button>
+          </form>
+        </div>
+
+        <!-- Confirmations: shown by js/interested.js in place of the tabs and forms after a successful
+             submission. The heading text (with the first name) is set by the JS. -->
+        <section id="worker-confirmation" class="interest-confirmation" aria-labelledby="worker-confirmation-heading"
+          hidden>
+          <!-- Bird animation (worker, playful): 6 silhouettes traced from images/birds3.webp, one path
+               each so they move individually. Decorative only. Animated in css/interested.css. -->
+          <div class="confirmation-animation" aria-hidden="true">
+            <svg class="birds birds--worker" viewBox="0 0 320 96" preserveAspectRatio="xMinYMid meet"
+              focusable="false" aria-hidden="true">
+              <g class="bird" style="--d:0s;--fx:-26px;--fy:40px"><path transform="translate(6 42) rotate(-6) scale(0.34)" fill-opacity="0.45" d="M0 0 13 9 36 33 48 41 69 69 72 72 79 75 89 76 105 68 117 64 153 59 169 60 151 71 124 77 109 83 96 91 91 96 91 99 95 108 104 116 103 118 93 119 73 115 66 111 60 105 56 95 55 83 51 81 56 76 57 69 31 41 12 25 3 9Z"/></g>
+              <g class="bird" style="--d:0.08s;--fx:-40px;--fy:46px"><path transform="translate(80 30) rotate(4) scale(0.4)" fill-opacity="0.4" d="M6 0 9 0 12 6 15 2 19 8 21 5 26 12 29 10 31 12 43 31 60 51 63 60 81 57 88 64 91 73 91 80 79 81 71 79 70 80 72 84 72 94 64 113 61 112 59 117 54 116 52 121 48 119 44 124 40 122 35 128 33 128 37 97 35 80 20 78 13 75 1 76 5 74 10 68 15 66 26 65 31 61 27 52 14 36 3 18 0 2 1 1 4 6Z"/></g>
+              <g class="bird" style="--d:0.16s;--fx:-60px;--fy:52px"><path transform="translate(134 24) rotate(-8) scale(0.55)" fill-opacity="0.3" d="M38 0 38 2 27 12 27 15 31 17 26 19 22 19 17 14 18 12 16 10 7 7 0 2 14 7 20 11 23 11 28 6Z"/></g>
+              <g class="bird" style="--d:0.24s;--fx:-76px;--fy:60px"><path transform="translate(168 8) rotate(6) scale(0.42)" fill-opacity="0.35" d="M28 0 30 4 32 1 34 2 35 8 37 6 39 7 39 11 42 12 42 17 45 17 46 19 47 39 51 56 50 65 54 68 62 69 65 72 66 84 62 91 49 83 44 93 32 104 29 103 27 105 24 105 22 103 18 105 17 102 11 104 10 101 3 104 12 89 18 82 23 70 9 58 0 54 5 54 8 52 13 52 20 55 27 54 28 45 24 27 24 10Z"/></g>
+              <g class="bird" style="--d:0.32s;--fx:-96px;--fy:44px"><path transform="translate(214 46) rotate(-4) scale(0.36)" fill-opacity="0.4" d="M2 0 5 3 8 0 12 4 17 3 20 8 23 7 26 12 30 13 31 16 33 15 39 19 44 28 49 43 57 51 68 67 110 68 135 72 109 77 79 76 67 80 95 91 115 93 117 95 117 99 113 103 97 98 77 104 54 104 35 100 18 88 10 89 0 96 2 91 6 87 8 78 13 73 29 73 34 71 21 47 10 36 3 25 0 16 0 5Z"/></g>
+              <g class="bird" style="--d:0.4s;--fx:-120px;--fy:58px"><path transform="translate(276 14) rotate(10) scale(0.4)" fill-opacity="0.3" d="M0 0 19 17 34 34 41 35 51 30 70 27 76 28 70 32 56 35 44 41 41 44 41 46 47 54 34 53 30 51 26 46 25 38 23 37 26 34 26 31 4 10Z"/></g>
+            </svg>
+          </div>
+          <h2 id="worker-confirmation-heading" class="confirmation-title" tabindex="-1">Thanks for registering!</h2>
+          <p class="confirmation-text">We’ve received your details and CV. We’ll be in touch with next steps.</p>
+          <p class="confirmation-closing">Welcome to the Flok. Good things are coming.</p>
+          <a href="index.html" class="interest-submit confirmation-home">Back to home</a>
+        </section>
+
+        <section id="employer-confirmation" class="interest-confirmation"
+          aria-labelledby="employer-confirmation-heading" hidden>
+          <!-- Bird animation (employer, subtle): 3 silhouettes traced from images/birds3.webp, one path
+               each so they move individually. Decorative only. Animated in css/interested.css. -->
+          <div class="confirmation-animation" aria-hidden="true">
+            <svg class="birds birds--employer" viewBox="0 0 320 96" preserveAspectRatio="xMinYMid meet"
+              focusable="false" aria-hidden="true">
+              <g class="bird" style="--d:0s;--fx:-12px;--fy:16px"><path transform="translate(8 44) rotate(-4) scale(0.3)" fill-opacity="0.45" d="M0 0 13 9 36 33 48 41 69 69 72 72 79 75 89 76 105 68 117 64 153 59 169 60 151 71 124 77 109 83 96 91 91 96 91 99 95 108 104 116 103 118 93 119 73 115 66 111 60 105 56 95 55 83 51 81 56 76 57 69 31 41 12 25 3 9Z"/></g>
+              <g class="bird" style="--d:0.12s;--fx:-18px;--fy:18px"><path transform="translate(80 20) rotate(4) scale(0.38)" fill-opacity="0.38" d="M28 0 30 4 32 1 34 2 35 8 37 6 39 7 39 11 42 12 42 17 45 17 46 19 47 39 51 56 50 65 54 68 62 69 65 72 66 84 62 91 49 83 44 93 32 104 29 103 27 105 24 105 22 103 18 105 17 102 11 104 10 101 3 104 12 89 18 82 23 70 9 58 0 54 5 54 8 52 13 52 20 55 27 54 28 45 24 27 24 10Z"/></g>
+              <g class="bird" style="--d:0.24s;--fx:-22px;--fy:20px"><path transform="translate(130 12) rotate(-6) scale(0.6)" fill-opacity="0.3" d="M37 0 39 0 38 2 32 6 27 12 27 14 31 17 24 19 19 15 17 10 6 6 0 2 13 6 20 10 24 10Z"/></g>
+            </svg>
+          </div>
+          <h2 id="employer-confirmation-heading" class="confirmation-title" tabindex="-1">Thanks for registering!</h2>
+          <p class="confirmation-text">We’ve received your business details. We’ll be in touch to talk about your
+            staffing needs and how Flok can help.</p>
+          <p class="confirmation-closing">Welcome to the Flok. Here’s to good people and great hospitality.</p>
+          <a href="index.html" class="interest-submit confirmation-home">Back to home</a>
+          <!-- Stays hidden until ENABLE_VENUE_SIGNUP_LINK is true in js/interested.js. -->
+          <p class="venue-signup" id="venueSignup" hidden>
+            <a href="https://app.flokjobs.com/signup" class="venue-signup-link" id="venueSignupLink">Create your venue
+              account<span class="new-tab-note" id="venueSignupNewTab" hidden> (opens in a new tab)</span></a>
+          </p>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-col account-col">
+        <h3 class="footer-heading">Account</h3>
+        <ul class="footer-links">
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Log In</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col resources-col">
+        <h3 class="footer-heading">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="industries.html">Industries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col legal-col">
+        <h3 class="footer-heading">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="fairprocessingnotice.html">Fair Processing Policy</a></li>
+          <li><a href="cookiepolicy.html">Cookies Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col support-col">
+        <h3 class="footer-heading">Support</h3>
+        <ul class="footer-links">
+          <li><a href="contact-us.html" target="_blank">Contact Us</a></li>
+          <li><a href="help-centre.html">Help Centre</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col socials-col">
+        <h3 class="footer-heading">Socials</h3>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/company/flokjobs/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/flokjobs/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Flok-Jobs/61576512420509/" target="_blank"
+              rel="noopener noreferrer">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 Flok</p>
+      <a href="index.html"><img src="images/Flok_Logo_Trademark_Logo.svg" alt="Flok Logo" class="footer-logo"
+          width="960" height="450"></a>
+    </div>
+  </footer>
+
+</body>
+
+<!-- JavaScript -->
+<script src="js/overlay-menu.js"></script>
+<script src="js/back-to-top.js"></script>
+<script src="js/resources-dropdown.js"></script>
+<script src="js/form-options.js"></script>
+<script src="js/interested.js"></script>
+
+</html>
